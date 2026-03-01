@@ -1,0 +1,90 @@
+{
+    "id": "414eb7a8-f1f7-47f8-b2b1-d9cc1b22e12a",
+    "task_name": "adaptive-rejection-sampler",
+    "trial_name": "adaptive-rejection-sampler__GkqP3qQ",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/terminal_bench_2_0__2026_03_01__11_27_57/adaptive-rejection-sampler__GkqP3qQ",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "adaptive-rejection-sampler"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "4fde6e809c475b000ae3ea4135f906ffe4775bccae7dafd0b123f4ecc9fcf697",
+    "config": {
+        "task": {
+            "path": "adaptive-rejection-sampler",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "adaptive-rejection-sampler__GkqP3qQ",
+        "trials_dir": "jobs/terminal_bench_2_0__2026_03_01__11_27_57",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "9e3af3a4-15e7-460e-ac02-fe1a01b0099d"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 1181130,
+        "n_cache_tokens": 1118464,
+        "n_output_tokens": 15234,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-01T04:10:14.152526Z",
+    "finished_at": "2026-03-01T04:20:28.704616Z",
+    "environment_setup": {
+        "started_at": "2026-03-01T04:10:14.153241Z",
+        "finished_at": "2026-03-01T04:10:23.199152Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-01T04:10:23.199161Z",
+        "finished_at": "2026-03-01T04:11:00.188435Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-01T04:11:00.188473Z",
+        "finished_at": "2026-03-01T04:19:34.497273Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-01T04:19:34.497339Z",
+        "finished_at": "2026-03-01T04:20:13.392077Z"
+    }
+}

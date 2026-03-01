@@ -1,0 +1,90 @@
+{
+    "id": "b92070f3-da5a-4a4c-9254-6d339b7f4afb",
+    "task_name": "gcode-to-text",
+    "trial_name": "gcode-to-text__3xDqA2y",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/terminal_bench_2_0__2026_03_01__11_27_57/gcode-to-text__3xDqA2y",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "gcode-to-text"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "5531de29b9b445e4cd67b66231d34cb9e7bddcf15f4c2574b7376a19f0e4c339",
+    "config": {
+        "task": {
+            "path": "gcode-to-text",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "gcode-to-text__3xDqA2y",
+        "trials_dir": "jobs/terminal_bench_2_0__2026_03_01__11_27_57",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "9e3af3a4-15e7-460e-ac02-fe1a01b0099d"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 529467,
+        "n_cache_tokens": 464640,
+        "n_output_tokens": 11182,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-01T05:14:16.890331Z",
+    "finished_at": "2026-03-01T05:19:33.828119Z",
+    "environment_setup": {
+        "started_at": "2026-03-01T05:14:16.898394Z",
+        "finished_at": "2026-03-01T05:14:33.009270Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-01T05:14:33.009291Z",
+        "finished_at": "2026-03-01T05:15:04.722050Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-01T05:15:04.722084Z",
+        "finished_at": "2026-03-01T05:18:52.185092Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-01T05:18:52.185191Z",
+        "finished_at": "2026-03-01T05:19:05.841404Z"
+    }
+}

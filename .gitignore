@@ -1,3 +1,7 @@
+# Temp files
+*~
+\#*\#
+
 # Harbor sensetive run files
 arg0/
 shell_snapshots/

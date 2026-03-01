@@ -1,0 +1,47 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 3,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772347732.07611,
+            "stop": 1772347732.392069
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_removal_of_secret_information",
+                "status": "passed",
+                "duration": 0.0010522929951548576,
+                "start": 1772347732.377162,
+                "stop": 1772347732.3785284,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_correct_replacement_of_secret_information",
+                "status": "passed",
+                "duration": 0.0007895499584265053,
+                "start": 1772347732.3788252,
+                "stop": 1772347732.3797894,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_no_other_files_changed",
+                "status": "passed",
+                "duration": 0.011532238044310361,
+                "start": 1772347732.3800626,
+                "stop": 1772347732.3917975,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}
