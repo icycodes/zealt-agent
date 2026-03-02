@@ -1,0 +1,2 @@
+Using prebuilt image: alexgshaw/modernize-scientific-stack:20251031
+Trial modernize-scientific-stack__wQVM2Da failed: Agent setup failed with exit code 28. See logs in jobs/2026-03-02__12-02-20/modernize-scientific-stack__wQVM2Da/agent/setup

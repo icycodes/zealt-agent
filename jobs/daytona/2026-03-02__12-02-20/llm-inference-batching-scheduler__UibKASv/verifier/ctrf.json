@@ -1,0 +1,74 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772424441.899013,
+            "stop": 1772424442.013729
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_output_files_exist",
+                "status": "passed",
+                "duration": 0.00043013133108615875,
+                "start": 1772424441.9760764,
+                "stop": 1772424441.976669,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_input_data_integrity",
+                "status": "passed",
+                "duration": 0.0004149414598941803,
+                "start": 1772424441.976807,
+                "stop": 1772424441.9773176,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_generate_and_schema",
+                "status": "passed",
+                "duration": 0.007521430030465126,
+                "start": 1772424441.9774334,
+                "stop": 1772424441.9850605,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_solution_shape_feasibility_and_batch_consistency",
+                "status": "passed",
+                "duration": 0.00734386220574379,
+                "start": 1772424441.9851925,
+                "stop": 1772424441.9926426,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_solution_coverage_no_duplicates",
+                "status": "passed",
+                "duration": 0.006003180518746376,
+                "start": 1772424441.9927766,
+                "stop": 1772424441.9988818,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_performance_thresholds",
+                "status": "passed",
+                "duration": 0.014482937753200531,
+                "start": 1772424441.9990077,
+                "stop": 1772424442.0135968,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

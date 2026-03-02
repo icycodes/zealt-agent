@@ -1,0 +1,90 @@
+{
+    "id": "d9fc2561-3ec3-4160-8b26-c8a2d7d8384e",
+    "task_name": "video-processing",
+    "trial_name": "video-processing__22thtQw",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/2026-03-02__12-02-20/video-processing__22thtQw",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "video-processing"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "b62eef3fb5c016796ec8b1eda72f2be68fcb44844d2dbe12776412e1580a33b3",
+    "config": {
+        "task": {
+            "path": "video-processing",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "video-processing__22thtQw",
+        "trials_dir": "jobs/2026-03-02__12-02-20",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "8173aeeb-f32f-41dc-8f07-f8093962a6d5"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 692689,
+        "n_cache_tokens": 648832,
+        "n_output_tokens": 23566,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-02T04:35:09.229828Z",
+    "finished_at": "2026-03-02T04:42:36.619089Z",
+    "environment_setup": {
+        "started_at": "2026-03-02T04:35:09.247952Z",
+        "finished_at": "2026-03-02T04:35:11.423127Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-02T04:35:11.423146Z",
+        "finished_at": "2026-03-02T04:35:24.448679Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-02T04:35:24.448795Z",
+        "finished_at": "2026-03-02T04:42:09.125891Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-02T04:42:23.653676Z",
+        "finished_at": "2026-03-02T04:42:35.542134Z"
+    }
+}

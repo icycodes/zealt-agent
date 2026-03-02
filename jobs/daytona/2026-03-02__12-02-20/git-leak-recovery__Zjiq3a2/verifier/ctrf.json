@@ -1,0 +1,65 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 5,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772428940.2435894,
+            "stop": 1772428940.3112447
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_flag_file_exists_and_correct",
+                "status": "passed",
+                "duration": 0.0003929436206817627,
+                "start": 1772428940.2912028,
+                "stop": 1772428940.2917619,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_no_secrets_in_commits",
+                "status": "passed",
+                "duration": 0.00437549501657486,
+                "start": 1772428940.2918782,
+                "stop": 1772428940.296355,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_good_commits_preserved",
+                "status": "passed",
+                "duration": 0.0027437880635261536,
+                "start": 1772428940.2964618,
+                "stop": 1772428940.2993753,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_no_secrets_in_unreachable_objects",
+                "status": "passed",
+                "duration": 0.006427489221096039,
+                "start": 1772428940.2995605,
+                "stop": 1772428940.306092,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_repository_contents_checksum",
+                "status": "passed",
+                "duration": 0.004711003974080086,
+                "start": 1772428940.3062077,
+                "stop": 1772428940.3110836,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

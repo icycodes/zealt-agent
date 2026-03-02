@@ -1,0 +1,4 @@
+Using prebuilt image: alexgshaw/sam-cell-seg:20251031
+Trial sam-cell-seg__F2WTPWD failed: Failed to create sandbox: Function 'create' exceeded timeout of 600 seconds.
+Failed to download logs to jobs/2026-03-02__12-02-20/sam-cell-seg__F2WTPWD/agent
+Sandbox not found. Please build the environment first.

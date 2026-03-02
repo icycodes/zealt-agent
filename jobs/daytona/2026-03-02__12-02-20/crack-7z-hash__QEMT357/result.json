@@ -1,0 +1,90 @@
+{
+    "id": "b6d36149-774d-4900-a1bf-7bf68cb649f5",
+    "task_name": "crack-7z-hash",
+    "trial_name": "crack-7z-hash__QEMT357",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/2026-03-02__12-02-20/crack-7z-hash__QEMT357",
+    "task_id": {
+        "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+        "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+        "path": "crack-7z-hash"
+    },
+    "source": "terminal-bench",
+    "task_checksum": "6557afcd0ab96deef7a8292019ea507be18f91433df61618b622866a293525a8",
+    "config": {
+        "task": {
+            "path": "crack-7z-hash",
+            "git_url": "https://github.com/laude-institute/terminal-bench-2.git",
+            "git_commit_id": "69671fbaac6d67a7ef0dfec016cc38a64ef7a77c",
+            "overwrite": false,
+            "download_dir": null,
+            "source": "terminal-bench"
+        },
+        "trial_name": "crack-7z-hash__QEMT357",
+        "trials_dir": "jobs/2026-03-02__12-02-20",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "8173aeeb-f32f-41dc-8f07-f8093962a6d5"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 1046080,
+        "n_cache_tokens": 969472,
+        "n_output_tokens": 7131,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-02T04:18:02.908481Z",
+    "finished_at": "2026-03-02T04:27:56.863425Z",
+    "environment_setup": {
+        "started_at": "2026-03-02T04:18:02.911070Z",
+        "finished_at": "2026-03-02T04:18:05.539486Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-02T04:18:05.539505Z",
+        "finished_at": "2026-03-02T04:18:21.742462Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-02T04:18:21.742556Z",
+        "finished_at": "2026-03-02T04:27:27.010460Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-02T04:27:41.764585Z",
+        "finished_at": "2026-03-02T04:27:55.788655Z"
+    }
+}
