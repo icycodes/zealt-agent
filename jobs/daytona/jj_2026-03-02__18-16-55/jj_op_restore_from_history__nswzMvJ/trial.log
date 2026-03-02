@@ -1,0 +1,9 @@
+Building environment from Dockerfile /home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jj_op_restore_from_history/environment/Dockerfile
+Trial jj_op_restore_from_history__nswzMvJ failed: Failed to create session: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+
+Failed to download logs to jobs/2026-03-02__18-16-55/jj_op_restore_from_history__nswzMvJ/agent

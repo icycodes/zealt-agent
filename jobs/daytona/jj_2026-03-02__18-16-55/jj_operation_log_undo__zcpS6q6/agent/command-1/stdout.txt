@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"019cae0e-99c0-70c2-94b8-d6e33d6529d1"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Requesting user input**"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Ready in `/app`. Tell me what you want done, and I’ll handle it."}}
+{"type":"turn.completed","usage":{"input_tokens":7476,"cached_input_tokens":6656,"output_tokens":95}}

@@ -1,0 +1,8 @@
+Building environment from Dockerfile /home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jj_bookmark_management/environment/Dockerfile
+Trial jj_bookmark_management__gBBhnAj failed: Failed to execute session command: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+

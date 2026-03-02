@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019cae10-a130-7c43-9165-86ff130b54ec"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Ready. I’ve loaded the `/root` agent instructions and will follow them (including skill usage rules) for your next request."}}
+{"type":"turn.completed","usage":{"input_tokens":7476,"cached_input_tokens":6656,"output_tokens":108}}

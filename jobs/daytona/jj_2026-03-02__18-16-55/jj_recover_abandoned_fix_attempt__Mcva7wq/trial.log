@@ -1,0 +1,2 @@
+Building environment from Dockerfile /home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jj_recover_abandoned_fix_attempt/environment/Dockerfile
+Trial jj_recover_abandoned_fix_attempt__Mcva7wq failed: Agent setup failed with exit code 1. See logs in jobs/2026-03-02__18-16-55/jj_recover_abandoned_fix_attempt__Mcva7wq/agent/setup
