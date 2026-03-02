@@ -1,0 +1,2 @@
+Building environment from Dockerfile /home/kw/code/work/model-eval/tasks/jj-harbor/tasks/20260301_1900/jj_changelog_commit_descriptions/environment/Dockerfile
+Trial jj_changelog_commit_descriptions__5oHy6Ui failed: Agent setup failed with exit code 1. See logs in jobs/2026-03-02__16-41-16/jj_changelog_commit_descriptions__5oHy6Ui/agent/setup

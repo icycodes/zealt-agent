@@ -1,0 +1,29 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772441184.0554492,
+            "stop": 1772441184.0604458
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_outputs",
+                "status": "passed",
+                "duration": 0.0003010100917890668,
+                "start": 1772441184.0599022,
+                "stop": 1772441184.0603368,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

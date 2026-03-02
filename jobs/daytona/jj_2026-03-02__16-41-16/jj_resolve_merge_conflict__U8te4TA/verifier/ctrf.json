@@ -1,0 +1,95 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 7,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772441059.784925,
+            "stop": 1772441059.9378695
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_no_conflicts_in_working_copy",
+                "status": "passed",
+                "duration": 0.019503095012623817,
+                "start": 1772441059.7974417,
+                "stop": 1772441059.8172183,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_no_conflict_markers_in_config_txt",
+                "status": "passed",
+                "duration": 0.00035818893229588866,
+                "start": 1772441059.817459,
+                "stop": 1772441059.8179235,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_config_txt_content_is_correct",
+                "status": "passed",
+                "duration": 0.016494827927090228,
+                "start": 1772441059.818046,
+                "stop": 1772441059.8347142,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_still_has_two_parents",
+                "status": "passed",
+                "duration": 0.016109488031361252,
+                "start": 1772441059.8348966,
+                "stop": 1772441059.851186,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_parent_descriptions_are_correct",
+                "status": "passed",
+                "duration": 0.015061588026583195,
+                "start": 1772441059.8513956,
+                "stop": 1772441059.8666549,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_description_starts_with_merge",
+                "status": "passed",
+                "duration": 0.01571610802784562,
+                "start": 1772441059.8669217,
+                "stop": 1772441059.8829234,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_description_contains_resolution_note",
+                "status": "passed",
+                "duration": 0.016373717924579978,
+                "start": 1772441059.88327,
+                "stop": 1772441059.899916,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_resolve_list_is_empty",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.015392057015560567,
+                "start": 1772441059.9001431,
+                "stop": 1772441059.9376125,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_resolve_list_is_empty():\n        result = subprocess.run(\n            [\"jj\", \"resolve\", \"--list\", \"--no-pager\", \"--color\", \"never\"],\n            cwd=REPO_DIR,\n            capture_output=True,\n            text=True,\n        )\n>       assert result.returncode == 0, f\"jj resolve --list failed: {result.stderr}\"\nE       AssertionError: jj resolve --list failed: Error: No conflicts found at this revision\nE         \nE       assert 2 == 0\nE        +  where 2 = CompletedProcess(args=['jj', 'resolve', '--list', '--no-pager', '--color', 'never'], returncode=2, stdout='', stderr='Error: No conflicts found at this revision\\n').returncode\n\n/tests/test_final_state.py:113: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

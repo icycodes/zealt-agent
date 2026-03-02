@@ -1,0 +1,76 @@
+{
+    "id": "df4f884e-25cf-4ba2-beb4-ba0d4785c0f9",
+    "task_name": "jj_split_squash_upstream_prep",
+    "trial_name": "jj_split_squash_upstream_prep__UCpg3LG",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/2026-03-02__16-41-16/jj_split_squash_upstream_prep__UCpg3LG",
+    "task_id": {
+        "path": "20260301_1900/jj_split_squash_upstream_prep"
+    },
+    "source": "20260301_1900",
+    "task_checksum": "64f4459f3c49749f341d190b8cae0e1a33062baa037b8351cf050fff350614b6",
+    "config": {
+        "task": {
+            "path": "20260301_1900/jj_split_squash_upstream_prep",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "20260301_1900"
+        },
+        "trial_name": "jj_split_squash_upstream_prep__UCpg3LG",
+        "trials_dir": "jobs/2026-03-02__16-41-16",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "ebf5265e-ba11-4f50-adc0-eded0af83589"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Agent setup failed with exit code 100. See logs in jobs/2026-03-02__16-41-16/jj_split_squash_upstream_prep__UCpg3LG/agent/setup",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 357, in run\n    await self._setup_agent()\n  File \"/home/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 230, in _setup_agent\n    await asyncio.wait_for(\n  File \"/opt/miniconda3/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 123, in setup\n    raise RuntimeError(\nRuntimeError: Agent setup failed with exit code 100. See logs in jobs/2026-03-02__16-41-16/jj_split_squash_upstream_prep__UCpg3LG/agent/setup\n",
+        "occurred_at": "2026-03-02T16:44:50.724997"
+    },
+    "started_at": "2026-03-02T08:43:50.185154Z",
+    "finished_at": "2026-03-02T08:44:51.344176Z",
+    "environment_setup": {
+        "started_at": "2026-03-02T08:43:50.188394Z",
+        "finished_at": "2026-03-02T08:44:43.791617Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-02T08:44:43.791624Z",
+        "finished_at": "2026-03-02T08:44:50.138500Z"
+    },
+    "agent_execution": null,
+    "verifier": null
+}

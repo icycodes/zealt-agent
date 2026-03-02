@@ -1,0 +1,88 @@
+{
+    "id": "ed086f5c-9093-4c98-8e5b-bbf0bcfa3e4e",
+    "task_name": "jj_recover_abandoned_fix_attempt",
+    "trial_name": "jj_recover_abandoned_fix_attempt__BpSeUaY",
+    "trial_uri": "file:///home/kw/code/work/model-eval/tasks/jj-harbor/tasks/jobs/2026-03-02__16-41-16/jj_recover_abandoned_fix_attempt__BpSeUaY",
+    "task_id": {
+        "path": "20260301_1900/jj_recover_abandoned_fix_attempt"
+    },
+    "source": "20260301_1900",
+    "task_checksum": "22c250a25cc3d63d5260399d9bed521979be52b17c2764db6d1584c5bda37b5a",
+    "config": {
+        "task": {
+            "path": "20260301_1900/jj_recover_abandoned_fix_attempt",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "20260301_1900"
+        },
+        "trial_name": "jj_recover_abandoned_fix_attempt__BpSeUaY",
+        "trials_dir": "jobs/2026-03-02__16-41-16",
+        "timeout_multiplier": 1.0,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.3-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "job_id": "ebf5265e-ba11-4f50-adc0-eded0af83589"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 7476,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 158,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-02T08:42:35.721206Z",
+    "finished_at": "2026-03-02T08:48:35.955885Z",
+    "environment_setup": {
+        "started_at": "2026-03-02T08:42:35.721995Z",
+        "finished_at": "2026-03-02T08:42:38.432977Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-02T08:42:38.432985Z",
+        "finished_at": "2026-03-02T08:47:57.198931Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-02T08:47:57.199017Z",
+        "finished_at": "2026-03-02T08:48:04.055350Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-02T08:48:21.911836Z",
+        "finished_at": "2026-03-02T08:48:35.361222Z"
+    }
+}

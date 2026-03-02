@@ -1,0 +1,69 @@
+{
+    "id": "ebf5265e-ba11-4f50-adc0-eded0af83589",
+    "started_at": "2026-03-02T16:41:16.815628",
+    "finished_at": "2026-03-02T16:54:07.136937",
+    "n_total_trials": 32,
+    "stats": {
+        "n_trials": 32,
+        "n_errors": 9,
+        "evals": {
+            "codex__20260301_1900": {
+                "n_trials": 23,
+                "n_errors": 9,
+                "metrics": [
+                    {
+                        "mean": 0.28125
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "jj_amend_working_copy__F7TZ4dR",
+                            "jj_gitignore_untrack__5Yhochs",
+                            "jj_init_user_config__Rg4r3Cz",
+                            "jj_op_restore_from_history__iXdRoQ3",
+                            "jj_rebase_onto_main__9hRcd2n",
+                            "jj_restore_working_copy__evTrfdT",
+                            "jj_revset_prune_revisions__fyAgb4D",
+                            "jj_squash_into_parent__8yZR7AD",
+                            "jj_working_copy_restore_files__ZiTCBQ6"
+                        ],
+                        "0.0": [
+                            "jj_recover_abandoned_fix_attempt__BpSeUaY",
+                            "jj_resolve_merge_conflict__U8te4TA",
+                            "jj_bookmark_management__6bDDJ6C",
+                            "jj_config_alias_setup__pwFbomg",
+                            "jj_history_cleanup_split_squash__xg5hDUG",
+                            "jj_history_rewrite__bQJv87S",
+                            "jj_op_log_recovery__ek3pxRU",
+                            "jj_rebase_conflict__vR28gtA",
+                            "jj_rebase_conflict_resolution__RkFEP4a",
+                            "jj_restore_single_file__ZjejrSw",
+                            "jj_revset_prune_task__EYgD8kE",
+                            "jj_revsets_prune__xKsFA29",
+                            "jj_rewrite_history_split_squash__bVtREb3",
+                            "jj_squash_history_cleanup__TxwYDP3"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "DaytonaError": [
+                        "jj_alias_ui_config__UXjXdHt",
+                        "jj_ci_release_bookmark_workflow__NqMQ2cb",
+                        "jj_op_log_find_and_undo__5kX2WeN",
+                        "jj_push_pull_multiple_remotes__ESf2AHF",
+                        "jj_resolve_stacked_conflict__V3AaKwc",
+                        "jj_undo_accidental_abandon__EYNjyLU"
+                    ],
+                    "RuntimeError": [
+                        "jj_changelog_commit_descriptions__5oHy6Ui",
+                        "jj_split_squash_upstream_prep__UCpg3LG"
+                    ],
+                    "AgentSetupTimeoutError": [
+                        "jj_operation_log_undo__a5eJrH6"
+                    ]
+                }
+            }
+        }
+    }
+}
