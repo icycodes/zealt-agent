@@ -1,0 +1,111 @@
+{
+    "id": "5c5e3006-de7b-4bea-9514-c06bb8dfdcf2",
+    "started_at": "2026-03-04T21:23:49.245014",
+    "finished_at": "2026-03-04T22:07:23.030353",
+    "n_total_trials": 65,
+    "stats": {
+        "n_trials": 65,
+        "n_errors": 20,
+        "evals": {
+            "pochi__gemini-3.1-pro__tasks": {
+                "n_trials": 56,
+                "n_errors": 20,
+                "metrics": [
+                    {
+                        "mean": 0.2923076923076923
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "jj_op_log_recovery__PiNDSbY",
+                            "jj_alias_ui_config__xTdta6z",
+                            "jj_resolve_stacked_conflict__yeemWsn",
+                            "jj_squash_history_cleanup__YY6NSez",
+                            "jj_undo_recover_abandoned_commit__Rim7FNM",
+                            "jj_split_feature_and_test__3QRNZrM",
+                            "jj_template_audit_log__85FSLqj",
+                            "jj_operation_log_undo__XdMwyzK",
+                            "jj_recover_abandoned_feature_wor__YW37AF7",
+                            "jj_working_copy_restore_files__NEQWyFs",
+                            "jj_ci_release_bookmark_workflow__Cee2sdv",
+                            "jj_log_template_metadata__ePkQVfs",
+                            "jj_configure_log_aliases_and_pag__jH3YeYN",
+                            "jj_multi_remote_push_fetch__HGbJZp6",
+                            "jj_rewrite_history_split_squash__DVrg7eh",
+                            "jj_squash_into_parent__x7mrJHJ",
+                            "jj_split_and_squash_fixup__FANwN2D",
+                            "jj_revsets_prune__Bb5EUJr",
+                            "jj_changelog_commit_descriptions__ZXwF6Ea",
+                            "jj_revset_prune_task__yoPoESV",
+                            "jj_split_squash_amend_upstream__yEKnkLk",
+                            "jj_config_alias_setup__mB2eaHx",
+                            "jj_rebase_conflict__nhXcACp",
+                            "jj_bookmark_management__B5gjaKH",
+                            "jj_describe_conventional_commits__7EBdtGB",
+                            "jj_git_colocated_interop__HgdXmuN",
+                            "jj_history_rewrite__Zcs7JpF",
+                            "jj_split_amend_for_review__QzfEVPA",
+                            "jj_op_log_recover_deleted_branch__wbqJCfu",
+                            "jj_recover_abandoned_fix_attempt__zxyxpkF",
+                            "jj_restore_single_file__ZyQFudF",
+                            "jj_tag_release_bookmarks__iNHxNwh",
+                            "jj_resolve_stacked_patch_conflic__a2D9K8p",
+                            "jj_revset_prune_revisions__e5MthVC",
+                            "jj_restore_support_ticket_commit__JfEaNjq",
+                            "jj_rebase_conflict_resolution__C3GYGZY",
+                            "jj_restore_build_artifact__v8aDfNK"
+                        ],
+                        "1.0": [
+                            "jj_bookmark_create_and_move__mZxtUyE",
+                            "jj_undo_accidental_abandon__SVddNjb",
+                            "jj_abandon_wip_revisions_revsets__VaLiDAC",
+                            "jj_op_log_find_and_undo__2FgAXoJ",
+                            "jj_rebase_stacked_service_patche__G9gkzYC",
+                            "jj_init_user_config__DpUT4n4",
+                            "jj_squash_split_amend_release__uabw5RV",
+                            "jj_split_squash_upstream_prep__wCdTn6p",
+                            "jj_restore_working_copy__rvE5swv",
+                            "jj_rebase_onto_main__rN6B3fa",
+                            "jj_gitignore_untrack__2xAEzQQ",
+                            "jj_oplog_undo_recovery__pVT3D2M",
+                            "jj_prune_stale_audit_revisions__He7NjAz",
+                            "jj_create_move_bookmarks__ruWTcCA",
+                            "jj_recover_hidden_commit__AN6mwic",
+                            "jj_rebase_branch_and_track_bookm__F45HnPR",
+                            "jj_op_restore_from_history__XS752Ld",
+                            "jj_amend_working_copy__gbUTTxg",
+                            "jj_set_alias_and_ui_pager__XVXVKP4"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "jj_configure_alias_and_ui_color__YDppkXn",
+                        "jj_sparse_checkout_branch_tracki__njUkp9X",
+                        "jj_push_pull_multiple_remotes__ZEc6sjP",
+                        "jj_sync_fork_upstream_remotes__r7KcPhC",
+                        "jj_resolve_multi_branch_conflict__dZZa2yt",
+                        "jj_history_cleanup_split_squash__m773xmG",
+                        "jj_resolve_merge_conflict__pY79r8q",
+                        "jj_resolve_divergent_change_ids__bTxSvAw",
+                        "jj_restore_working_copy_files__WGThryb"
+                    ],
+                    "AgentTimeoutError": [
+                        "jj_multi_remote_push_fetch__HGbJZp6",
+                        "jj_rewrite_history_split_squash__DVrg7eh",
+                        "jj_init_user_config__DpUT4n4",
+                        "jj_squash_into_parent__x7mrJHJ",
+                        "jj_revsets_prune__Bb5EUJr",
+                        "jj_split_squash_upstream_prep__wCdTn6p",
+                        "jj_config_alias_setup__mB2eaHx",
+                        "jj_oplog_undo_recovery__pVT3D2M",
+                        "jj_git_colocated_interop__HgdXmuN",
+                        "jj_history_rewrite__Zcs7JpF",
+                        "jj_set_alias_and_ui_pager__XVXVKP4"
+                    ]
+                }
+            }
+        }
+    }
+}

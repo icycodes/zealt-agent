@@ -1,0 +1,423 @@
+Trial jj_sparse_checkout_branch_tracki__njUkp9X failed: Docker compose command failed for environment jj_sparse_checkout_branch_tracking. Command: docker compose -p jj_sparse_checkout_branch_tracki__njukp9x --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_sparse_checkout_branch_tracking/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 669B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.55kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/ubuntu:22.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [ 9/12] RUN cd /home/user/platform-mono-temp &&     mkdir -p infra/terraform infra/kubernetes &&     mkdir -p services/auth services/payments services/notifications &&     mkdir -p shared/libs shared/protos &&     mkdir -p docs &&     echo "# Platform Mono" > README.md &&     echo "# Infra" > infra/README.md &&     echo "# Terraform" > infra/terraform/main.tf &&     echo "# Kubernetes" > infra/kubernetes/kustomization.yaml &&     echo "# Services" > services/README.md &&     echo "# Auth Service" > services/auth/main.go &&     echo "# Payments Service" > services/payments/main.go &&     echo "# Notifications Service" > services/notifications/main.go &&     echo "# Shared Libraries" > shared/libs/utils.go &&     echo "# Shared Protos" > shared/protos/api.proto &&     echo "# Documentation" > docs/index.md &&     git add . &&     git commit -m "initial commit: monorepo structure" &&     git push origin HEAD:main
+#6 CACHED
+
+#7 [ 3/12] RUN pip3 install pytest
+#7 CACHED
+
+#8 [ 4/12] RUN curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj
+#8 CACHED
+
+#9 [2/7] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 5/12] RUN mkdir -p /home/user && chmod 0755 /home/user
+#10 CACHED
+
+#11 [ 6/12] RUN git config --global user.email "user@example.com" &&     git config --global user.name "User"
+#11 CACHED
+
+#12 [ 7/12] RUN git init --bare /home/user/platform-mono-remote
+#12 CACHED
+
+#13 [ 8/12] RUN git clone /home/user/platform-mono-remote /home/user/platform-mono-temp
+#13 CACHED
+
+#14 [10/12] RUN cd /home/user/platform-mono-temp &&     git checkout -b infra/terraform-refactor &&     echo "# Terraform refactor WIP" > infra/terraform/refactor.tf &&     git add . &&     git commit -m "infra: begin terraform refactor" &&     git push origin infra/terraform-refactor &&     git checkout main
+#14 CACHED
+
+#15 [11/12] RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono
+#15 0.401 Warning: Name and email not configured. Until configured, your commits will be created with the empty identity, and can't be pushed to remotes.
+#15 0.401 Hint: To configure, run:
+#15 0.401   jj config set --user user.name "Some One"
+#15 0.401   jj config set --user user.email "someone@example.com"
+#15 0.406 Fetching into new repo in "/home/user/platform-mono"
+#15 0.415 Error: Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+#15 ERROR: process "/bin/sh -c jj git clone /home/user/platform-mono-remote /home/user/platform-mono" did not complete successfully: exit code: 1
+------
+ > [11/12] RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono:
+Name and email not configured. Until configured, your commits will be created with the empty identity, and can't be pushed to remotes.
+0.401 Hint: To configure, run:
+0.401   jj config set --user user.name "Some One"
+0.401   jj config set --user user.email "someone@example.com"
+0.406 Fetching into new repo in "/home/user/platform-mono"
+0.415 Error: Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+------
+Dockerfile:64
+
+--------------------
+
+  62 |     
+
+  63 |     # Clone using jj from the bare remote
+
+  64 | >>> RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono
+
+  65 |     
+
+  66 |     # Configure jj user identity in repo
+
+--------------------
+
+failed to solve: process "/bin/sh -c jj git clone /home/user/platform-mono-remote /home/user/platform-mono" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_push_pull_multiple_remotes__ZEc6sjP failed: Docker compose command failed for environment jj_push_pull_multiple_remotes. Command: docker compose -p jj_push_pull_multiple_remotes__zec6sjp --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_push_pull_multiple_remotes/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 651B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.87kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/ubuntu:22.04
+#5 DONE 0.0s
+
+#6 [2/9] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && pip3 install pytest     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/9] RUN curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj
+#7 CACHED
+
+#8 [4/9] RUN mkdir -p /home/user && chmod 0755 /home/user
+#8 CACHED
+
+#9 [5/9] RUN git init --bare /home/user/remotes/origin.git     && git init --bare /home/user/remotes/upstream.git
+#9 CACHED
+
+#10 [6/9] RUN mkdir -p /home/user/myproject     && cd /home/user/myproject     && jj git init --no-colocate .     && jj config set --repo user.name "Test User"     && jj config set --repo user.email "test@example.com"
+#10 CACHED
+
+#11 [7/9] RUN cd /home/user/myproject     && echo "# My Project" > README.md     && jj describe -m "initial commit"     && jj bookmark create main -r @     && jj git remote add origin /home/user/remotes/origin.git     && jj git remote add upstream /home/user/remotes/upstream.git
+#11 CACHED
+
+#12 [8/9] RUN cd /home/user/myproject     && jj git export     && GIT_DIR="$(jj git root)"     && MAIN_SHA="$(git --git-dir="$GIT_DIR" rev-parse main)"     && git --git-dir="$GIT_DIR" push /home/user/remotes/origin.git "${MAIN_SHA}:refs/heads/main"     && git --git-dir="$GIT_DIR" push /home/user/remotes/upstream.git "${MAIN_SHA}:refs/heads/main"     && jj git fetch --remote origin     && jj git fetch --remote upstream     && jj bookmark track main --remote=origin     && jj bookmark track main --remote=upstream
+#12 0.423 To /home/user/remotes/origin.git
+#12 0.423  * [new branch]      ee4ad9f1a96035ed2c2033adf090fe01cb34ee17 -> main
+#12 0.428 To /home/user/remotes/upstream.git
+#12 0.428  * [new branch]      ee4ad9f1a96035ed2c2033adf090fe01cb34ee17 -> main
+#12 0.575 Error: Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+#12 ERROR: process "/bin/sh -c cd /home/user/myproject     && jj git export     && GIT_DIR=\"$(jj git root)\"     && MAIN_SHA=\"$(git --git-dir=\"$GIT_DIR\" rev-parse main)\"     && git --git-dir=\"$GIT_DIR\" push /home/user/remotes/origin.git \"${MAIN_SHA}:refs/heads/main\"     && git --git-dir=\"$GIT_DIR\" push /home/user/remotes/upstream.git \"${MAIN_SHA}:refs/heads/main\"     && jj git fetch --remote origin     && jj git fetch --remote upstream     && jj bookmark track main --remote=origin     && jj bookmark track main --remote=upstream" did not complete successfully: exit code: 1
+------
+ > [8/9] RUN cd /home/user/myproject     && jj git export     && GIT_DIR="$(jj git root)"     && MAIN_SHA="$(git --git-dir="$GIT_DIR" rev-parse main)"     && git --git-dir="$GIT_DIR" push /home/user/remotes/origin.git "${MAIN_SHA}:refs/heads/main"     && git --git-dir="$GIT_DIR" push /home/user/remotes/upstream.git "${MAIN_SHA}:refs/heads/main"     && jj git fetch --remote origin     && jj git fetch --remote upstream     && jj bookmark track main --remote=origin     && jj bookmark track main --remote=upstream:
+0.423 To /home/user/remotes/origin.git
+0.423  * [new branch]      ee4ad9f1a96035ed2c2033adf090fe01cb34ee17 -> main
+Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+------
+Dockerfile:39
+
+--------------------
+
+  38 |     
+
+  39 | >>> RUN cd /home/user/myproject \
+
+  40 | >>>     && jj git export \
+
+  41 | >>>     && GIT_DIR="$(jj git root)" \
+
+  42 | >>>     && MAIN_SHA="$(git --git-dir="$GIT_DIR" rev-parse main)" \
+
+  43 | >>>     && git --git-dir="$GIT_DIR" push /home/user/remotes/origin.git "${MAIN_SHA}:refs/heads/main" \
+
+  44 | >>>     && git --git-dir="$GIT_DIR" push /home/user/remotes/upstream.git "${MAIN_SHA}:refs/heads/main" \
+
+  45 | >>>     && jj git fetch --remote origin \
+
+  46 | >>>     && jj git fetch --remote upstream \
+
+  47 | >>>     && jj bookmark track main --remote=origin \
+
+  48 | >>>     && jj bookmark track main --remote=upstream
+
+  49 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c cd /home/user/myproject     && jj git export     && GIT_DIR=\"$(jj git root)\"     && MAIN_SHA=\"$(git --git-dir=\"$GIT_DIR\" rev-parse main)\"     && git --git-dir=\"$GIT_DIR\" push /home/user/remotes/origin.git \"${MAIN_SHA}:refs/heads/main\"     && git --git-dir=\"$GIT_DIR\" push /home/user/remotes/upstream.git \"${MAIN_SHA}:refs/heads/main\"     && jj git fetch --remote origin     && jj git fetch --remote upstream     && jj bookmark track main --remote=origin     && jj bookmark track main --remote=upstream" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_sync_fork_upstream_remotes__r7KcPhC failed: Docker compose command failed for environment jj_sync_fork_upstream_remotes. Command: docker compose -p jj_sync_fork_upstream_remotes__r7kcphc --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_sync_fork_upstream_remotes/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 651B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.14kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/12] FROM docker.io/library/ubuntu:22.04
+#5 DONE 0.0s
+
+#6 [ 3/12] RUN pip3 install pytest
+#6 CACHED
+
+#7 [ 4/12] RUN curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj
+#7 CACHED
+
+#8 [ 2/12] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [ 5/12] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [ 6/12] RUN git init --bare /home/user/remotes/upstream.git
+#10 0.111 hint: Using 'master' as the name for the initial branch. This default branch name
+#10 0.111 hint: is subject to change. To configure the initial branch name to use in all
+#10 0.111 hint: of your new repositories, which will suppress this warning, call:
+#10 0.111 hint: 
+#10 0.111 hint: 	git config --global init.defaultBranch <name>
+#10 0.111 hint: 
+#10 0.111 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+#10 0.111 hint: 'development'. The just-created branch can be renamed via this command:
+#10 0.111 hint: 
+#10 0.111 hint: 	git branch -m <name>
+#10 0.112 Initialized empty Git repository in /home/user/remotes/upstream.git/
+#10 DONE 0.1s
+
+#11 [ 7/12] RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email "upstream@example.com"     && git -C /tmp/tmp_upstream config user.name "Upstream Author"     && echo "# MyProject" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m "Initial commit"     && echo "def core(): pass" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m "Add core library"     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m "Add upstream feature"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream
+#11 0.104 Cloning into '/tmp/tmp_upstream'...
+#11 0.108 warning: You appear to have cloned an empty repository.
+#11 0.108 done.
+#11 0.111 [master (root-commit) cb30945] Initial commit
+#11 0.111  1 file changed, 1 insertion(+)
+#11 0.111  create mode 100644 README.md
+#11 0.114 [master c439215] Add core library
+#11 0.114  1 file changed, 1 insertion(+)
+#11 0.114  create mode 100644 core.py
+#11 0.116 [master 8d3ea19] Add upstream feature
+#11 0.116  1 file changed, 1 insertion(+)
+#11 0.116  create mode 100644 upstream_feature.py
+#11 0.116 error: src refspec main does not match any
+#11 0.116 error: failed to push some refs to '/home/user/remotes/upstream.git'
+#11 ERROR: process "/bin/sh -c git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email \"upstream@example.com\"     && git -C /tmp/tmp_upstream config user.name \"Upstream Author\"     && echo \"# MyProject\" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m \"Initial commit\"     && echo \"def core(): pass\" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m \"Add core library\"     && echo \"def upstream_feature(): pass\" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m \"Add upstream feature\"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream" did not complete successfully: exit code: 1
+------
+ > [ 7/12] RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email "upstream@example.com"     && git -C /tmp/tmp_upstream config user.name "Upstream Author"     && echo "# MyProject" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m "Initial commit"     && echo "def core(): pass" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m "Add core library"     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m "Add upstream feature"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream:
+0.111  1 file changed, 1 insertion(+)
+0.111  create mode 100644 README.md
+0.114 [master c439215] Add core library
+0.114  1 file changed, 1 insertion(+)
+0.114  create mode 100644 core.py
+0.116 [master 8d3ea19] Add upstream feature
+0.116  1 file changed, 1 insertion(+)
+0.116  create mode 100644 upstream_feature.py
+0.116 error: src refspec main does not match any
+0.116 error: failed to push some refs to '/home/user/remotes/upstream.git'
+------
+Dockerfile:27
+
+--------------------
+
+  26 |     
+
+  27 | >>> RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream \
+
+  28 | >>>     && git -C /tmp/tmp_upstream config user.email "upstream@example.com" \
+
+  29 | >>>     && git -C /tmp/tmp_upstream config user.name "Upstream Author" \
+
+  30 | >>>     && echo "# MyProject" > /tmp/tmp_upstream/README.md \
+
+  31 | >>>     && git -C /tmp/tmp_upstream add README.md \
+
+  32 | >>>     && git -C /tmp/tmp_upstream commit -m "Initial commit" \
+
+  33 | >>>     && echo "def core(): pass" > /tmp/tmp_upstream/core.py \
+
+  34 | >>>     && git -C /tmp/tmp_upstream add core.py \
+
+  35 | >>>     && git -C /tmp/tmp_upstream commit -m "Add core library" \
+
+  36 | >>>     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py \
+
+  37 | >>>     && git -C /tmp/tmp_upstream add upstream_feature.py \
+
+  38 | >>>     && git -C /tmp/tmp_upstream commit -m "Add upstream feature" \
+
+  39 | >>>     && git -C /tmp/tmp_upstream push origin main \
+
+  40 | >>>     && rm -rf /tmp/tmp_upstream
+
+  41 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email \"upstream@example.com\"     && git -C /tmp/tmp_upstream config user.name \"Upstream Author\"     && echo \"# MyProject\" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m \"Initial commit\"     && echo \"def core(): pass\" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m \"Add core library\"     && echo \"def upstream_feature(): pass\" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m \"Add upstream feature\"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_configure_alias_and_ui_color__YDppkXn failed: Agent setup failed with exit code 28. See logs in jobs/2026-03-04__21-23-49/jj_configure_alias_and_ui_color__YDppkXn/agent/setup
+Not retrying trial because the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Trial jj_history_cleanup_split_squash__m773xmG failed: Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_history_cleanup_split_squash__m773xmG/agent/setup
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_resolve_merge_conflict__pY79r8q failed: Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_resolve_merge_conflict__pY79r8q/agent/setup
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_resolve_multi_branch_conflict__dZZa2yt failed: Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_resolve_multi_branch_conflict__dZZa2yt/agent/setup
+Trial jj_resolve_divergent_change_ids__bTxSvAw failed: Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_resolve_divergent_change_ids__bTxSvAw/agent/setup
+Not retrying trial because the maximum number of retries has been reached
+Not retrying trial because the maximum number of retries has been reached
+Trial jj_restore_working_copy_files__WGThryb failed: Docker compose command failed for environment jj_restore_working_copy_files. Command: docker compose -p jj_restore_working_copy_files__wgthryb --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_restore_working_copy_files/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 651B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.12kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/12] FROM docker.io/library/ubuntu:22.04
+#5 DONE 0.0s
+
+#6 [ 2/12] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [ 3/12] RUN pip3 install --no-cache-dir pytest
+#7 CACHED
+
+#8 [internal] preparing inline document
+#8 DONE 0.0s
+
+#9 [internal] preparing inline document
+#9 DONE 0.0s
+
+#10 [internal] preparing inline document
+#10 DONE 0.1s
+
+#11 [internal] preparing inline document
+#11 DONE 0.1s
+
+#12 [ 4/12] RUN curl -sSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj     && chmod +x /usr/local/bin/jj
+#12 DONE 3.4s
+
+#13 [ 5/12] RUN mkdir -p /home/user && chmod 0755 /home/user
+#13 DONE 0.1s
+
+#14 [ 6/12] RUN jj config set --user user.name "Dev User"     && jj config set --user user.email "dev@example.com"
+#14 DONE 0.3s
+
+#15 [ 7/12] RUN mkdir -p /home/user/webserver/src
+#15 DONE 0.2s
+
+#16 [ 8/12] COPY --chmod=644 <<EOF /home/user/webserver/Cargo.toml
+#16 DONE 0.0s
+
+#17 [ 9/12] COPY --chmod=644 <<EOF /home/user/webserver/README.md
+#17 DONE 0.0s
+
+#18 [10/12] COPY --chmod=644 <<EOF /home/user/webserver/src/main.rs
+#18 DONE 0.0s
+
+#19 [11/12] COPY --chmod=644 <<EOF /home/user/webserver/src/config.rs
+#19 DONE 0.1s
+
+#20 [12/12] RUN cd /home/user/webserver     && jj git init     && jj config set --repo user.name "Dev User"     && jj config set --repo user.email "dev@example.com"     && jj describe -m "initial project scaffold"     && jj new -m "add rate limiting feature"     && printf 'TODO: placeholder - needs rewrite\n' > /home/user/webserver/src/main.rs     && rm /home/user/webserver/src/config.rs     && printf '- Dev User (contributor)\n' >> /home/user/webserver/README.md
+#20 0.285 Initialized repo in "."
+#20 0.285 Hint: Running `git clean -xdf` will remove `.jj/`!
+#20 0.818 Working copy  (@) now at: kuxrmpos cc1b5cda initial project scaffold
+#20 0.821 Parent commit (@-)      : zzzzzzzz 00000000 (empty) (no description set)
+#20 1.005 Working copy  (@) now at: vskxzxos 89393f25 (empty) add rate limiting feature
+#20 1.008 Parent commit (@-)      : kuxrmpos cc1b5cda initial project scaffold
+#20 1.013 /bin/sh: 1: printf: Illegal option - 
+#20 ERROR: process "/bin/sh -c cd /home/user/webserver     && jj git init     && jj config set --repo user.name \"Dev User\"     && jj config set --repo user.email \"dev@example.com\"     && jj describe -m \"initial project scaffold\"     && jj new -m \"add rate limiting feature\"     && printf 'TODO: placeholder - needs rewrite\\n' > /home/user/webserver/src/main.rs     && rm /home/user/webserver/src/config.rs     && printf '- Dev User (contributor)\\n' >> /home/user/webserver/README.md" did not complete successfully: exit code: 2
+------
+ > [12/12] RUN cd /home/user/webserver     && jj git init     && jj config set --repo user.name "Dev User"     && jj config set --repo user.email "dev@example.com"     && jj describe -m "initial project scaffold"     && jj new -m "add rate limiting feature"     && printf 'TODO: placeholder - needs rewrite\n' > /home/user/webserver/src/main.rs     && rm /home/user/webserver/src/config.rs     && printf '- Dev User (contributor)\n' >> /home/user/webserver/README.md:
+0.285 Initialized repo in "."
+0.285 Hint: Running `git clean -xdf` will remove `.jj/`!
+kuxrmpos cc1b5cda initial project scaffold
+0.821 Parent commit (@-)      : zzzzzzzz 00000000 (empty) (no description set)
+vskxzxos 89393f25 (empty) add rate limiting feature
+1.008 Parent commit (@-)      : kuxrmpos cc1b5cda initial project scaffold
+1.013 /bin/sh: 1: printf: Illegal option - 
+------
+Dockerfile:76
+
+--------------------
+
+  75 |     
+
+  76 | >>> RUN cd /home/user/webserver \
+
+  77 | >>>     && jj git init \
+
+  78 | >>>     && jj config set --repo user.name "Dev User" \
+
+  79 | >>>     && jj config set --repo user.email "dev@example.com" \
+
+  80 | >>>     && jj describe -m "initial project scaffold" \
+
+  81 | >>>     && jj new -m "add rate limiting feature" \
+
+  82 | >>>     && printf 'TODO: placeholder - needs rewrite\n' > /home/user/webserver/src/main.rs \
+
+  83 | >>>     && rm /home/user/webserver/src/config.rs \
+
+  84 | >>>     && printf '- Dev User (contributor)\n' >> /home/user/webserver/README.md
+
+  85 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c cd /home/user/webserver     && jj git init     && jj config set --repo user.name \"Dev User\"     && jj config set --repo user.email \"dev@example.com\"     && jj describe -m \"initial project scaffold\"     && jj new -m \"add rate limiting feature\"     && printf 'TODO: placeholder - needs rewrite\\n' > /home/user/webserver/src/main.rs     && rm /home/user/webserver/src/config.rs     && printf '- Dev User (contributor)\\n' >> /home/user/webserver/README.md" did not complete successfully: exit code: 2
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
+Exception AgentTimeoutError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached

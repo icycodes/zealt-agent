@@ -1,0 +1,92 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772632530.1479483,
+            "stop": 1772632531.4969394
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_feature_bookmark_tip_description",
+                "status": "passed",
+                "duration": 0.15356397000141442,
+                "start": 1772632530.15458,
+                "stop": 1772632530.3083503,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_feature_bookmark_parent_description",
+                "status": "passed",
+                "duration": 0.15332688321359456,
+                "start": 1772632530.3085794,
+                "stop": 1772632530.462081,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_feature_bookmark_grandparent_is_main",
+                "status": "passed",
+                "duration": 0.2975367312319577,
+                "start": 1772632530.462215,
+                "stop": 1772632530.7600124,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_grandparent_description_is_deploy_sh_commit",
+                "status": "passed",
+                "duration": 0.1431811337824911,
+                "start": 1772632530.760221,
+                "stop": 1772632530.9036105,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_deploy_sh_in_feature_branch",
+                "status": "passed",
+                "duration": 0.14862898900173604,
+                "start": 1772632530.903766,
+                "stop": 1772632531.0525858,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_metrics_module_in_feature_branch",
+                "status": "passed",
+                "duration": 0.1472596088424325,
+                "start": 1772632531.0527334,
+                "stop": 1772632531.2001793,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_metrics_dashboard_in_feature_branch",
+                "status": "passed",
+                "duration": 0.1485221970360726,
+                "start": 1772632531.2003393,
+                "stop": 1772632531.3490362,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_scaffold_sh_in_feature_branch",
+                "status": "passed",
+                "duration": 0.14737381786108017,
+                "start": 1772632531.3492525,
+                "stop": 1772632531.4968085,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

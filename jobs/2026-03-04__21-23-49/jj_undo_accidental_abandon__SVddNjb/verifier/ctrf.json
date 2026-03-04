@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772630756.020519,
+            "stop": 1772630757.2775023
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_auth_module_commit_visible",
+                "status": "passed",
+                "duration": 0.2029294071253389,
+                "start": 1772630756.028374,
+                "stop": 1772630756.2314937,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_src_auth_py_content_in_auth_commit",
+                "status": "passed",
+                "duration": 0.1467643049545586,
+                "start": 1772630756.2316287,
+                "stop": 1772630756.378555,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_update_readme_parent_is_auth_module",
+                "status": "passed",
+                "duration": 0.14954543975181878,
+                "start": 1772630756.378696,
+                "stop": 1772630756.5284407,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_auth_module_parent_is_initial_scaffold",
+                "status": "passed",
+                "duration": 0.15584875806234777,
+                "start": 1772630756.5286994,
+                "stop": 1772630756.6848285,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_main_bookmark_points_to_update_readme",
+                "status": "passed",
+                "duration": 0.1499770248774439,
+                "start": 1772630756.6849823,
+                "stop": 1772630756.8351486,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_is_empty_on_top_of_main",
+                "status": "passed",
+                "duration": 0.2962438268586993,
+                "start": 1772630756.8352928,
+                "stop": 1772630757.1317115,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_operation_log_has_undo_or_restore",
+                "status": "passed",
+                "duration": 0.14537463337183,
+                "start": 1772630757.131849,
+                "stop": 1772630757.2773876,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

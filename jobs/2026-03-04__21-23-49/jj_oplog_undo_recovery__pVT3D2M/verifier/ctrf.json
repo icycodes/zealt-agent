@@ -1,0 +1,83 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772632549.6820452,
+            "stop": 1772632550.6780357
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_implement_core_feature_commit_restored",
+                "status": "passed",
+                "duration": 0.14528110204264522,
+                "start": 1772632549.6878881,
+                "stop": 1772632549.833387,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bad_description_not_present",
+                "status": "passed",
+                "duration": 0.1362826891709119,
+                "start": 1772632549.8335185,
+                "stop": 1772632549.9699688,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_add_tests_commit_restored",
+                "status": "passed",
+                "duration": 0.15094924881123006,
+                "start": 1772632549.9701052,
+                "stop": 1772632550.1212327,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_all_three_commits_in_history",
+                "status": "passed",
+                "duration": 0.1491035739891231,
+                "start": 1772632550.121388,
+                "stop": 1772632550.270674,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_undo_operations_in_oplog",
+                "status": "passed",
+                "duration": 0.1362391458824277,
+                "start": 1772632550.270807,
+                "stop": 1772632550.4072075,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tests_py_file_accessible",
+                "status": "passed",
+                "duration": 0.13487043208442628,
+                "start": 1772632550.4073486,
+                "stop": 1772632550.542448,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_core_py_file_accessible",
+                "status": "passed",
+                "duration": 0.1351711847819388,
+                "start": 1772632550.5425818,
+                "stop": 1772632550.67792,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

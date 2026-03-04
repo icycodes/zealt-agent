@@ -1,0 +1,113 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 9,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772630902.7102475,
+            "stop": 1772630904.8755174
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_squashed_commit_exists_with_correct_description",
+                "status": "passed",
+                "duration": 0.15412827185355127,
+                "start": 1772630902.7193103,
+                "stop": 1772630902.8736463,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_squashed_commit_contains_all_three_files",
+                "status": "passed",
+                "duration": 0.1488308769185096,
+                "start": 1772630902.8737879,
+                "stop": 1772630903.0228002,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_only_one_mutable_non_root_non_wc_commit",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.15082555008120835,
+                "start": 1772630903.0229373,
+                "stop": 1772630903.1802287,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_only_one_mutable_non_root_non_wc_commit():\n        \"\"\"There is exactly one mutable non-root non-working-copy commit (the squashed release).\"\"\"\n        result = run(\n            \"jj log --no-graph -r 'mutable() & ~@ & ~root()' -T 'change_id ++ \\\"\\\\n\\\"'\"\n        )\n        assert result.returncode == 0, f\"jj log failed: {result.stderr}\"\n        lines = [l.strip() for l in result.stdout.strip().splitlines() if l.strip()]\n>       assert len(lines) == 1, (\n            f\"Expected exactly 1 mutable non-root non-wc commit after squash, got {len(lines)}: \"\n            f\"{result.stdout!r}\"\n        )\nE       AssertionError: Expected exactly 1 mutable non-root non-wc commit after squash, got 0: ''\nE       assert 0 == 1\nE        +  where 0 = len([])\n\n/tests/test_final_state.py:63: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_original_feature_commits_gone",
+                "status": "passed",
+                "duration": 0.45747175510041416,
+                "start": 1772630903.1803374,
+                "stop": 1772630903.637978,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bookmark_release_v1_0_exists",
+                "status": "passed",
+                "duration": 0.16150850988924503,
+                "start": 1772630903.63813,
+                "stop": 1772630903.7998235,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bookmark_release_v1_0_points_to_release_commit",
+                "status": "passed",
+                "duration": 0.15263014193624258,
+                "start": 1772630903.7999654,
+                "stop": 1772630903.9527755,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tag_v1_0_exists",
+                "status": "passed",
+                "duration": 0.15397010394372046,
+                "start": 1772630903.9529152,
+                "stop": 1772630904.107057,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_tag_v1_0_points_to_release_commit",
+                "status": "passed",
+                "duration": 0.15095263393595815,
+                "start": 1772630904.1071885,
+                "stop": 1772630904.258315,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_is_empty_child_of_release_commit",
+                "status": "passed",
+                "duration": 0.3072199150919914,
+                "start": 1772630904.2584486,
+                "stop": 1772630904.5658536,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bookmark_and_tag_point_to_same_commit_as_wc_parent",
+                "status": "passed",
+                "duration": 0.30918379803188145,
+                "start": 1772630904.5659943,
+                "stop": 1772630904.8753536,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

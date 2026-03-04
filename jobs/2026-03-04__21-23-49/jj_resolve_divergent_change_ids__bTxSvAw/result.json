@@ -1,0 +1,85 @@
+{
+    "id": "95f65633-9273-4c3a-84a5-a1d1953d4a6b",
+    "task_name": "jj_resolve_divergent_change_ids",
+    "trial_name": "jj_resolve_divergent_change_ids__bTxSvAw",
+    "trial_uri": "file:///Users/kw/code/work/pochi-harbor/jobs/2026-03-04__21-23-49/jj_resolve_divergent_change_ids__bTxSvAw",
+    "task_id": {
+        "path": "../jj-harbor/tasks/jj_resolve_divergent_change_ids"
+    },
+    "source": "tasks",
+    "task_checksum": "a7da9ef4737dd943e6f36ced3d09893e0cbccd1c08ff30904d72842db39f4b8a",
+    "config": {
+        "task": {
+            "path": "../jj-harbor/tasks/jj_resolve_divergent_change_ids",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "jj_resolve_divergent_change_ids__bTxSvAw",
+        "trials_dir": "jobs/2026-03-04__21-23-49",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.pochi:Pochi",
+            "model_name": "google/gemini-3.1-pro",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "5c5e3006-de7b-4bea-9514-c06bb8dfdcf2"
+    },
+    "agent_info": {
+        "name": "pochi",
+        "version": "unknown",
+        "model_info": {
+            "name": "gemini-3.1-pro",
+            "provider": "google"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_resolve_divergent_change_ids__bTxSvAw/agent/setup",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 480, in run\n    await self._setup_agent()\n  File \"/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 240, in _setup_agent\n    await asyncio.wait_for(\n  File \"/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 124, in setup\n    raise RuntimeError(\nRuntimeError: Agent setup failed with exit code 127. See logs in jobs/2026-03-04__21-23-49/jj_resolve_divergent_change_ids__bTxSvAw/agent/setup\n",
+        "occurred_at": "2026-03-04T21:51:01.426350"
+    },
+    "started_at": "2026-03-04T13:50:39.622790Z",
+    "finished_at": "2026-03-04T13:51:11.852575Z",
+    "environment_setup": {
+        "started_at": "2026-03-04T13:50:39.625182Z",
+        "finished_at": "2026-03-04T13:50:41.059286Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-04T13:50:41.059315Z",
+        "finished_at": "2026-03-04T13:51:01.425603Z"
+    },
+    "agent_execution": null,
+    "verifier": null
+}

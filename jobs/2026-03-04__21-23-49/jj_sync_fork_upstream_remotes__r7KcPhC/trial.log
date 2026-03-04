@@ -1,0 +1,114 @@
+Trial jj_sync_fork_upstream_remotes__r7KcPhC failed: Docker compose command failed for environment jj_sync_fork_upstream_remotes. Command: docker compose -p jj_sync_fork_upstream_remotes__r7kcphc --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_sync_fork_upstream_remotes/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 651B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.14kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/12] FROM docker.io/library/ubuntu:22.04
+#5 DONE 0.0s
+
+#6 [ 3/12] RUN pip3 install pytest
+#6 CACHED
+
+#7 [ 4/12] RUN curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj
+#7 CACHED
+
+#8 [ 2/12] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [ 5/12] RUN mkdir -p /home/user && chmod 0755 /home/user
+#9 CACHED
+
+#10 [ 6/12] RUN git init --bare /home/user/remotes/upstream.git
+#10 0.111 hint: Using 'master' as the name for the initial branch. This default branch name
+#10 0.111 hint: is subject to change. To configure the initial branch name to use in all
+#10 0.111 hint: of your new repositories, which will suppress this warning, call:
+#10 0.111 hint: 
+#10 0.111 hint: 	git config --global init.defaultBranch <name>
+#10 0.111 hint: 
+#10 0.111 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+#10 0.111 hint: 'development'. The just-created branch can be renamed via this command:
+#10 0.111 hint: 
+#10 0.111 hint: 	git branch -m <name>
+#10 0.112 Initialized empty Git repository in /home/user/remotes/upstream.git/
+#10 DONE 0.1s
+
+#11 [ 7/12] RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email "upstream@example.com"     && git -C /tmp/tmp_upstream config user.name "Upstream Author"     && echo "# MyProject" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m "Initial commit"     && echo "def core(): pass" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m "Add core library"     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m "Add upstream feature"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream
+#11 0.104 Cloning into '/tmp/tmp_upstream'...
+#11 0.108 warning: You appear to have cloned an empty repository.
+#11 0.108 done.
+#11 0.111 [master (root-commit) cb30945] Initial commit
+#11 0.111  1 file changed, 1 insertion(+)
+#11 0.111  create mode 100644 README.md
+#11 0.114 [master c439215] Add core library
+#11 0.114  1 file changed, 1 insertion(+)
+#11 0.114  create mode 100644 core.py
+#11 0.116 [master 8d3ea19] Add upstream feature
+#11 0.116  1 file changed, 1 insertion(+)
+#11 0.116  create mode 100644 upstream_feature.py
+#11 0.116 error: src refspec main does not match any
+#11 0.116 error: failed to push some refs to '/home/user/remotes/upstream.git'
+#11 ERROR: process "/bin/sh -c git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email \"upstream@example.com\"     && git -C /tmp/tmp_upstream config user.name \"Upstream Author\"     && echo \"# MyProject\" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m \"Initial commit\"     && echo \"def core(): pass\" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m \"Add core library\"     && echo \"def upstream_feature(): pass\" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m \"Add upstream feature\"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream" did not complete successfully: exit code: 1
+------
+ > [ 7/12] RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email "upstream@example.com"     && git -C /tmp/tmp_upstream config user.name "Upstream Author"     && echo "# MyProject" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m "Initial commit"     && echo "def core(): pass" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m "Add core library"     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m "Add upstream feature"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream:
+0.111  1 file changed, 1 insertion(+)
+0.111  create mode 100644 README.md
+0.114 [master c439215] Add core library
+0.114  1 file changed, 1 insertion(+)
+0.114  create mode 100644 core.py
+0.116 [master 8d3ea19] Add upstream feature
+0.116  1 file changed, 1 insertion(+)
+0.116  create mode 100644 upstream_feature.py
+0.116 error: src refspec main does not match any
+0.116 error: failed to push some refs to '/home/user/remotes/upstream.git'
+------
+Dockerfile:27
+
+--------------------
+
+  26 |     
+
+  27 | >>> RUN git clone /home/user/remotes/upstream.git /tmp/tmp_upstream \
+
+  28 | >>>     && git -C /tmp/tmp_upstream config user.email "upstream@example.com" \
+
+  29 | >>>     && git -C /tmp/tmp_upstream config user.name "Upstream Author" \
+
+  30 | >>>     && echo "# MyProject" > /tmp/tmp_upstream/README.md \
+
+  31 | >>>     && git -C /tmp/tmp_upstream add README.md \
+
+  32 | >>>     && git -C /tmp/tmp_upstream commit -m "Initial commit" \
+
+  33 | >>>     && echo "def core(): pass" > /tmp/tmp_upstream/core.py \
+
+  34 | >>>     && git -C /tmp/tmp_upstream add core.py \
+
+  35 | >>>     && git -C /tmp/tmp_upstream commit -m "Add core library" \
+
+  36 | >>>     && echo "def upstream_feature(): pass" > /tmp/tmp_upstream/upstream_feature.py \
+
+  37 | >>>     && git -C /tmp/tmp_upstream add upstream_feature.py \
+
+  38 | >>>     && git -C /tmp/tmp_upstream commit -m "Add upstream feature" \
+
+  39 | >>>     && git -C /tmp/tmp_upstream push origin main \
+
+  40 | >>>     && rm -rf /tmp/tmp_upstream
+
+  41 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c git clone /home/user/remotes/upstream.git /tmp/tmp_upstream     && git -C /tmp/tmp_upstream config user.email \"upstream@example.com\"     && git -C /tmp/tmp_upstream config user.name \"Upstream Author\"     && echo \"# MyProject\" > /tmp/tmp_upstream/README.md     && git -C /tmp/tmp_upstream add README.md     && git -C /tmp/tmp_upstream commit -m \"Initial commit\"     && echo \"def core(): pass\" > /tmp/tmp_upstream/core.py     && git -C /tmp/tmp_upstream add core.py     && git -C /tmp/tmp_upstream commit -m \"Add core library\"     && echo \"def upstream_feature(): pass\" > /tmp/tmp_upstream/upstream_feature.py     && git -C /tmp/tmp_upstream add upstream_feature.py     && git -C /tmp/tmp_upstream commit -m \"Add upstream feature\"     && git -C /tmp/tmp_upstream push origin main     && rm -rf /tmp/tmp_upstream" did not complete successfully: exit code: 1
+
+. Stderr: None. 

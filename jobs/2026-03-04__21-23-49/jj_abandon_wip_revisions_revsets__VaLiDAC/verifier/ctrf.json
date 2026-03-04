@@ -1,0 +1,74 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772630768.3372161,
+            "stop": 1772630769.2524679
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_no_wip_revisions_remain",
+                "status": "passed",
+                "duration": 0.1486151812132448,
+                "start": 1772630768.3429742,
+                "stop": 1772630768.491783,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bookmark_main_still_exists",
+                "status": "passed",
+                "duration": 0.15186719386838377,
+                "start": 1772630768.4919071,
+                "stop": 1772630768.6439493,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bookmark_feature_core_still_exists",
+                "status": "passed",
+                "duration": 0.15547649888321757,
+                "start": 1772630768.644108,
+                "stop": 1772630768.7997708,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_readme_still_accessible",
+                "status": "passed",
+                "duration": 0.15192856965586543,
+                "start": 1772630768.7999036,
+                "stop": 1772630768.952005,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_lib_rs_still_accessible",
+                "status": "passed",
+                "duration": 0.14682946517132223,
+                "start": 1772630768.9521413,
+                "stop": 1772630769.0991445,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_feature_core_commit_still_has_correct_description",
+                "status": "passed",
+                "duration": 0.1527106980793178,
+                "start": 1772630769.099277,
+                "stop": 1772630769.252266,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

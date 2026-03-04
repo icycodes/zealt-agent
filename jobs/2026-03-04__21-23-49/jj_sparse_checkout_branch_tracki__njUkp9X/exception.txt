@@ -1,0 +1,118 @@
+Traceback (most recent call last):
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 479, in run
+    await self._setup_environment()
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 212, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 224, in _start_environment_with_retry
+    await asyncio.wait_for(
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 238, in start
+    await self._run_docker_compose_command(["build"])
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 219, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment jj_sparse_checkout_branch_tracking. Command: docker compose -p jj_sparse_checkout_branch_tracki__njukp9x --project-directory /Users/kw/code/work/jj-harbor/tasks/jj_sparse_checkout_branch_tracking/environment -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 669B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 2.55kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:22.04
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/ubuntu:22.04
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [ 9/12] RUN cd /home/user/platform-mono-temp &&     mkdir -p infra/terraform infra/kubernetes &&     mkdir -p services/auth services/payments services/notifications &&     mkdir -p shared/libs shared/protos &&     mkdir -p docs &&     echo "# Platform Mono" > README.md &&     echo "# Infra" > infra/README.md &&     echo "# Terraform" > infra/terraform/main.tf &&     echo "# Kubernetes" > infra/kubernetes/kustomization.yaml &&     echo "# Services" > services/README.md &&     echo "# Auth Service" > services/auth/main.go &&     echo "# Payments Service" > services/payments/main.go &&     echo "# Notifications Service" > services/notifications/main.go &&     echo "# Shared Libraries" > shared/libs/utils.go &&     echo "# Shared Protos" > shared/protos/api.proto &&     echo "# Documentation" > docs/index.md &&     git add . &&     git commit -m "initial commit: monorepo structure" &&     git push origin HEAD:main
+#6 CACHED
+
+#7 [ 3/12] RUN pip3 install pytest
+#7 CACHED
+
+#8 [ 4/12] RUN curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin ./jj
+#8 CACHED
+
+#9 [2/7] RUN apt-get update && apt-get install -y     curl     ca-certificates     git     python3     python3-pip     bash     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 5/12] RUN mkdir -p /home/user && chmod 0755 /home/user
+#10 CACHED
+
+#11 [ 6/12] RUN git config --global user.email "user@example.com" &&     git config --global user.name "User"
+#11 CACHED
+
+#12 [ 7/12] RUN git init --bare /home/user/platform-mono-remote
+#12 CACHED
+
+#13 [ 8/12] RUN git clone /home/user/platform-mono-remote /home/user/platform-mono-temp
+#13 CACHED
+
+#14 [10/12] RUN cd /home/user/platform-mono-temp &&     git checkout -b infra/terraform-refactor &&     echo "# Terraform refactor WIP" > infra/terraform/refactor.tf &&     git add . &&     git commit -m "infra: begin terraform refactor" &&     git push origin infra/terraform-refactor &&     git checkout main
+#14 CACHED
+
+#15 [11/12] RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono
+#15 0.401 Warning: Name and email not configured. Until configured, your commits will be created with the empty identity, and can't be pushed to remotes.
+#15 0.401 Hint: To configure, run:
+#15 0.401   jj config set --user user.name "Some One"
+#15 0.401   jj config set --user user.email "someone@example.com"
+#15 0.406 Fetching into new repo in "/home/user/platform-mono"
+#15 0.415 Error: Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+#15 ERROR: process "/bin/sh -c jj git clone /home/user/platform-mono-remote /home/user/platform-mono" did not complete successfully: exit code: 1
+------
+ > [11/12] RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono:
+Name and email not configured. Until configured, your commits will be created with the empty identity, and can't be pushed to remotes.
+0.401 Hint: To configure, run:
+0.401   jj config set --user user.name "Some One"
+0.401   jj config set --user user.email "someone@example.com"
+0.406 Fetching into new repo in "/home/user/platform-mono"
+0.415 Error: Git does not recognize required option: porcelain (note: supported version is 2.41.0)
+------
+Dockerfile:64
+
+--------------------
+
+  62 |     
+
+  63 |     # Clone using jj from the bare remote
+
+  64 | >>> RUN jj git clone /home/user/platform-mono-remote /home/user/platform-mono
+
+  65 |     
+
+  66 |     # Configure jj user identity in repo
+
+--------------------
+
+failed to solve: process "/bin/sh -c jj git clone /home/user/platform-mono-remote /home/user/platform-mono" did not complete successfully: exit code: 1
+
+. Stderr: None. 

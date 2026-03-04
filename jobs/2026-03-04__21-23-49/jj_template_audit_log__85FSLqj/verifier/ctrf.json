@@ -1,0 +1,209 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 16,
+            "passed": 1,
+            "failed": 15,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772630744.6600087,
+            "stop": 1772630744.8506525
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_audit_summary_log_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00035921111702919006,
+                "start": 1772630744.6688929,
+                "stop": 1772630744.675846,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_summary_log_exists():\n>       assert os.path.isfile(AUDIT_SUMMARY_LOG), f\"File does not exist: {AUDIT_SUMMARY_LOG}\"\nE       AssertionError: File does not exist: /home/user/audit-repo/audit_summary.log\nE       assert False\nE        +  where False = <function isfile at 0xffff9bd8df30>('/home/user/audit-repo/audit_summary.log')\nE        +    where <function isfile at 0xffff9bd8df30> = <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'>.isfile\nE        +      where <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'> = os.path\n\n/tests/test_final_state.py:14: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002093757502734661,
+                "start": 1772630744.6759431,
+                "stop": 1772630744.6775305,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_exists():\n>       assert os.path.isfile(AUDIT_FULL_LOG), f\"File does not exist: {AUDIT_FULL_LOG}\"\nE       AssertionError: File does not exist: /home/user/audit-repo/audit_full.log\nE       assert False\nE        +  where False = <function isfile at 0xffff9bd8df30>('/home/user/audit-repo/audit_full.log')\nE        +    where <function isfile at 0xffff9bd8df30> = <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'>.isfile\nE        +      where <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'> = os.path\n\n/tests/test_final_state.py:18: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_audit_tickets_log_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002030848991125822,
+                "start": 1772630744.6776285,
+                "stop": 1772630744.6792135,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_tickets_log_exists():\n>       assert os.path.isfile(AUDIT_TICKETS_LOG), f\"File does not exist: {AUDIT_TICKETS_LOG}\"\nE       AssertionError: File does not exist: /home/user/audit-repo/audit_tickets.log\nE       assert False\nE        +  where False = <function isfile at 0xffff9bd8df30>('/home/user/audit-repo/audit_tickets.log')\nE        +    where <function isfile at 0xffff9bd8df30> = <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'>.isfile\nE        +      where <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'> = os.path\n\n/tests/test_final_state.py:22: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_audit_summary_log_has_5_lines",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00015199976041913033,
+                "start": 1772630744.6792939,
+                "stop": 1772630744.680614,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_summary_log_has_5_lines():\n>       with open(AUDIT_SUMMARY_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_summary.log'\n\n/tests/test_final_state.py:26: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_summary_log_contains_email",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00014687608927488327,
+                "start": 1772630744.6807008,
+                "stop": 1772630744.6819608,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_summary_log_contains_email():\n>       with open(AUDIT_SUMMARY_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_summary.log'\n\n/tests/test_final_state.py:32: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_summary_log_pipe_separated",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0001425852533429861,
+                "start": 1772630744.6820333,
+                "stop": 1772630744.6832805,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_summary_log_pipe_separated():\n>       with open(AUDIT_SUMMARY_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_summary.log'\n\n/tests/test_final_state.py:38: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_summary_log_contains_all_descriptions",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0001393747515976429,
+                "start": 1772630744.683353,
+                "stop": 1772630744.6845777,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_summary_log_contains_all_descriptions():\n>       with open(AUDIT_SUMMARY_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_summary.log'\n\n/tests/test_final_state.py:50: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_has_5_blocks",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0001407521776854992,
+                "start": 1772630744.684657,
+                "stop": 1772630744.6859868,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_has_5_blocks():\n>       with open(AUDIT_FULL_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_full.log'\n\n/tests/test_final_state.py:64: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_has_required_keys",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00021575088612735271,
+                "start": 1772630744.6860583,
+                "stop": 1772630744.6909072,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_has_required_keys():\n>       with open(AUDIT_FULL_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_full.log'\n\n/tests/test_final_state.py:71: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_commit_ids_are_full_length",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000177083071321249,
+                "start": 1772630744.6910324,
+                "stop": 1772630744.692531,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_commit_ids_are_full_length():\n>       with open(AUDIT_FULL_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_full.log'\n\n/tests/test_final_state.py:79: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_timestamps_utc_format",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0001636252272874117,
+                "start": 1772630744.692616,
+                "stop": 1772630744.6939516,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_timestamps_utc_format():\n>       with open(AUDIT_FULL_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_full.log'\n\n/tests/test_final_state.py:89: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_full_log_author_email_present",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00014766794629395008,
+                "start": 1772630744.69403,
+                "stop": 1772630744.695312,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_full_log_author_email_present():\n>       with open(AUDIT_FULL_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_full.log'\n\n/tests/test_final_state.py:101: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_tickets_log_has_5_lines",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00015512597747147083,
+                "start": 1772630744.6953866,
+                "stop": 1772630744.6966486,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_tickets_log_has_5_lines():\n>       with open(AUDIT_TICKETS_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_tickets.log'\n\n/tests/test_final_state.py:111: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_tickets_log_contains_all_tickets",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00014312495477497578,
+                "start": 1772630744.696724,
+                "stop": 1772630744.6979668,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_tickets_log_contains_all_tickets():\n>       with open(AUDIT_TICKETS_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_tickets.log'\n\n/tests/test_final_state.py:117: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_audit_tickets_log_format",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0002159180585294962,
+                "start": 1772630744.6980402,
+                "stop": 1772630744.6997752,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_tickets_log_format():\n>       with open(AUDIT_TICKETS_LOG, \"r\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/audit-repo/audit_tickets.log'\n\n/tests/test_final_state.py:125: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_final_state.py::test_jj_log_still_shows_5_commits",
+                "status": "passed",
+                "duration": 0.15043681906536222,
+                "start": 1772630744.6999316,
+                "stop": 1772630744.850523,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}
