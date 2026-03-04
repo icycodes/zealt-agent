@@ -1,0 +1,4 @@
+Selected strategy: _DaytonaDirect
+Building environment from /Users/kw/code/work/jj-harbor/tasks/jj_resolve_divergent_change_ids/environment/Dockerfile
+Trial jj_resolve_divergent_change_ids__ypHRtma failed: Agent setup timed out after 360.0 seconds
+Convention artifacts dir not found or download failed (best-effort)

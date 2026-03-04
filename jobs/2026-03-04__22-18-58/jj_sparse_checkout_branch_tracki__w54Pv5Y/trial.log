@@ -1,0 +1,6 @@
+Selected strategy: _DaytonaDirect
+Building environment from /Users/kw/code/work/jj-harbor/tasks/jj_sparse_checkout_branch_tracking/environment/Dockerfile
+Trial jj_sparse_checkout_branch_tracki__w54Pv5Y failed: Failed to create sandbox: Failure during waiting for sandbox to start: Sandbox e4f026bb-8f04-4580-b6c6-1006de0b9398 failed to start with state: SandboxState.BUILD_FAILED, error reason: unprocessable entity: The command '/bin/sh -c jj git clone /home/user/platform-mono-remote /home/user/platform-mono' returned a non-zero code: 1
+Failed to download logs to jobs/2026-03-04__22-18-58/jj_sparse_checkout_branch_tracki__w54Pv5Y/agent
+Convention artifacts dir not found or download failed (best-effort)
+Sandbox not found. Please build the environment first.

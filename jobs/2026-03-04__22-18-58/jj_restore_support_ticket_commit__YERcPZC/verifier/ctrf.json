@@ -1,0 +1,68 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 4,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772634536.0831883,
+            "stop": 1772634536.1724753
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_recovered_commit_visible_in_log",
+                "status": "passed",
+                "duration": 0.017158552072942257,
+                "start": 1772634536.0904827,
+                "stop": 1772634536.107909,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_parent_is_recovered_commit",
+                "status": "passed",
+                "duration": 0.015789115917868912,
+                "start": 1772634536.1081247,
+                "stop": 1772634536.1241474,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_auth_fix_py_file_exists",
+                "status": "passed",
+                "duration": 0.00028578087221831083,
+                "start": 1772634536.1243765,
+                "stop": 1772634536.1247623,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_main_bookmark_still_exists",
+                "status": "passed",
+                "duration": 0.018695808830671012,
+                "start": 1772634536.1248832,
+                "stop": 1772634536.1437552,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_recovered_commit_accessible_via_revset",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.015713764005340636,
+                "start": 1772634536.1439352,
+                "stop": 1772634536.1723456,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_recovered_commit_accessible_via_revset():\n        result = subprocess.run(\n            [\"jj\", \"log\", \"--no-graph\", \"-T\", \"description\",\n             \"-r\", \"description('ticket-1042')\"],\n            cwd=REPO_DIR,\n            capture_output=True,\n            text=True,\n        )\n        assert result.returncode == 0, \\\n            f\"Could not find ticket-1042 commit via revset description(): {result.stderr}\"\n>       assert \"ticket-1042\" in result.stdout, \\\n            \"The ticket-1042 commit is not accessible (still abandoned or missing)\"\nE       AssertionError: The ticket-1042 commit is not accessible (still abandoned or missing)\nE       assert 'ticket-1042' in ''\nE        +  where '' = CompletedProcess(args=['jj', 'log', '--no-graph', '-T', 'description', '-r', \"description('ticket-1042')\"], returncode=0, stdout='', stderr='').stdout\n\n/tests/test_final_state.py:62: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "id": "b84aaeb4-cd28-48ce-b46b-1f91f7db3428",
+    "task_name": "jj_describe_conventional_commits",
+    "trial_name": "jj_describe_conventional_commits__tMWrZxf",
+    "trial_uri": "file:///Users/kw/code/work/pochi-harbor/jobs/2026-03-04__22-18-58/jj_describe_conventional_commits__tMWrZxf",
+    "task_id": {
+        "path": "../jj-harbor/tasks/jj_describe_conventional_commits"
+    },
+    "source": "tasks",
+    "task_checksum": "196f4fa1937ce2f867412f089ad2d303f4fab5d63cf7fe533f96c14f068e20b0",
+    "config": {
+        "task": {
+            "path": "../jj-harbor/tasks/jj_describe_conventional_commits",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "jj_describe_conventional_commits__tMWrZxf",
+        "trials_dir": "jobs/2026-03-04__22-18-58",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.2-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "b9fe109e-5a75-4aed-a883-81c89a928787"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 37978,
+        "n_cache_tokens": 33664,
+        "n_output_tokens": 385,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-04T14:24:10.013249Z",
+    "finished_at": "2026-03-04T14:25:08.328370Z",
+    "environment_setup": {
+        "started_at": "2026-03-04T14:24:10.015058Z",
+        "finished_at": "2026-03-04T14:24:12.294536Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-04T14:24:12.294553Z",
+        "finished_at": "2026-03-04T14:24:26.095237Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-04T14:24:26.095306Z",
+        "finished_at": "2026-03-04T14:24:38.610044Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-04T14:24:54.044508Z",
+        "finished_at": "2026-03-04T14:25:04.742673Z"
+    }
+}

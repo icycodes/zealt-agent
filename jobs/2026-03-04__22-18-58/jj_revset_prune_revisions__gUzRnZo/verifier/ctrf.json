@@ -1,0 +1,125 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 5,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772634481.3147337,
+            "stop": 1772634481.470087
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_no_wip_revisions_in_visible_history",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.045937841990962625,
+                "start": 1772634481.3253944,
+                "stop": 1772634481.3845313,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_no_wip_revisions_in_visible_history():\n        result = run_jj([\"log\", \"--no-graph\", \"-r\", 'description(glob:\"wip:*\")', \"-T\", 'description ++ \"\\\\n\"'])\n        assert result.returncode == 0, f\"jj log with wip revset failed: {result.stderr}\"\n>       assert result.stdout.strip() == \"\", (\n            f\"Expected no wip revisions, but found:\\n{result.stdout}\"\n        )\nE       AssertionError: Expected no wip revisions, but found:\nE         wip: scratch notes\nE         \nE         wip: debug temp\nE         \nE         \nE       assert 'wip: scratch...p: debug temp' == ''\nE         \nE         + wip: scratch notes\nE         + \nE         + wip: debug temp\n\n/tests/test_final_state.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_meaningful_commits_present",
+                "status": "passed",
+                "duration": 0.01821642112918198,
+                "start": 1772634481.3847122,
+                "stop": 1772634481.4031842,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_wip_commits_not_in_history",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.016604381147772074,
+                "start": 1772634481.4034405,
+                "stop": 1772634481.421915,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_wip_commits_not_in_history():\n        result = run_jj([\"log\", \"--no-graph\", \"-T\", 'description ++ \"\\\\n\"'])\n        assert result.returncode == 0, f\"jj log failed: {result.stderr}\"\n        log = result.stdout\n>       assert \"wip: debug temp\" not in log, (\n            \"'wip: debug temp' still appears in visible history \u2014 it was not abandoned.\"\n        )\nE       AssertionError: 'wip: debug temp' still appears in visible history \u2014 it was not abandoned.\nE       assert 'wip: debug temp' not in '\\nwip: scra...config\\n\\n\\n'\nE         \nE         'wip: debug temp' is contained here:\nE           on logic\nE           \nE           wip: debug temp\nE           \nE           feat: add transform script...\nE         \nE         ...Full output truncated (4 lines hidden), use '-vv' to show\n\n/tests/test_final_state.py:39: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_working_copy_parent_is_validation_logic",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.02431389200501144,
+                "start": 1772634481.422061,
+                "stop": 1772634481.448326,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_working_copy_parent_is_validation_logic():\n        result = run_jj([\"log\", \"--no-graph\", \"-r\", \"@-\", \"-T\", \"description\"])\n        assert result.returncode == 0, f\"jj log failed: {result.stderr}\"\n>       assert \"feat: add validation logic\" in result.stdout, (\n            f\"Working copy parent should be 'feat: add validation logic', got: {result.stdout.strip()}\"\n        )\nE       AssertionError: Working copy parent should be 'feat: add validation logic', got: wip: scratch notes\nE       assert 'feat: add validation logic' in 'wip: scratch notes\\n'\nE        +  where 'wip: scratch notes\\n' = CompletedProcess(args=['jj', 'log', '--no-graph', '-r', '@-', '-T', 'description'], returncode=0, stdout='wip: scratch notes\\n', stderr='').stdout\n\n/tests/test_final_state.py:50: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_audit_log_file_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00038330000825226307,
+                "start": 1772634481.4484959,
+                "stop": 1772634481.450349,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_log_file_exists():\n        audit_log = os.path.join(REPO_DIR, \"audit_log.txt\")\n>       assert os.path.isfile(audit_log), (\n            f\"audit_log.txt not found at {audit_log}. \"\n            \"Run 'jj log --no-graph > audit_log.txt' to create it.\"\n        )\nE       AssertionError: audit_log.txt not found at /home/user/audit-repo/audit_log.txt. Run 'jj log --no-graph > audit_log.txt' to create it.\nE       assert False\nE        +  where False = <function isfile at 0x7db6ffbb5f30>('/home/user/audit-repo/audit_log.txt')\nE        +    where <function isfile at 0x7db6ffbb5f30> = <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'>.isfile\nE        +      where <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'> = os.path\n\n/tests/test_final_state.py:57: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_audit_log_file_not_empty",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0003180198837071657,
+                "start": 1772634481.4504776,
+                "stop": 1772634481.4521163,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_audit_log_file_not_empty():\n        audit_log = os.path.join(REPO_DIR, \"audit_log.txt\")\n>       assert os.path.isfile(audit_log), f\"audit_log.txt not found at {audit_log}.\"\nE       AssertionError: audit_log.txt not found at /home/user/audit-repo/audit_log.txt.\nE       assert False\nE        +  where False = <function isfile at 0x7db6ffbb5f30>('/home/user/audit-repo/audit_log.txt')\nE        +    where <function isfile at 0x7db6ffbb5f30> = <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'>.isfile\nE        +      where <module 'posixpath' from '/usr/lib/python3.10/posixpath.py'> = os.path\n\n/tests/test_final_state.py:65: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_pipeline_config_toml_still_present",
+                "status": "passed",
+                "duration": 0.00026571995113044977,
+                "start": 1772634481.4522436,
+                "stop": 1772634481.4526026,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_transform_py_still_present",
+                "status": "passed",
+                "duration": 0.00022448995150625706,
+                "start": 1772634481.4527113,
+                "stop": 1772634481.4530172,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_validation_py_still_present",
+                "status": "passed",
+                "duration": 0.00023064017295837402,
+                "start": 1772634481.4531186,
+                "stop": 1772634481.453433,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_no_conflicts_in_repo",
+                "status": "passed",
+                "duration": 0.01621237094514072,
+                "start": 1772634481.4535336,
+                "stop": 1772634481.4699233,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,96 @@
+trap 'rm -rf /tmp/codex-secrets "$CODEX_HOME/auth.json"' EXIT TERM INT; . ~/.nvm/nvm.sh; codex exec --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check --model gpt-5.2-codex --json --enable unified_exec -c model_reasoning_effort=high -- '# Extract Commit Metadata Using `jj log` Templates
+
+## Context
+
+You are a member of a data team maintaining a linear audit history in a Jujutsu (jj) repository. Your team needs a machine-readable snapshot of the commit log that captures key metadata fields for compliance and audit purposes. You will use `jj log` with a custom template to extract specific commit fields and write the output to a designated log file.
+
+## Starting Environment
+
+A jj repository has already been initialized at `/home/user/project`. The repository contains a linear chain of **five commits** (excluding the root), each with a meaningful description representing data pipeline steps. The commits are on a bookmark named `audit-log`.
+
+You can verify the repo state by running:
+```
+cd /home/user/project
+jj log
+```
+
+The five commits have the following descriptions (oldest to newest):
+1. `ingest raw data`
+2. `validate schema`
+3. `transform records`
+4. `aggregate metrics`
+5. `export results`
+
+The author name for all commits is `Audit Bot` and the author email is `audit@example.com`.
+
+## Your Task
+
+You must run a single `jj log` command that:
+
+1. Targets all non-root, non-working-copy commits in the repository (use the revset `roots(mutable())::@ ~ @` to select committed revisions excluding the current empty working-copy commit).
+2. Uses `--no-graph` to suppress the graph decoration.
+3. Uses a `--template` (or `-T`) that formats each commit as a single line with the following fields separated by a pipe character (`|`):
+   - The short commit ID: `commit_id.short(8)`
+   - The author name: `author.name()`
+   - The author email: `author.email()`
+   - The commit description stripped of its trailing newline: `description.first_line()`
+4. Each record must end with a newline (`\n`).
+5. Redirects the output to `/home/user/project/commit_log.txt`.
+
+### Exact Template String
+
+The template string you must use is:
+```
+commit_id.short(8) ++ "|" ++ author.name() ++ "|" ++ author.email() ++ "|" ++ description.first_line() ++ "\n"
+```
+
+### Exact Command to Run
+
+```bash
+cd /home/user/project && jj log --no-graph -r '"'"'roots(mutable())::@ ~ @'"'"' -T '"'"'commit_id.short(8) ++ "|" ++ author.name() ++ "|" ++ author.email() ++ "|" ++ description.first_line() ++ "\n"'"'"' > /home/user/project/commit_log.txt
+```
+
+## Expected Output
+
+The file `/home/user/project/commit_log.txt` must contain exactly **5 lines** (one per committed revision), ordered from **oldest to newest** (i.e., use `--reversed` flag in addition). Each line follows the format:
+
+```
+<8-char-commit-id>|Audit Bot|audit@example.com|<description>
+```
+
+### Revised Exact Command (with `--reversed` for oldest-first ordering)
+
+```bash
+cd /home/user/project && jj log --no-graph --reversed -r '"'"'roots(mutable())::@ ~ @'"'"' -T '"'"'commit_id.short(8) ++ "|" ++ author.name() ++ "|" ++ author.email() ++ "|" ++ description.first_line() ++ "\n"'"'"' > /home/user/project/commit_log.txt
+```
+
+Example output (commit IDs will differ):
+```
+a1b2c3d4|Audit Bot|audit@example.com|ingest raw data
+e5f6a7b8|Audit Bot|audit@example.com|validate schema
+c9d0e1f2|Audit Bot|audit@example.com|transform records
+34567890|Audit Bot|audit@example.com|aggregate metrics
+abcdef12|Audit Bot|audit@example.com|export results
+```
+
+## Verification Conditions
+
+The automated verifier will:
+1. Check that the file `/home/user/project/commit_log.txt` exists.
+2. Check that the file contains exactly 5 non-empty lines.
+3. Check that each line matches the pattern `^[0-9a-f]{8}\|Audit Bot\|audit@example.com\|.+$`.
+4. Check that line 1 ends with `|ingest raw data`.
+5. Check that line 2 ends with `|validate schema`.
+6. Check that line 3 ends with `|transform records`.
+7. Check that line 4 ends with `|aggregate metrics`.
+8. Check that line 5 ends with `|export results`.
+9. Check that the commit IDs in the file correspond to real commits in the jj repository.
+
+## Notes
+
+- Do **not** use `git` commands; use only `jj` commands.
+- The `jj` binary is available in your PATH.
+- No `sudo` or root access is required.
+- The output file must be at the exact path `/home/user/project/commit_log.txt`.
+- Make sure you run the command from within the `/home/user/project` directory or pass `-R /home/user/project` to jj.
+' 2>&1 </dev/null | stdbuf -oL tee /logs/agent/codex.txt

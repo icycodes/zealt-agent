@@ -1,0 +1,143 @@
+Traceback (most recent call last):
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 1313, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs, sock=sock)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/base_events.py", line 1159, in create_connection
+    transport, protocol = await self._create_connection_transport(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/base_events.py", line 1192, in _create_connection_transport
+    await waiter
+ConnectionAbortedError: SSL handshake is taking longer than 60.0 seconds: aborting the connection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/errors.py", line 87, in async_wrapper
+    return await async_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/timeout.py", line 423, in async_wrapper
+    return await asyncio.wait_for(task, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/otel_decorator.py", line 94, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/otel_decorator.py", line 183, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_async/daytona.py", line 429, in create
+    return await self._create(params, timeout=timeout, on_snapshot_create_logs=on_snapshot_create_logs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_async/daytona.py", line 497, in _create
+    response = await self._sandbox_api.create_sandbox(sandbox_data, _request_timeout=http_timeout(timeout))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/pydantic/_internal/_validate_call.py", line 34, in wrapper_function
+    return await wrapper(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona_api_client_async/api/sandbox_api.py", line 666, in create_sandbox
+    response_data = await self.api_client.call_api(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona_api_client_async/api_client.py", line 277, in call_api
+    response_data = await self.rest_client.request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona_api_client_async/rest.py", line 212, in request
+    r = await pool_manager.request(**args)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/client.py", line 734, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 1239, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 1611, in _create_direct_connection
+    raise last_exc
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 1580, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/aiohttp/connector.py", line 1321, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host app.daytona.io:443 ssl:default [None]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 479, in run
+    await self._setup_environment()
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 212, in _setup_environment
+    await self._start_environment_with_retry()
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 224, in _start_environment_with_retry
+    await asyncio.wait_for(
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/daytona.py", line 1046, in start
+    return await self._strategy.start(force_build)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/daytona.py", line 219, in start
+    await env._create_sandbox(params=params)
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/daytona.py", line 836, in _create_sandbox
+    self._sandbox = await daytona.create(
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/errors.py", line 89, in async_wrapper
+    process_n_raise_exception(e)
+  File "/Users/kw/.local/share/uv/tools/harbor/lib/python3.12/site-packages/daytona/_utils/errors.py", line 79, in process_n_raise_exception
+    raise DaytonaError(msg)  # pylint: disable=raise-missing-from
+    ^^^^^^^^^^^^^^^^^^^^^^^
+daytona.common.errors.DaytonaError: Failed to create sandbox: Cannot connect to host app.daytona.io:443 ssl:default [None]

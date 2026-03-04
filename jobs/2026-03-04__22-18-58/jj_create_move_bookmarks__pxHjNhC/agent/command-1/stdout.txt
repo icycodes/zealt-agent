@@ -1,0 +1,10 @@
+{"type":"thread.started","thread_id":"019cb93d-5517-7fa3-b046-6a586661e602"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"command_execution","command":"/bin/bash -lc 'jj bookmark create feature/password-reset -r @-'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"command_execution","command":"/bin/bash -lc 'jj bookmark create feature/password-reset -r @-'","aggregated_output":"Created 1 bookmarks pointing to lwolzsqw 4086ca67 feature/password-reset | feat: implement password reset\n","exit_code":0,"status":"completed"}}
+{"type":"item.started","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc 'jj bookmark move feature/auth --to @-'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc 'jj bookmark move feature/auth --to @-'","aggregated_output":"Moved 1 bookmarks to lwolzsqw 4086ca67 feature/auth* feature/password-reset | feat: implement password reset\n","exit_code":0,"status":"completed"}}
+{"type":"item.started","item":{"id":"item_2","type":"command_execution","command":"/bin/bash -lc 'jj bookmark list'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_2","type":"command_execution","command":"/bin/bash -lc 'jj bookmark list'","aggregated_output":"feature/auth: lwolzsqw 4086ca67 feat: implement password reset\nfeature/password-reset: lwolzsqw 4086ca67 feat: implement password reset\n","exit_code":0,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_3","type":"agent_message","text":"Done. Both bookmarks now point to `feat: implement password reset`.\n\n`jj bookmark list` shows:\n- `feature/auth: lwolzsqw 4086ca67 feat: implement password reset`\n- `feature/password-reset: lwolzsqw 4086ca67 feat: implement password reset`\n\nAnything else you want to adjust in the bookmark layout?"}}
+{"type":"turn.completed","usage":{"input_tokens":37286,"cached_input_tokens":33408,"output_tokens":192}}

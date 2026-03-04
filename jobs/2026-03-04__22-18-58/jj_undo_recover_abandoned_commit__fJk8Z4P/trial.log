@@ -1,0 +1,4 @@
+Selected strategy: _DaytonaDirect
+Building environment from /Users/kw/code/work/jj-harbor/tasks/jj_undo_recover_abandoned_commit/environment/Dockerfile
+Trial jj_undo_recover_abandoned_commit__fJk8Z4P failed: Failed to upload files: 
+Convention artifacts dir not found or download failed (best-effort)

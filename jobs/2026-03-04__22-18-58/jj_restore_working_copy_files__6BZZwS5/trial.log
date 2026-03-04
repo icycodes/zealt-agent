@@ -1,0 +1,6 @@
+Selected strategy: _DaytonaDirect
+Building environment from /Users/kw/code/work/jj-harbor/tasks/jj_restore_working_copy_files/environment/Dockerfile
+Trial jj_restore_working_copy_files__6BZZwS5 failed: Failed to create sandbox: Failure during waiting for sandbox to start: Sandbox 6787a849-897b-4859-a905-e25e671c4c90 failed to start with state: SandboxState.BUILD_FAILED, error reason: unprocessable entity: the --chmod option requires BuildKit. Refer to https://docs.docker.com/go/buildkit/ to learn how to build images with BuildKit enabled
+Failed to download logs to jobs/2026-03-04__22-18-58/jj_restore_working_copy_files__6BZZwS5/agent
+Convention artifacts dir not found or download failed (best-effort)
+Sandbox not found. Please build the environment first.

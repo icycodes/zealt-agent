@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"019cb93e-0a4d-7492-bcfa-5ca1692d76f2"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Asking for user instructions**"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"I’m ready. What would you like me to do?"}}
+{"type":"turn.completed","usage":{"input_tokens":8201,"cached_input_tokens":7424,"output_tokens":63}}

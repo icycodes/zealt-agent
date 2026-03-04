@@ -1,0 +1,94 @@
+{
+    "id": "b527efcd-e4aa-4a3b-b76c-ce8d62278ce7",
+    "task_name": "jj_split_and_squash_fixup",
+    "trial_name": "jj_split_and_squash_fixup__FmwjDSy",
+    "trial_uri": "file:///Users/kw/code/work/pochi-harbor/jobs/2026-03-04__22-18-58/jj_split_and_squash_fixup__FmwjDSy",
+    "task_id": {
+        "path": "../jj-harbor/tasks/jj_split_and_squash_fixup"
+    },
+    "source": "tasks",
+    "task_checksum": "dc11f4275b0e1c7610d2d02d65fb89f813707997e71700f3f1ceff77d79f3b0f",
+    "config": {
+        "task": {
+            "path": "../jj-harbor/tasks/jj_split_and_squash_fixup",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "jj_split_and_squash_fixup__FmwjDSy",
+        "trials_dir": "jobs/2026-03-04__22-18-58",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.2-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "b9fe109e-5a75-4aed-a883-81c89a928787"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 8207,
+        "n_cache_tokens": 7424,
+        "n_output_tokens": 69,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-04T14:21:46.764758Z",
+    "finished_at": "2026-03-04T14:22:36.791182Z",
+    "environment_setup": {
+        "started_at": "2026-03-04T14:21:46.767184Z",
+        "finished_at": "2026-03-04T14:21:48.973761Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-04T14:21:48.973772Z",
+        "finished_at": "2026-03-04T14:22:03.166439Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-04T14:22:03.166542Z",
+        "finished_at": "2026-03-04T14:22:08.597849Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-04T14:22:23.470574Z",
+        "finished_at": "2026-03-04T14:22:34.186312Z"
+    }
+}

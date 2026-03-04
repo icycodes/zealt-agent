@@ -1,0 +1,4 @@
+Selected strategy: _DaytonaDirect
+Building environment from /Users/kw/code/work/jj-harbor/tasks/jj_alias_ui_config/environment/Dockerfile
+Trial jj_alias_ui_config__mizgMAB failed: Agent setup timed out after 360.0 seconds
+Convention artifacts dir not found or download failed (best-effort)

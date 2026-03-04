@@ -1,0 +1,94 @@
+{
+    "id": "a44fb2c0-dd2b-49c4-8759-01a55fc242d4",
+    "task_name": "jj_op_log_recovery",
+    "trial_name": "jj_op_log_recovery__ACuQFgm",
+    "trial_uri": "file:///Users/kw/code/work/pochi-harbor/jobs/2026-03-04__22-18-58/jj_op_log_recovery__ACuQFgm",
+    "task_id": {
+        "path": "../jj-harbor/tasks/jj_op_log_recovery"
+    },
+    "source": "tasks",
+    "task_checksum": "2a7f40d8927eeeccc09911447891712f940c2e62361d414cdd18b51d1d6b0ca8",
+    "config": {
+        "task": {
+            "path": "../jj-harbor/tasks/jj_op_log_recovery",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "jj_op_log_recovery__ACuQFgm",
+        "trials_dir": "jobs/2026-03-04__22-18-58",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.2-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "b9fe109e-5a75-4aed-a883-81c89a928787"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 311281,
+        "n_cache_tokens": 295936,
+        "n_output_tokens": 4450,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-04T14:18:58.938066Z",
+    "finished_at": "2026-03-04T14:21:46.757749Z",
+    "environment_setup": {
+        "started_at": "2026-03-04T14:18:58.938590Z",
+        "finished_at": "2026-03-04T14:19:13.564825Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-04T14:19:13.564848Z",
+        "finished_at": "2026-03-04T14:19:38.931564Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-04T14:19:38.931591Z",
+        "finished_at": "2026-03-04T14:21:17.781524Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-04T14:21:33.023694Z",
+        "finished_at": "2026-03-04T14:21:43.812135Z"
+    }
+}

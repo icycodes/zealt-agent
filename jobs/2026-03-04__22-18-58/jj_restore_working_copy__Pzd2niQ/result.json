@@ -1,0 +1,94 @@
+{
+    "id": "cdbb856d-690f-47fe-bd28-61b0e73c628f",
+    "task_name": "jj_restore_working_copy",
+    "trial_name": "jj_restore_working_copy__Pzd2niQ",
+    "trial_uri": "file:///Users/kw/code/work/pochi-harbor/jobs/2026-03-04__22-18-58/jj_restore_working_copy__Pzd2niQ",
+    "task_id": {
+        "path": "../jj-harbor/tasks/jj_restore_working_copy"
+    },
+    "source": "tasks",
+    "task_checksum": "f44285753bcbb6c07ef48a0d0246f2216e72c20e6c5202a3870931be8eb5c4e1",
+    "config": {
+        "task": {
+            "path": "../jj-harbor/tasks/jj_restore_working_copy",
+            "git_url": null,
+            "git_commit_id": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "jj_restore_working_copy__Pzd2niQ",
+        "trials_dir": "jobs/2026-03-04__22-18-58",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": "gpt-5.2-codex",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {}
+        },
+        "environment": {
+            "type": "daytona",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "job_id": "b9fe109e-5a75-4aed-a883-81c89a928787"
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": 64893,
+        "n_cache_tokens": 59648,
+        "n_output_tokens": 529,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-03-04T14:22:51.751088Z",
+    "finished_at": "2026-03-04T14:23:59.669922Z",
+    "environment_setup": {
+        "started_at": "2026-03-04T14:22:51.752000Z",
+        "finished_at": "2026-03-04T14:22:54.868128Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-03-04T14:22:54.868145Z",
+        "finished_at": "2026-03-04T14:23:10.077182Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-03-04T14:23:10.077231Z",
+        "finished_at": "2026-03-04T14:23:28.806449Z"
+    },
+    "verifier": {
+        "started_at": "2026-03-04T14:23:44.860061Z",
+        "finished_at": "2026-03-04T14:23:57.055249Z"
+    }
+}
