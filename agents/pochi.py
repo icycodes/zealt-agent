@@ -50,8 +50,7 @@ class Pochi(BaseInstalledAgent):
                     "pochi "
                     f"--model {model} "
                     f"--prompt {escaped_instruction} "
-                    "--stream-json "
-                    f"--output-result > >(tee /logs/agent/pochi-stdout.log) 2> >(tee /logs/agent/pochi-stderr.log >&2) "
+                    "--stream-json > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2)"
                 ),
                 env=env,
             ),
@@ -191,7 +190,7 @@ class Pochi(BaseInstalledAgent):
         return trajectory
 
     def populate_context_post_run(self, context: AgentContext) -> None:
-        pochi_log_path = self.logs_dir / "pochi-stdout.log"
+        pochi_log_path = self.logs_dir / "pochi" / "stdout.txt"
         if not pochi_log_path.exists():
             print(f"Pochi log not found at {pochi_log_path}")
             return
