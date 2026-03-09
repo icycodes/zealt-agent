@@ -49,8 +49,12 @@ class Pochi(BaseInstalledAgent):
                 command=(
                     "pochi "
                     f"--model {model} "
-                    f"--prompt {escaped_instruction} "
-                    "--stream-json > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2)"
+                    "--stream-json "
+                    "> >(tee /logs/agent/pochi/stdout.txt) "
+                    "2> >(tee /logs/agent/pochi/stderr.txt >&2) "
+                    "<<'EOF'\n"
+                    f"{escaped_instruction}\n"
+                    "EOF"
                 ),
                 env=env,
             ),
