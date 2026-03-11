@@ -31,6 +31,12 @@ class Pochi(BaseInstalledAgent):
     def name() -> str:
         return "pochi"
 
+    def get_version_command(self) -> str | None:
+        return "pochi --version"
+
+    def parse_version(self, stdout: str) -> str:
+        return stdout.strip()
+    
     @property
     def _install_agent_template_path(self) -> Path:
         return Path(__file__).parent / "install-pochi.sh.j2"
