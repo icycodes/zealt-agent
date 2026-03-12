@@ -42,24 +42,71 @@ class Pochi(BaseInstalledAgent):
         return Path(__file__).parent / "install-pochi.sh.j2"
 
     def create_run_agent_commands(self, instruction: str) -> list[ExecInput]:
-        escaped_instruction = shlex.quote(instruction)
-
         model = self.model_name if self.model_name else "google/gemini-3.1-pro"
 
         env = {
-            "POCHI_API_KEY": os.environ.get("POCHI_API_KEY", "")
+            "POCHI_API_KEY": os.environ.get("POCHI_API_KEY", ""),
+            "OPENAI_API_KEY": os.environ.get("OPENAI_API_KEY", ""),
+            "DEEPINFRA_API_KEY": os.environ.get("DEEPINFRA_API_KEY", ""),
+            "ANTHROPIC_API_KEY": os.environ.get("ANTHROPIC_API_KEY", ""),
         }
+
+        config_json = """{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}"""
 
         return [
             ExecInput(
                 command=(
+                    "mkdir -p ~/.pochi && "
+                    f"cat << EOF > ~/.pochi/config.jsonc\n{config_json}\nEOF\n"
+                    "sed -i 's/OPENAI_API_KEY/'$OPENAI_API_KEY'/g' ~/.pochi/config.jsonc && "
+                    "sed -i 's/DEEPINFRA_API_KEY/'$DEEPINFRA_API_KEY'/g' ~/.pochi/config.jsonc && "
+                    "sed -i 's/ANTHROPIC_API_KEY/'$ANTHROPIC_API_KEY'/g' ~/.pochi/config.jsonc && "
                     "pochi "
                     f"--model {model} "
                     "--stream-json "
                     "> >(tee /logs/agent/pochi/stdout.txt) "
                     "2> >(tee /logs/agent/pochi/stderr.txt >&2) "
                     "<<'EOF'\n"
-                    f"{escaped_instruction}\n"
+                    f"{instruction}\n"
                     "EOF"
                 ),
                 env=env,
