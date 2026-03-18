@@ -45,6 +45,8 @@ class Pochi(BaseInstalledAgent):
         model = self.model_name if self.model_name else "google/gemini-3.1-pro"
 
         env = {
+            "POCHI_LOG": "debug",
+            "E2B_API_KEY": os.environ.get("E2B_API_KEY", ""),
             "POCHI_API_KEY": os.environ.get("POCHI_API_KEY", ""),
             "OPENAI_API_KEY": os.environ.get("OPENAI_API_KEY", ""),
             "DEEPINFRA_API_KEY": os.environ.get("DEEPINFRA_API_KEY", ""),
@@ -102,7 +104,10 @@ class Pochi(BaseInstalledAgent):
                     "sed -i 's/ANTHROPIC_API_KEY/'$ANTHROPIC_API_KEY'/g' ~/.pochi/config.jsonc && "
                     "pochi "
                     f"--model {model} "
-                    "--stream-json "
+                    "--max-steps 200 "
+                    "--max-retries 10 "
+                    "--blobs-dir /logs/agent/pochi/blobs "
+                    "--stream-json /logs/agent/pochi/stream.jsonl "
                     "> >(tee /logs/agent/pochi/stdout.txt) "
                     "2> >(tee /logs/agent/pochi/stderr.txt >&2) "
                     "<<'EOF'\n"
