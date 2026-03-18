@@ -107,7 +107,7 @@ class Pochi(BaseInstalledAgent):
                     "--max-steps 200 "
                     "--max-retries 10 "
                     "--blobs-dir /logs/agent/pochi/blobs "
-                    "--stream-json /logs/agent/pochi/stream.jsonl "
+                    "--stream-json /logs/agent/pochi/trajectory.jsonl "
                     "> >(tee /logs/agent/pochi/stdout.txt) "
                     "2> >(tee /logs/agent/pochi/stderr.txt >&2) "
                     "<<'EOF'\n"
