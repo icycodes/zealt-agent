@@ -8,6 +8,9 @@
 arg0/
 shell_snapshots/
 
+# Ignore in agent, the jobs would be shown in benchmark repos
+jobs/
+
 # Python Gitignore
 #
 # Byte-compiled / optimized / DLL files
