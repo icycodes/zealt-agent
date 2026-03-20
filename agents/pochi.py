@@ -2,6 +2,7 @@ import os
 import json
 import shlex
 import shutil
+import subprocess
 
 from harbor.models.agent.context import AgentContext
 from harbor.models.trial.paths import EnvironmentPaths
@@ -31,8 +32,14 @@ class Pochi(BaseInstalledAgent):
     def name() -> str:
         return "pochi"
 
+    # this is not used, maybe later version of harbor would use
     def get_version_command(self) -> str | None:
-        return "pochi --version"
+        return 'export PATH="$HOME/.pochi/bin:$PATH"; pochi --version'
+
+    # this defined which version of pochi to install
+    # we have to specify this so that the version could be shown in result.json
+    def version(self) -> str | None:
+        "0.6.2"
 
     def parse_version(self, stdout: str) -> str:
         return stdout.strip()
@@ -160,8 +167,16 @@ class Pochi(BaseInstalledAgent):
                 step_id += 1
             elif role == "assistant":
                 metadata = msg.get("metadata", {})
-                tokens = metadata.get("totalTokens", 0)
-                total_output_tokens += tokens
+
+                total_tokens = metadata.get("totalTokens", 0)
+                system_tokens = metadata.get("systemPromptTokens", 0)
+                tools_tokens = metadata.get("toolsTokens", 0)
+
+                prompt_tokens = system_tokens + tools_tokens
+                completion_tokens = max(total_tokens - prompt_tokens, 0)
+
+                total_input_tokens += prompt_tokens
+                total_output_tokens += completion_tokens
 
                 parts = msg.get("parts", [])
 
@@ -232,7 +247,7 @@ class Pochi(BaseInstalledAgent):
             return None
 
         final_metrics = FinalMetrics(
-            total_prompt_tokens=total_input_tokens,
+            total_input_tokens=total_input_tokens,
             total_completion_tokens=total_output_tokens,
             total_cached_tokens=total_cached_tokens,
             total_steps=len(steps),
@@ -252,13 +267,13 @@ class Pochi(BaseInstalledAgent):
         return trajectory
 
     def populate_context_post_run(self, context: AgentContext) -> None:
-        pochi_log_path = self.logs_dir / "pochi" / "stdout.txt"
-        if not pochi_log_path.exists():
-            print(f"Pochi log not found at {pochi_log_path}")
+        pochi_trajectory = self.logs_dir / "pochi" / "trajectory.jsonl"
+        if not pochi_trajectory.exists():
+            print(f"Pochi trajectory not found at {pochi_trajectory}")
             return
 
         try:
-            log_lines = pochi_log_path.read_text().splitlines()
+            log_lines = pochi_trajectory.read_text().splitlines()
         except Exception as e:
             print(f"Error loading Pochi log: {e}")
             return
