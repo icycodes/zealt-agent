@@ -39,7 +39,7 @@ class Pochi(BaseInstalledAgent):
     # this defined which version of pochi to install
     # we have to specify this so that the version could be shown in result.json
     def version(self) -> str | None:
-        "0.6.2"
+        return "v0.6.2"
 
     def parse_version(self, stdout: str) -> str:
         return stdout.strip()
@@ -49,7 +49,7 @@ class Pochi(BaseInstalledAgent):
         return Path(__file__).parent / "install-pochi.sh.j2"
 
     def create_run_agent_commands(self, instruction: str) -> list[ExecInput]:
-        model = self.model_name if self.model_name else "google/gemini-3.1-pro"
+        model = self.model_name if self.model_name else "google/gemini-3-flash"
 
         env = {
             "POCHI_LOG": "debug",
@@ -104,11 +104,18 @@ class Pochi(BaseInstalledAgent):
         return [
             ExecInput(
                 command=(
-                    "mkdir -p ~/.pochi && "
-                    f"cat << EOF > ~/.pochi/config.jsonc\n{config_json}\nEOF\n"
-                    "sed -i 's/OPENAI_API_KEY/'$OPENAI_API_KEY'/g' ~/.pochi/config.jsonc && "
-                    "sed -i 's/DEEPINFRA_API_KEY/'$DEEPINFRA_API_KEY'/g' ~/.pochi/config.jsonc && "
-                    "sed -i 's/ANTHROPIC_API_KEY/'$ANTHROPIC_API_KEY'/g' ~/.pochi/config.jsonc && "
+                    "cat << 'EOF' | sed "
+                    "-e \"s/OPENAI_API_KEY/${OPENAI_API_KEY}/g\" "
+                    "-e \"s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g\" "
+                    "-e \"s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g\" "
+                    "> ~/.pochi/config.jsonc\n"
+                    f"{config_json}\n"
+                    "EOF"
+                ),
+                env=env,
+            ),            
+            ExecInput(
+                command=(
                     "pochi "
                     f"--model {model} "
                     "--max-steps 200 "
@@ -139,6 +146,9 @@ class Pochi(BaseInstalledAgent):
         total_output_tokens = 0
         total_cached_tokens = 0
         session_id = "unknown"
+        total_total_tokens = 0
+        total_system_tokens = 0
+        total_tools_tokens = 0
 
         for line in log_lines:
             if not line.strip():
@@ -168,9 +178,13 @@ class Pochi(BaseInstalledAgent):
             elif role == "assistant":
                 metadata = msg.get("metadata", {})
 
+
                 total_tokens = metadata.get("totalTokens", 0)
+                total_total_tokens += total_tokens
                 system_tokens = metadata.get("systemPromptTokens", 0)
+                total_system_tokens += system_tokens
                 tools_tokens = metadata.get("toolsTokens", 0)
+                total_tools_tokens += tools_tokens
 
                 prompt_tokens = system_tokens + tools_tokens
                 completion_tokens = max(total_tokens - prompt_tokens, 0)
@@ -247,10 +261,15 @@ class Pochi(BaseInstalledAgent):
             return None
 
         final_metrics = FinalMetrics(
-            total_input_tokens=total_input_tokens,
+            total_prompt_tokens=total_input_tokens,
             total_completion_tokens=total_output_tokens,
             total_cached_tokens=total_cached_tokens,
             total_steps=len(steps),
+            extra={
+                "total_tokens": total_total_tokens,
+                "system_tokens": total_system_tokens,
+                "tools_tokens": total_tools_tokens,
+            },
         )
 
         trajectory = Trajectory(
