@@ -110,8 +110,8 @@ class Pochi(BaseInstalledAgent):
     async def run(
         self, instruction: str, environment: BaseEnvironment, context: AgentContext
     ) -> None:
-        # Write the trial_id into "/logs/trial_id"
-        write_trial_id_command = f"echo {environment.session_id} > /logs/trial_id"
+        # Write the trial_id into "/logs/artifacts/trial_id"
+        write_trial_id_command = f"echo {environment.session_id} > /logs/artifacts/trial_id"
 
         await self.exec_as_agent(environment, command=write_trial_id_command)
 
