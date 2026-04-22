@@ -1,2 +1,0 @@
-Using prebuilt image: alexgshaw/regex-log:20251031
-Trial regex-log__bN8WwTL failed: Agent setup failed with exit code 1. See logs in jobs/2026-03-02__12-02-20/regex-log__bN8WwTL/agent/setup

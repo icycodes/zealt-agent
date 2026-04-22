@@ -1,8 +1,0 @@
-W: GPG error: http://security.ubuntu.com/ubuntu jammy-security InRelease: Couldn't create temporary file /tmp/apt.conf.z3bUqt for passing config to apt-key
-E: The repository 'http://security.ubuntu.com/ubuntu jammy-security InRelease' is not signed.
-W: GPG error: http://archive.ubuntu.com/ubuntu jammy InRelease: Couldn't create temporary file /tmp/apt.conf.BcxJ0T for passing config to apt-key
-E: The repository 'http://archive.ubuntu.com/ubuntu jammy InRelease' is not signed.
-W: GPG error: http://archive.ubuntu.com/ubuntu jammy-updates InRelease: Couldn't create temporary file /tmp/apt.conf.IEeOZp for passing config to apt-key
-E: The repository 'http://archive.ubuntu.com/ubuntu jammy-updates InRelease' is not signed.
-W: GPG error: http://archive.ubuntu.com/ubuntu jammy-backports InRelease: Couldn't create temporary file /tmp/apt.conf.kk7pnR for passing config to apt-key
-E: The repository 'http://archive.ubuntu.com/ubuntu jammy-backports InRelease' is not signed.

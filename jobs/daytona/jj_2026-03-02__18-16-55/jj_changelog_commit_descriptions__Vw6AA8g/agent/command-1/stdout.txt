@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cae12-072c-7f21-ac34-2752b2a99104"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Confirming readiness and awaiting tasks**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Ready in `/app`.\n\nTell me the task you want done, and if it involves creating or installing a skill I’ll use `skill-creator` or `skill-installer` accordingly."}}
-{"type":"turn.completed","usage":{"input_tokens":7476,"cached_input_tokens":0,"output_tokens":209}}

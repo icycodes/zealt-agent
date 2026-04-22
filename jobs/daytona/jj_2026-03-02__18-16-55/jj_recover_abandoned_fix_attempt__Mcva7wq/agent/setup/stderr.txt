@@ -1,8 +1,0 @@
-debconf: delaying package configuration, since apt-utils is not installed
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16631  100 16631    0     0   266k      0 --:--:-- --:--:-- --:--:--  270k
-Failed to download 'https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/nvm.sh'
-main: line 467: /root/.nvm/nvm.sh: No such file or directory
-/installed-agent/install.sh: line 11: /root/.nvm/nvm.sh: No such file or directory
-Error: NVM failed to load

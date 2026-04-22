@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cadb9-cda8-7ed3-aa0e-283039e1519e"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Prompting for clarification**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"What would you like me to work on?"}}
-{"type":"turn.completed","usage":{"input_tokens":7476,"cached_input_tokens":0,"output_tokens":79}}

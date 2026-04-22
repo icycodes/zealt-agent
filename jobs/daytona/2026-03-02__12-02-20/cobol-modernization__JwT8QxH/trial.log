@@ -1,2 +1,0 @@
-Using prebuilt image: alexgshaw/cobol-modernization:20251031
-Trial cobol-modernization__JwT8QxH failed: Agent setup failed with exit code 28. See logs in jobs/2026-03-02__12-02-20/cobol-modernization__JwT8QxH/agent/setup

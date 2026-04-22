@@ -1,4 +1,0 @@
-{"type":"thread.started","thread_id":"019cb93d-4748-72b0-b0f2-b535a7f7fbc6"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"Got it. I’ll follow the `AGENTS.md` skill instructions for this workspace.\n\nWhat would you like to do?"}}
-{"type":"turn.completed","usage":{"input_tokens":8203,"cached_input_tokens":7424,"output_tokens":52}}

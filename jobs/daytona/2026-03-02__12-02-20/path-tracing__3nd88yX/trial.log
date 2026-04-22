@@ -1,4 +1,0 @@
-Using prebuilt image: alexgshaw/path-tracing:20251031
-Trial path-tracing__3nd88yX failed: Failed to create sandbox: Function 'create' exceeded timeout of 600 seconds.
-Failed to download logs to jobs/2026-03-02__12-02-20/path-tracing__3nd88yX/agent
-Sandbox not found. Please build the environment first.

@@ -1,78 +1,0 @@
-Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
-Get:2 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.8 kB]
-Get:3 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1242 kB]
-Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [3262 kB]
-Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1883 kB]
-Ign:6 http://archive.ubuntu.com/ubuntu noble InRelease
-Ign:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Ign:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Ign:6 http://archive.ubuntu.com/ubuntu noble InRelease
-Ign:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Ign:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Ign:6 http://archive.ubuntu.com/ubuntu noble InRelease
-Ign:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Ign:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Err:6 http://archive.ubuntu.com/ubuntu noble InRelease
-  Could not connect to archive.ubuntu.com:80 (198.18.1.181), connection timed out
-Err:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-  Unable to connect to archive.ubuntu.com:http:
-Err:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-  Unable to connect to archive.ubuntu.com:http:
-Fetched 6548 kB in 37s (176 kB/s)
-Reading package lists...
-W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/noble/InRelease  Could not connect to archive.ubuntu.com:80 (198.18.1.181), connection timed out
-W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease  Unable to connect to archive.ubuntu.com:http:
-W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/noble-backports/InRelease  Unable to connect to archive.ubuntu.com:http:
-W: Some index files failed to download. They have been ignored, or old ones used instead.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  libcurl4t64
-The following NEW packages will be installed:
-  curl
-The following packages will be upgraded:
-  libcurl4t64
-1 upgraded, 1 newly installed, 0 to remove and 20 not upgraded.
-Need to get 568 kB of archives.
-After this operation, 534 kB of additional disk space will be used.
-Get:1 http://security.ubuntu.com/ubuntu noble-security/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.7 [342 kB]
-Get:2 http://security.ubuntu.com/ubuntu noble-security/main amd64 curl amd64 8.5.0-2ubuntu10.7 [227 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 568 kB in 2s (277 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8431 files and directories currently installed.)
-Preparing to unpack .../libcurl4t64_8.5.0-2ubuntu10.7_amd64.deb ...
-Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.7) over (8.5.0-2ubuntu10.6) ...
-Selecting previously unselected package curl.
-Preparing to unpack .../curl_8.5.0-2ubuntu10.7_amd64.deb ...
-Unpacking curl (8.5.0-2ubuntu10.7) ...
-Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.7) ...
-Setting up curl (8.5.0-2ubuntu10.7) ...
-Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16631  100 16631    0     0  19256      0 --:--:-- --:--:-- --:--:-- 19248
-=> Downloading nvm as script to '/root/.nvm'
-
-=> Appending nvm source string to /root/.bashrc
-=> Appending bash_completion source string to /root/.bashrc
-=> Close and reopen your terminal to start using nvm or run the following to use it now:
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-Downloading and installing node v22.22.0...
-Downloading https://nodejs.org/dist/v22.22.0/node-v22.22.0-linux-x64.tar.gz...
-#=#=#                                                                                                                                                     0.0%                                                                           0.1%                                                                           0.2%                                                                           0.4%                                                                           0.8%#                                                                          1.9%###                                                                        4.3%######                                                                     8.9%#########                                                                 13.6%#############                                                             18.1%################                                                          22.7%###################                                                       26.7%#####################                                                     30.1%########################                                                  33.6%##########################                                                37.4%#############################                                             40.9%###############################                                           44.1%##################################                                        48.6%#####################################                                     52.7%########################################                                  55.7%##########################################                                58.8%############################################                              62.1%###############################################                           66.3%#################################################                         68.7%###################################################                       72.1%######################################################                    75.8%#########################################################                 79.9%###########################################################               83.2%##############################################################            86.2%################################################################          89.4%##################################################################        93.0%#####################################################################     97.2%######################################################################## 100.0%
-Computing checksum with sha256sum
-Checksums matched!
-Now using node v22.22.0 (npm v10.9.4)
-Creating default alias: default -> 22 (-> v22.22.0 *)
-10.9.4
-
-added 2 packages in 6s
-npm notice
-npm notice New major version of npm available! 10.9.4 -> 11.11.0
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.0
-npm notice To update run: npm install -g npm@11.11.0
-npm notice

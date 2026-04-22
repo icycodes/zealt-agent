@@ -1,4 +1,0 @@
-Building environment from Dockerfile /home/kw/code/work/model-eval/tasks/jj-harbor/tasks/20260301_1900/jj_undo_accidental_abandon/environment/Dockerfile
-Trial jj_undo_accidental_abandon__EYNjyLU failed: Failed to create sandbox: Failure during waiting for sandbox to start: Sandbox 6748954d-aafa-4e4e-aee3-8fba18be77f2 failed to start with state: SandboxState.BUILD_FAILED, error reason: unprocessable entity: The command '/bin/sh -c curl -fsSL https://github.com/jj-vcs/jj/releases/download/v0.38.0/jj-v0.38.0-x86_64-unknown-linux-musl.tar.gz     | tar -xz -C /usr/local/bin jj     && chmod +x /usr/local/bin/jj' returned a non-zero code: 2
-Failed to download logs to jobs/2026-03-02__16-41-16/jj_undo_accidental_abandon__EYNjyLU/agent
-Sandbox not found. Please build the environment first.

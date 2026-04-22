@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cb93a-33cb-71b1-bf70-0270f2cf2a51"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Waiting for user input**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Ready. What would you like to do in `/home/user/myproject`?"}}
-{"type":"turn.completed","usage":{"input_tokens":8207,"cached_input_tokens":7424,"output_tokens":69}}

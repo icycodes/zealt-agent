@@ -7,6 +7,7 @@
 # sensitive run files
 arg0/
 shell_snapshots/
+jobs/
 
 # Ignore in agent, the jobs would be shown in benchmark repos
 jobs/

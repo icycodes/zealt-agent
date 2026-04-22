@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cadb8-eb95-7870-a229-f49fb8b72b8b"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Requesting clarification for empty input**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"What do you want to work on?  \nI can help with coding, debugging, reviewing changes, or installing/creating a skill."}}
-{"type":"turn.completed","usage":{"input_tokens":7476,"cached_input_tokens":0,"output_tokens":93}}

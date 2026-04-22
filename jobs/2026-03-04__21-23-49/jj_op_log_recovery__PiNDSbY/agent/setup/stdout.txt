@@ -1,253 +1,0 @@
-Get:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease [270 kB]
-Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
-Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
-Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/restricted arm64 Packages [24.2 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 Packages [17.2 MB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 Packages [1758 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy/multiverse arm64 Packages [224 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1659 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [6692 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3893 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [47.7 kB]
-Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-backports/main arm64 Packages [83.5 kB]
-Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-backports/universe arm64 Packages [35.3 kB]
-Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [41.2 kB]
-Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3569 kB]
-Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [6483 kB]
-Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1355 kB]
-Fetched 43.7 MB in 18s (2483 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-curl is already the newest version (7.81.0-1ubuntu1.22).
-The following NEW packages will be installed:
-  ripgrep
-0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
-Need to get 1174 kB of archives.
-After this operation, 3657 kB of additional disk space will be used.
-Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 ripgrep arm64 13.0.0-2ubuntu0.1 [1174 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 1174 kB in 2s (757 kB/s)
-Selecting previously unselected package ripgrep.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9838 files and directories currently installed.)
-Preparing to unpack .../ripgrep_13.0.0-2ubuntu0.1_arm64.deb ...
-Unpacking ripgrep (13.0.0-2ubuntu0.1) ...
-Setting up ripgrep (13.0.0-2ubuntu0.1) ...
-*   Trying 198.18.5.187:443...
-* Connected to getpochi.com (198.18.5.187) port 443 (#0)
-* ALPN, offering h2
-* ALPN, offering http/1.1
-*  CAfile: /etc/ssl/certs/ca-certificates.crt
-*  CApath: /etc/ssl/certs
-* TLSv1.0 (OUT), TLS header, Certificate Status (22):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS handshake, Client hello (1):
-} [512 bytes data]
-* TLSv1.2 (IN), TLS header, Certificate Status (22):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Server hello (2):
-{ [122 bytes data]
-* TLSv1.2 (IN), TLS header, Finished (20):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
-{ [19 bytes data]
-* TLSv1.3 (IN), TLS handshake, Certificate (11):
-{ [2556 bytes data]
-* TLSv1.3 (IN), TLS handshake, CERT verify (15):
-{ [79 bytes data]
-* TLSv1.3 (IN), TLS handshake, Finished (20):
-{ [52 bytes data]
-* TLSv1.2 (OUT), TLS header, Finished (20):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
-} [1 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS handshake, Finished (20):
-} [52 bytes data]
-* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
-* ALPN, server accepted to use h2
-* Server certificate:
-*  subject: CN=getpochi.com
-*  start date: Feb  9 03:29:47 2026 GMT
-*  expire date: May 10 04:29:22 2026 GMT
-*  subjectAltName: host "getpochi.com" matched cert's "getpochi.com"
-*  issuer: C=US; O=Google Trust Services; CN=WE1
-*  SSL certificate verify ok.
-* Using HTTP2, server supports multiplexing
-* Connection state changed (HTTP/2 confirmed)
-* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* Using Stream ID: 1 (easy handle 0xaaaade3f7800)
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-> GET /install.sh HTTP/2
-> Host: getpochi.com
-> user-agent: curl/7.81.0
-> accept: */*
-> 
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
-{ [230 bytes data]
-* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
-{ [230 bytes data]
-* old SSL session ID is stale, removing
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-< HTTP/2 302 
-< date: Wed, 04 Mar 2026 13:24:13 GMT
-< content-length: 0
-< location: https://app.getpochi.com/install.sh
-< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4pSMDXTW8kbslh%2F%2BsBA9iIjvF%2BxmZJN7GCo4TacY0t2Dgg9GQZj4amnZ%2B58gaXdAXWzsTDiZr3ZB0abjm%2FYZF3JKfxyqqfgyhAwCZQ%3D%3D"}]}
-< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
-< server: cloudflare
-< cf-ray: 9d7133324b79b1fb-AMS
-< 
-{ [0 bytes data]
-* Connection #0 to host getpochi.com left intact
-* Issue another request to this URL: 'https://app.getpochi.com/install.sh'
-*   Trying 198.18.0.109:443...
-* Connected to app.getpochi.com (198.18.0.109) port 443 (#1)
-* ALPN, offering h2
-* ALPN, offering http/1.1
-*  CAfile: /etc/ssl/certs/ca-certificates.crt
-*  CApath: /etc/ssl/certs
-* TLSv1.0 (OUT), TLS header, Certificate Status (22):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS handshake, Client hello (1):
-} [512 bytes data]
-* TLSv1.2 (IN), TLS header, Certificate Status (22):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Server hello (2):
-{ [122 bytes data]
-* TLSv1.2 (IN), TLS header, Finished (20):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
-{ [19 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Certificate (11):
-{ [2596 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, CERT verify (15):
-{ [264 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Finished (20):
-{ [36 bytes data]
-* TLSv1.2 (OUT), TLS header, Finished (20):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
-} [1 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.3 (OUT), TLS handshake, Finished (20):
-} [36 bytes data]
-* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
-* ALPN, server accepted to use h2
-* Server certificate:
-*  subject: CN=app.getpochi.com
-*  start date: Feb  6 22:07:34 2026 GMT
-*  expire date: May  7 22:07:33 2026 GMT
-*  subjectAltName: host "app.getpochi.com" matched cert's "app.getpochi.com"
-*  issuer: C=US; O=Let's Encrypt; CN=R13
-*  SSL certificate verify ok.
-* Using HTTP2, server supports multiplexing
-* Connection state changed (HTTP/2 confirmed)
-* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* Using Stream ID: 1 (easy handle 0xaaaade3f7800)
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-> GET /install.sh HTTP/2
-> Host: app.getpochi.com
-> user-agent: curl/7.81.0
-> accept: */*
-> 
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
-{ [193 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (OUT), TLS header, Supplemental data (23):
-} [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-< HTTP/2 200 
-< cache-control: public, immutable, max-age=31536000
-< content-type: application/octet-stream
-< etag: "cbdb099cd1e48e9ae4be4f4b9c13985c16bf413b"
-< server: railway-edge
-< x-railway-edge: railway/europe-west4-drams3a
-< x-railway-request-id: v-jbTbkDT3W91Bhow9P4nw
-< accept-ranges: bytes
-< via: 1.1 varnish, 1.1 varnish
-< date: Wed, 04 Mar 2026 13:24:14 GMT
-< x-cache: MISS, MISS
-< x-cache-hits: 0, 0
-< x-timer: S1772630654.319690,VS0,VE5
-< x-railway-cdn-edge: fastly/cache-rtm-ehrd2290052-RTM
-< content-length: 6850
-< 
-{ [1042 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* TLSv1.2 (IN), TLS header, Supplemental data (23):
-{ [5 bytes data]
-* Connection #1 to host app.getpochi.com left intact
-[1;32m  Installing[0m Pochi version cli@0.5.105
-[1;32m    Checking[0m for existing Pochi installation
-[1;32m    Fetching[0m archive for Linux, version cli@0.5.105
-#=#=#                                                                         ##O#-#                                                                        ##O=#  #                                                                      #=#=-#  #                                                                     -#O#- #   #                                                                   -=#=#   #   #                                                                 -=O#-#   #   #                                                                -=O=#  #   #   #                                                                                                                                         0.0%                                                                           0.2%                                                                           0.3%                                                                           0.3%                                                                           0.5%                                                                           0.9%                                                                           0.9%                                                                           1.3%#                                                                          2.4%##                                                                         3.0%##                                                                         3.4%##                                                                         3.9%###                                                                        4.8%####                                                                       6.1%#####                                                                      7.2%#####                                                                      8.1%######                                                                     9.3%#######                                                                   10.9%########                                                                  11.7%########                                                                  11.8%########                                                                  12.5%#########                                                                 13.3%#########                                                                 13.8%##########                                                                14.4%##########                                                                15.0%###########                                                               15.4%###########                                                               15.9%###########                                                               16.4%############                                                              17.1%#############                                                             18.2%##############                                                            19.7%##############                                                            20.8%###############                                                           21.9%################                                                          22.8%#################                                                         23.9%##################                                                        25.2%###################                                                       26.4%###################                                                       27.6%####################                                                      28.5%#####################                                                     29.3%#####################                                                     30.0%#####################                                                     30.4%######################                                                    31.4%######################                                                    31.8%#######################                                                   33.0%########################                                                  34.2%########################                                                  34.6%#########################                                                 35.1%#########################                                                 35.6%##########################                                                37.1%###########################                                               38.5%############################                                              39.8%#############################                                             40.8%#############################                                             41.6%##############################                                            42.9%###############################                                           43.5%################################                                          45.0%#################################                                         46.5%##################################                                        47.8%###################################                                       49.5%####################################                                      50.7%#####################################                                     51.7%#####################################                                     52.6%######################################                                    52.9%#######################################                                   54.4%########################################                                  56.0%#########################################                                 57.2%###########################################                               60.5%###########################################                               60.6%############################################                              62.4%##############################################                            64.0%###############################################                           65.7%################################################                          67.0%#################################################                         68.5%##################################################                        70.7%###################################################                       70.9%######################################################                    76.1%########################################################                  78.9%########################################################                  78.9%##########################################################                80.9%###########################################################               82.9%#############################################################             85.1%###############################################################           87.6%################################################################          89.4%##################################################################        91.7%###################################################################       94.3%#####################################################################     96.0%#######################################################################   99.2%######################################################################## 100.0%
-[1;32m    Creating[0m directory layout
-[1;32m  Extracting[0m Pochi binaries and launchers
-[1;32m  Next steps[0m Add the following to your shell profile:
-
-    bash ~/.bashrc:
-
-        export PATH="/root/.pochi/bin:$PATH"
-        source <(pochi --completion)
-
-    zsh ~/.zshrc:
-
-        export PATH="/root/.pochi/bin:$PATH"
-        source <(pochi --completion --zsh)
-
-    fish ~/.config/fish/config.fish:
-
-        export PATH="/root/.pochi/bin:$PATH"
-        pochi --completion --fish | source
-
-[1;32m    Finished[0m Pochi is installed at /root/.pochi/bin
-0.5.105

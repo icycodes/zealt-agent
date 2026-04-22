@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cb939-28af-7a73-9bbb-7d99e52186d9"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Requesting clarification on next steps**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Got it. What would you like me to do next?"}}
-{"type":"turn.completed","usage":{"input_tokens":8201,"cached_input_tokens":0,"output_tokens":51}}

@@ -1,1 +1,0 @@
-pochi --model google/gemini-3.1-pro --prompt '' --stream-json --output-result > >(tee /logs/agent/pochi-stdout.log) 2> >(tee /logs/agent/pochi-stderr.log >&2) 

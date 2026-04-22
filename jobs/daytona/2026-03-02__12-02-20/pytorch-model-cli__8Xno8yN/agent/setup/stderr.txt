@@ -1,13 +1,0 @@
-debconf: delaying package configuration, since apt-utils is not installed
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16631  100 16631    0     0   459k      0 --:--:-- --:--:-- --:--:--  464k
-Downloading https://nodejs.org/dist/v22.22.0/node-v22.22.0-linux-x64.tar.gz...
-                                                                           0.1%##################                                                        25.4%######################                                                    31.7%###########################                                               37.6%###############################                                           43.2%###################################                                       49.2%#########################################                                 58.3%###############################################                           65.6%########################################################                  78.6%##############################################################            87.1%##################################################################        91.9%#######################################################################   99.5%######################################################################## 100.0%
-Computing checksum with sha256sum
-Checksums matched!
-npm notice
-npm notice New major version of npm available! 10.9.4 -> 11.11.0
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.0
-npm notice To update run: npm install -g npm@11.11.0
-npm notice

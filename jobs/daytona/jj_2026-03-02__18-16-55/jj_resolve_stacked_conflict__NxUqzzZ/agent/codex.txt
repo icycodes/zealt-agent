@@ -1,5 +1,0 @@
-{"type":"thread.started","thread_id":"019cae12-5536-7752-be63-22bee70df945"}
-{"type":"turn.started"}
-{"type":"item.completed","item":{"id":"item_0","type":"reasoning","text":"**Requesting clarification due to empty input**"}}
-{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"Ready in `/home/user/project`.\n\nTell me what you want to do next (build/fix/test/review), and I’ll run it."}}
-{"type":"turn.completed","usage":{"input_tokens":7480,"cached_input_tokens":6656,"output_tokens":93}}
