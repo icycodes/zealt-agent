@@ -30,6 +30,7 @@ class ExecInput(BaseModel):
     env: dict[str, str] | None = None
     timeout_sec: int | None = None
 
+
 class Pochi(BaseInstalledAgent):
     @staticmethod
     def name() -> str:
@@ -97,12 +98,12 @@ class Pochi(BaseInstalledAgent):
         mcp_block = "{\n" + ",\n".join(mcp_entries) + "\n}"
         escaped = shlex.quote(mcp_block)
         return (
-            f"python3 -c \""
+            f'python3 -c "'
             f"import json, pathlib; "
             f"p = pathlib.Path('$HOME/.pochi/config.jsonc'); "
             f"cfg = json.loads(p.read_text()) if p.exists() else {{}}; "
             f"cfg.setdefault('mcpServers', {{}}).update(json.loads({escaped})); "
-            f"p.write_text(json.dumps(cfg, indent=2))\""
+            f'p.write_text(json.dumps(cfg, indent=2))"'
         )
 
     @with_prompt_template
@@ -110,15 +111,10 @@ class Pochi(BaseInstalledAgent):
         self, instruction: str, environment: BaseEnvironment, context: AgentContext
     ) -> None:
         # Write the trial_id into "/logs/trial_id"
-        write_trial_id_command = (
-            f"echo {environment.session_id} > /logs/trial_id"
-        )
+        write_trial_id_command = f"echo {environment.session_id} > /logs/trial_id"
 
-        await self.exec_as_agent(
-            environment,
-            command=write_trial_id_command
-        )
-                
+        await self.exec_as_agent(environment, command=write_trial_id_command)
+
         model = self.model_name if self.model_name else "google/gemini-3-flash"
 
         config_env = {
@@ -172,9 +168,9 @@ class Pochi(BaseInstalledAgent):
         setup_command = (
             "mkdir -p ~/.pochi && "
             "cat << 'EOF' | sed "
-            "-e \"s/OPENAI_API_KEY/${OPENAI_API_KEY}/g\" "
-            "-e \"s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g\" "
-            "-e \"s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g\" "
+            '-e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" '
+            '-e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" '
+            '-e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" '
             "> ~/.pochi/config.jsonc\n"
             f"{config_json}\n"
             "EOF"
@@ -194,6 +190,21 @@ class Pochi(BaseInstalledAgent):
             env=config_env,
         )
 
+        # Ensure artifacts dir exists
+        await self.exec_as_agent(
+            environment,
+            command="mkdir -p /logs/artifacts",
+        )
+
+        artifact_preamble = (
+            "# Preserving your work\n\n"
+            "Save a copy of files you create during this task to `/logs/artifacts/`. "
+            "This directory is preserved after the run so outputs can be inspected. "
+            "Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, "
+            "`/logs/artifacts/reports/`). The directory already exists and is writable.\n\n"
+            "---\n\n"
+        )
+        instruction = artifact_preamble + instruction
         try:
             await self.exec_as_agent(
                 environment,
@@ -222,9 +233,7 @@ class Pochi(BaseInstalledAgent):
             except Exception:
                 pass
 
-    def _convert_pochi_to_atif(
-        self, log_lines: list[str]
-    ) -> Trajectory | None:
+    def _convert_pochi_to_atif(self, log_lines: list[str]) -> Trajectory | None:
         """Convert Pochi trajectory format to ATIF format."""
         if not log_lines:
             return None
@@ -255,7 +264,11 @@ class Pochi(BaseInstalledAgent):
             role = msg.get("role")
 
             if role == "user":
-                text_parts = [p.get("text", "") for p in msg.get("parts", []) if p.get("type") == "text"]
+                text_parts = [
+                    p.get("text", "")
+                    for p in msg.get("parts", [])
+                    if p.get("type") == "text"
+                ]
                 content = "\n".join(text_parts)
                 steps.append(
                     Step(
@@ -267,7 +280,6 @@ class Pochi(BaseInstalledAgent):
                 step_id += 1
             elif role == "assistant":
                 metadata = msg.get("metadata", {})
-
 
                 total_tokens = metadata.get("totalTokens", 0)
                 total_total_tokens += total_tokens
@@ -290,11 +302,28 @@ class Pochi(BaseInstalledAgent):
                 current_text = []
 
                 def _flush_step():
-                    nonlocal step_id, current_reasoning, current_tools, current_observations, current_text
-                    if current_tools or current_reasoning or current_observations or current_text:
-                        reasoning_content = "\n".join(current_reasoning) if current_reasoning else None
-                        obs = Observation(results=list(current_observations)) if current_observations else None
-                        message_content = "\n".join(current_text) if current_text else (reasoning_content or "")
+                    nonlocal step_id, current_reasoning
+                    nonlocal current_tools, current_observations
+                    nonlocal current_text
+                    if (
+                        current_tools
+                        or current_reasoning
+                        or current_observations
+                        or current_text
+                    ):
+                        reasoning_content = (
+                            "\n".join(current_reasoning) if current_reasoning else None
+                        )
+                        obs = (
+                            Observation(results=list(current_observations))
+                            if current_observations
+                            else None
+                        )
+                        message_content = (
+                            "\n".join(current_text)
+                            if current_text
+                            else (reasoning_content or "")
+                        )
 
                         steps.append(
                             Step(
@@ -302,9 +331,11 @@ class Pochi(BaseInstalledAgent):
                                 source="agent",
                                 message=message_content,
                                 reasoning_content=reasoning_content,
-                                tool_calls=list(current_tools) if current_tools else None,
+                                tool_calls=list(current_tools)
+                                if current_tools
+                                else None,
                                 observation=obs,
-                                model_name=self.model_name or "google/gemini-3.1-pro"
+                                model_name=self.model_name or "google/gemini-3-flash",
                             )
                         )
                         step_id += 1
@@ -334,7 +365,10 @@ class Pochi(BaseInstalledAgent):
                         )
                         output_data = part.get("output")
                         if output_data is not None:
-                            if isinstance(output_data, dict) and "output" in output_data:
+                            if (
+                                isinstance(output_data, dict)
+                                and "output" in output_data
+                            ):
                                 obs_content = output_data["output"]
                             else:
                                 obs_content = str(output_data)
