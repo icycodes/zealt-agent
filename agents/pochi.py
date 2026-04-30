@@ -41,7 +41,7 @@ class Pochi(BaseInstalledAgent):
         return PurePosixPath(EnvironmentPaths.agent_dir / "trajectory.json")
 
     def get_version_command(self) -> str | None:
-        return 'export PATH="$HOME/.pochi/bin:$PATH"; pochi --version'
+        return 'export PATH="$HOME/.pochi/bin:$PATH"; export POCHI_LOG=info pochi; pochi --version'
 
     def parse_version(self, stdout: str) -> str:
         return stdout.strip()
@@ -133,11 +133,11 @@ class Pochi(BaseInstalledAgent):
         "zai-org/GLM-4.7-Flash": {
           "name": "glm-4.7-flash"
         },
-        "moonshotai/Kimi-K2.5": {
-          "name": "kimi-K2.5"
+        "moonshotai/Kimi-K2.6": {
+          "name": "kimi-K2.6"
         },
-        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
-          "name": "qwen3-coder-480b"
+        "deepseek-ai/DeepSeek-V4-Pro": {
+          "name": "DeepSeek-V4-Pro"
         }
       }
     },
