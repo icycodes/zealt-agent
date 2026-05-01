@@ -1,0 +1,27 @@
+# ClickHouse Cloud S3 Parquet Ingestion
+
+## Background
+You need to ingest data from a public S3 Parquet file into a ClickHouse Cloud cluster using the official Python SDK (`clickhouse-connect`).
+
+## Requirements
+- Create a Python script `/home/user/app/load_s3.py`.
+- The script must connect to ClickHouse Cloud using the environment variables `CH_HOST`, `CH_PORT`, `CH_USER`, and `CH_PASSWORD`.
+- The script must create a table named `amazon_reviews` (if it does not exist) with the `MergeTree` engine, ordered by `review_id`.
+- The schema for `amazon_reviews` should have at least these columns: `review_id` (String), `product_id` (String), and `star_rating` (UInt8).
+- The script must use the `s3()` table function to read data from `https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2010.snappy.parquet` and insert exactly 10 rows into `amazon_reviews`.
+- Only select the `review_id`, `product_id`, and `star_rating` columns from the S3 file.
+- The connection must use HTTPS (`secure=True` in `clickhouse-connect`).
+
+## Implementation Guide
+1. Use `os.environ` to get `CH_HOST`, `CH_PORT`, `CH_USER`, and `CH_PASSWORD`.
+2. Initialize `clickhouse_connect.get_client(...)` with `secure=True`.
+3. Execute a `CREATE TABLE IF NOT EXISTS` statement.
+4. Execute an `INSERT INTO amazon_reviews SELECT review_id, product_id, star_rating FROM s3(...) LIMIT 10` statement.
+
+## Constraints
+- Project path: `/home/user/app`
+- The script must be executable via `python3 /home/user/app/load_s3.py`.
+- The script should not print anything on success, or exit with a non-zero status on error.
+
+## Integrations
+- ClickHouse Cloud

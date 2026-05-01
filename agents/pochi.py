@@ -53,13 +53,18 @@ class Pochi(BaseInstalledAgent):
             command="apt-get update && apt-get install -y curl ripgrep",
             env={"DEBIAN_FRONTEND": "noninteractive"},
         )
-        # Install pochi (as default user)
-        version_spec = f"pochi-{self._version}" if self._version else ""
+        # Install pochi (as default user). Pin a known-good CLI release when
+        # the trial config doesn't specify one — getpochi.com/install.sh's
+        # `get_latest_version` mis-parses the GitHub releases API from inside
+        # some containers (returns the API URL as the "version" → 404).
+        # Keep `bash -x` so any future install failure shows the resolved
+        # version and download URL in the trace.
+        version_spec = f"pochi-{self._version}" if self._version else "pochi-v0.6.8"
         await self.exec_as_agent(
             environment,
             command=(
                 "set -euo pipefail; "
-                f"curl -fsSL https://getpochi.com/install.sh | bash {version_spec} && "
+                f"curl -fsSL https://getpochi.com/install.sh | bash -x -s -- {version_spec} && "
                 "mkdir -p /logs/agent/pochi && "
                 "~/.pochi/bin/pochi --version"
             ),
