@@ -1,0 +1,44 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 2,
+            "passed": 0,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777537564.6597486,
+            "stop": 1777537564.994118
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_events_table_row_count_via_cli",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.322766397963278,
+                "start": 1777537564.6641748,
+                "stop": 1777537564.9926736,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_events_table_row_count_via_cli():\n        \"\"\"Priority 1: Use ClickHouse CLI to verify the table exists and has 1000 rows.\"\"\"\n        result = subprocess.run(\n            [\"clickhouse-client\", \"-q\", \"SELECT count() FROM events\"],\n            capture_output=True, text=True\n        )\n>       assert result.returncode == 0, f\"'clickhouse-client' query failed: {result.stderr}\"\nE       AssertionError: 'clickhouse-client' query failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\nE         \nE         \nE       assert 210 == 0\nE        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'SELECT count() FROM events'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\\n\\n').returncode\n\ntests/test_final_state.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_output_json_exists_and_valid",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00037287402665242553,
+                "start": 1777537564.9927707,
+                "stop": 1777537564.993936,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_json_exists_and_valid():\n        \"\"\"Priority 3 fallback: Verify the output.json file content.\"\"\"\n>       assert os.path.isfile(OUTPUT_FILE), f\"Output file not found at {OUTPUT_FILE}\"\nE       AssertionError: Output file not found at /home/user/ch_benchmark/output.json\nE       assert False\nE        +  where False = <function isfile at 0xf0dff7f80220>('/home/user/ch_benchmark/output.json')\nE        +    where <function isfile at 0xf0dff7f80220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:21: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777537944.3905184,
+            "stop": 1777537950.5226383
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_metrics_endpoints",
+                "status": "passed",
+                "duration": 6.119516942999326,
+                "start": 1777537944.4005337,
+                "stop": 1777537950.5214431,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

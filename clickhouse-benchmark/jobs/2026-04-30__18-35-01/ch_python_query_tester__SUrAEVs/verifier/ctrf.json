@@ -1,0 +1,41 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 2,
+            "passed": 1,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777599923.3266764,
+            "stop": 1777599923.361158
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_events_table_row_count_via_cli",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.021476068010088056,
+                "start": 1777599923.3312635,
+                "stop": 1777599923.359567,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_events_table_row_count_via_cli():\n        \"\"\"Priority 1: Use ClickHouse CLI to verify the table exists and has 1000 rows.\"\"\"\n        result = subprocess.run(\n            [\"clickhouse-client\", \"-q\", \"SELECT count() FROM events\"],\n            capture_output=True, text=True\n        )\n>       assert result.returncode == 0, f\"'clickhouse-client' query failed: {result.stderr}\"\nE       AssertionError: 'clickhouse-client' query failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\nE         \nE         \nE       assert 210 == 0\nE        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'SELECT count() FROM events'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\\n\\n').returncode\n\ntests/test_final_state.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_output_json_exists_and_valid",
+                "status": "passed",
+                "duration": 0.0011939999531023204,
+                "start": 1777599923.3596869,
+                "stop": 1777599923.361005,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

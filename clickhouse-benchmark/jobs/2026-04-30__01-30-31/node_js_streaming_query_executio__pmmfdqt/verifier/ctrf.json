@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777538091.652486,
+            "stop": 1777538091.6610432
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_query_js_exists",
+                "status": "passed",
+                "duration": 0.0002704579965211451,
+                "start": 1777538091.657049,
+                "stop": 1777538091.6574717,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_package_json_has_clickhouse_client",
+                "status": "passed",
+                "duration": 0.00024445803137496114,
+                "start": 1777538091.6575496,
+                "stop": 1777538091.6578925,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.00017087592277675867,
+                "start": 1777538091.6579525,
+                "stop": 1777538091.6581967,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_is_valid_json_array",
+                "status": "passed",
+                "duration": 0.0026171330246143043,
+                "start": 1777538091.6582456,
+                "stop": 1777538091.6609435,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

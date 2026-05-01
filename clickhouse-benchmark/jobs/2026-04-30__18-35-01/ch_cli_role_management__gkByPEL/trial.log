@@ -1,0 +1,93 @@
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_role_management__gkByPEL > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model google/gemini-3-flash --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Role and Key Management
+
+## Background
+You need to write a bash script to automate managing API keys and invitations in ClickHouse Cloud using `clickhousectl`.
+
+## Requirements
+- Create a bash script at `/home/user/ch-task/manage.sh`.
+- The script should take three arguments: an email address, a role ID, and an API key name.
+- It must use `clickhousectl` to:
+  1. Create an invitation for the provided email address with the provided role ID.
+  2. Create an API key with the provided API key name and the provided role ID.
+- The script should output the results in JSON format by passing the `--json` flag to `clickhousectl`.
+- Ensure the script is executable.
+
+## Implementation Guide
+1. Create the script `/home/user/ch-task/manage.sh`.
+2. Add `#!/bin/bash` at the top.
+3. Read the arguments: `EMAIL=$1`, `ROLE_ID=$2`, `KEY_NAME=$3`.
+4. Execute `clickhousectl cloud --json invitation create --email "$EMAIL" --role-id "$ROLE_ID"`.
+5. Execute `clickhousectl cloud --json key create --name "$KEY_NAME" --role-id "$ROLE_ID"`.
+6. Make the script executable (`chmod +x`).
+
+## Constraints
+- Project path: /home/user/ch-task
+- The script must exactly match the argument order: email, role ID, key name.
+- Do not hardcode the arguments.
+
+## Integrations
+- ClickHouse Cloud
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured

@@ -1,0 +1,38 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777594701.52531,
+            "stop": 1777594702.5796933
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_amazon_reviews_table_and_data",
+                "status": "passed",
+                "duration": 1.0467410249984823,
+                "start": 1777594701.5287712,
+                "stop": 1777594702.576263,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_exists",
+                "status": "passed",
+                "duration": 0.00182074005715549,
+                "start": 1777594702.5767388,
+                "stop": 1777594702.5793507,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

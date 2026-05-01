@@ -1,0 +1,8 @@
+Connecting to ClickHouse at [REDACTED_CLICKHOUSE_HOST]:8443 as 'default'...
+Connection established.
+Found 2 migration statement(s) to execute.
+[1/2] Executing: CREATE TABLE IF NOT EXISTS test_migration (id UInt64) ENGINE = MergeTree ORDER B...
+[1/2] OK
+[2/2] Executing: ALTER TABLE test_migration ADD COLUMN IF NOT EXISTS name String
+[2/2] OK
+All migrations executed successfully.

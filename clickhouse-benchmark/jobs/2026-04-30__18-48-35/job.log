@@ -1,0 +1,2075 @@
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_nodejs_analytics_api__hUXDy3b > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Analytics API
+
+## Background
+You need to build a real-time analytics backend for a dashboard using Node.js, Express, and ClickHouse Cloud.
+
+## Requirements
+- Initialize a Node.js project in `/home/user/analytics-api`.
+- Install `express` and the official `@clickhouse/client` SDK.
+- Create an `index.js` file that starts an Express server on port 3000.
+- Connect to ClickHouse Cloud using the following environment variables:
+  - `CLICKHOUSE_URL` (e.g. `https://your-host.clickhouse.cloud:8443` or `http://localhost:8123`)
+  - `CLICKHOUSE_USER`
+  - `CLICKHOUSE_PASSWORD`
+- Note: ClickHouse Cloud strictly requires TLS/HTTPS for connections, so your code should use the URL provided in `CLICKHOUSE_URL` which will include the correct protocol.
+- Implement a GET `/metrics` endpoint that queries ClickHouse for `SELECT count() AS total_parts FROM system.parts` and returns the result as JSON in the format `{"total_parts": <number>}`.
+- Ensure proper error handling and return a 500 status code if the database query fails.
+
+## Constraints
+- Project path: `/home/user/analytics-api`
+- Start command: `node index.js`
+- Port: 3000
+
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_github_archive__tgn43Fr > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Ingest GitHub Archive into ClickHouse Cloud
+
+## Background
+You need to write a Python script to ingest GitHub Archive events into ClickHouse Cloud using the official `clickhouse-connect` Python SDK. The GitHub Archive dataset contains public events from GitHub, and you'll be fetching a single hour of data.
+
+## Requirements
+- Create a Python script `/home/user/ch-task/ingest.py`.
+- The script must read connection details from the following environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT`, `CLICKHOUSE_USERNAME`, `CLICKHOUSE_PASSWORD`.
+- Connect to ClickHouse using `clickhouse-connect`.
+- Create a table named `github_events` with the `MergeTree` engine ordered by `id`. The table schema must include at least: `id String`, `type String`, `actor JSON`, `repo JSON`, `payload JSON`, `public UInt8`, `created_at DateTime`.
+- Ingest the data from `https://data.gharchive.org/2015-01-01-15.json.gz` into the `github_events` table. You can use ClickHouse's `url()` table function to do this efficiently.
+- After ingestion, write the total row count of the `github_events` table to a log file.
+
+## Implementation Guide
+1. Install `clickhouse-connect`.
+2. Write `/home/user/ch-task/ingest.py`.
+3. Execute the script.
+4. Write the row count to `/home/user/ch-task/output.log`.
+
+## Constraints
+- Project path: /home/user/ch-task
+- Log file: /home/user/ch-task/output.log
+- Use `clickhouse-connect` for all database interactions.
+- The table must be named `github_events`.
+
+## Integrations
+- None
+EOF
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_schema_migration__4CWzpSU > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Schema Migration
+
+## Background
+You need to manage schema changes for a ClickHouse Cloud database using the official Python SDK (`clickhouse-connect`). Your task is to write a Python script that ensures the `users` table exists and has the correct schema, applying an `ALTER TABLE` to add a missing column if necessary.
+
+## Requirements
+- Write a Python script `migrate.py` in the project directory.
+- The script must connect to ClickHouse Cloud using the following environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT` (default 8443), `CLICKHOUSE_USER` (default 'default'), and `CLICKHOUSE_PASSWORD`.
+- Ensure a table named `users` exists. If it doesn't, create it with the following schema: `id UInt64, username String`, using the `MergeTree` engine ordered by `id`.
+- Ensure the `users` table has a `last_login` column of type `DateTime`. If it doesn't exist, use `ALTER TABLE` to add it.
+- Log the actions taken (e.g., 'Table created', 'Column added') to `migration.log`.
+
+## Implementation Guide
+1. Read the connection details from environment variables.
+2. Connect using `clickhouse_connect.get_client(host=..., port=..., username=..., password=..., secure=True)`.
+3. Execute `CREATE TABLE IF NOT EXISTS users (id UInt64, username String) ENGINE = MergeTree ORDER BY id`.
+4. Execute `ALTER TABLE users ADD COLUMN IF NOT EXISTS last_login DateTime`.
+5. Write a success message to `/home/user/ch-migration/migration.log`.
+
+## Constraints
+- Project path: `/home/user/ch-migration`
+- Log file: `/home/user/ch-migration/migration.log`
+- The script must be idempotent (safe to run multiple times).
+
+## Integrations
+- None
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_async_insert__kcvCFHy > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Async Insert via Python
+
+## Background
+When ingesting data into ClickHouse, performance can degrade if many small inserts are performed. Using the Async Inserts feature allows ClickHouse to batch these small inserts server-side. You will write a Python script using the official `clickhouse-connect` SDK to demonstrate this.
+
+## Requirements
+- Create a Python script at `/home/user/project/async_insert.py`.
+- The script must connect to a local ClickHouse instance at `localhost:8123` (username `default`, no password).
+- Create a table named `async_table` with columns `id UInt64` and `data String`, using `MergeTree` engine ordered by `id`.
+- Insert at least 5 rows of data into `async_table` using the `insert` method.
+- You MUST enable Async Inserts for the ingestion by passing the appropriate settings (`async_insert=1` and `wait_for_async_insert=1`) in the insert call or connection.
+
+## Implementation Guide
+1. Ensure `clickhouse-connect` is installed.
+2. Write the script to connect to the database.
+3. Execute `CREATE TABLE IF NOT EXISTS async_table (id UInt64, data String) ENGINE = MergeTree ORDER BY id`.
+4. Call `client.insert` with the data and the settings `{'async_insert': 1, 'wait_for_async_insert': 1}`.
+
+## Constraints
+- Project path: `/home/user/project`
+- Script path: `/home/user/project/async_insert.py`
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_s3_parquet__wDkvjQf > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud S3 Parquet Ingestion
+
+## Background
+You need to ingest data from a public S3 Parquet file into a ClickHouse Cloud cluster using the official Python SDK (`clickhouse-connect`).
+
+## Requirements
+- Create a Python script `/home/user/app/load_s3.py`.
+- The script must connect to ClickHouse Cloud using the environment variables `CH_HOST`, `CH_PORT`, `CH_USER`, and `CH_PASSWORD`.
+- The script must create a table named `amazon_reviews` (if it does not exist) with the `MergeTree` engine, ordered by `review_id`.
+- The schema for `amazon_reviews` should have at least these columns: `review_id` (String), `product_id` (String), and `star_rating` (UInt8).
+- The script must use the `s3()` table function to read data from `https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2010.snappy.parquet` and insert exactly 10 rows into `amazon_reviews`.
+- Only select the `review_id`, `product_id`, and `star_rating` columns from the S3 file.
+- The connection must use HTTPS (`secure=True` in `clickhouse-connect`).
+
+## Implementation Guide
+1. Use `os.environ` to get `CH_HOST`, `CH_PORT`, `CH_USER`, and `CH_PASSWORD`.
+2. Initialize `clickhouse_connect.get_client(...)` with `secure=True`.
+3. Execute a `CREATE TABLE IF NOT EXISTS` statement.
+4. Execute an `INSERT INTO amazon_reviews SELECT review_id, product_id, star_rating FROM s3(...) LIMIT 10` statement.
+
+## Constraints
+- Project path: `/home/user/app`
+- The script must be executable via `python3 /home/user/app/load_s3.py`.
+- The script should not print anything on success, or exit with a non-zero status on error.
+
+## Integrations
+- ClickHouse Cloud
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_nodejs_query_endpoint__72bM2jL > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Node.js REST API
+
+## Background
+Create a REST API using Express and `@clickhouse/client` that connects to ClickHouse Cloud and exposes an endpoint to query system tables.
+
+## Requirements
+- Initialize a Node.js project in `/home/user/ch_api`.
+- Install `express` and `@clickhouse/client`.
+- Create a server that listens on port 3000.
+- Connect to ClickHouse Cloud using environment variables: `CLICKHOUSE_HOST` (a full URL of the form `https://<hostname>:8443`) and `CLICKHOUSE_PASSWORD`. The username should default to `default`.
+- Implement a `GET /tables` endpoint that queries `SELECT name FROM system.tables LIMIT 5` and returns the results as a JSON array.
+
+## Implementation Guide
+1. Create the project directory `/home/user/ch_api` and initialize it with `npm init -y`.
+2. Install the required packages.
+3. Create an `index.js` file with the Express server and ClickHouse client configuration.
+4. Pass the value of `CLICKHOUSE_HOST` directly to the `@clickhouse/client` `host` option (it is already a full URL).
+5. Start the server on port 3000.
+
+## Constraints
+- Project path: `/home/user/ch_api`
+- Start command: `node index.js`
+- Port: 3000
+- MUST use environment variables `CLICKHOUSE_HOST` and `CLICKHOUSE_PASSWORD` for connection.
+- The server should handle potential connection errors gracefully.
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo node_js_streaming_query_executio__cYd9SSF > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Node.js Streaming Query Execution
+
+## Background
+The Node.js `@clickhouse/client` SDK is commonly used to build backend APIs that stream analytical data efficiently using formats like `JSONEachRow`.
+
+## Requirements
+You need to create a Node.js script (`query.js`) that connects to ClickHouse Cloud, queries the `system.tables` table, and streams the results to standard output in JSON format.
+
+## Implementation
+1. Initialize a Node.js project in `/home/user/myproject`.
+2. Install `@clickhouse/client`.
+3. Create `query.js`.
+4. Connect to ClickHouse Cloud using the provided credentials from environment variables (`CLICKHOUSE_HOST`, `CLICKHOUSE_USER`, `CLICKHOUSE_PASSWORD`).
+5. Query `system.tables` using `format: 'JSONEachRow'`.
+6. Process the streaming response properly and log the fully parsed JSON array to the console.
+7. Run the script and redirect the output to `/home/user/myproject/output.log`.
+
+## Constraints
+- Project path: `/home/user/myproject`
+- Log file: `/home/user/myproject/output.log`
+- You must establish the connection over HTTPS using port `8443`.
+- The query execution method must specify `format: 'JSONEachRow'`.
+EOF
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo python_schema_migration_tool__LVdGjK5 > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Python Schema Migration Tool
+
+## Background
+Create a simple schema migration tool in Python using `clickhouse-connect` that applies SQL migration scripts to a ClickHouse Cloud service.
+
+## Requirements
+- Connect to ClickHouse using `clickhouse-connect`.
+- Read all `.sql` files from a `migrations` directory.
+- Execute each SQL file in alphabetical order.
+- Record applied migrations in a `schema_migrations` table (columns: `version` String, `applied_at` DateTime).
+- Skip migrations that have already been applied.
+
+## Implementation
+1. Initialize a Python project in `/home/user/project`.
+2. Install `clickhouse-connect`.
+3. Create a `migrate.py` script that implements the logic.
+4. Create a `migrations` directory with two files: `01_create_users.sql` (creates a `users` table with `id` UInt64 and `name` String) and `02_add_email.sql` (adds an `email` String column to the `users` table).
+
+## Constraints
+- Project path: `/home/user/project`
+- The ClickHouse credentials will be provided via environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT`, `CLICKHOUSE_USER`, `CLICKHOUSE_PASSWORD`.
+- Log file: `/home/user/project/migration.log`
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_backup_config__f8vZsUB > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Backup Configuration Script
+
+## Background
+ClickHouse Cloud provides a Management API to manage service lifecycles and backups. You need to write a bash script that interacts with the ClickHouse Cloud Management API to configure a custom backup schedule and retention policy for a specific service.
+
+## Requirements
+- Write a bash script named `configure_backup.sh` in the project directory.
+- The script must accept four environment variables: `CH_API_KEY_ID`, `CH_API_KEY_SECRET`, `CH_ORG_ID`, and `CH_SERVICE_ID`.
+- It must use `curl` to send a `PATCH` request to the ClickHouse Cloud Management API (`https://api.clickhouse.cloud/v1/organizations/${CH_ORG_ID}/services/${CH_SERVICE_ID}/backupConfiguration`).
+- The JSON payload should set the `startTime` field to `"00:00"` and the `retention` field to `7`.
+- The script must use Basic Authentication with the provided API key ID and secret.
+- The script must be executable.
+
+## Constraints
+- Project path: `/home/user/ch-backup`
+- Log file: `/home/user/ch-backup/output.log`
+- Do not execute the script; just create it and ensure it is correct and executable.
+
+## Integrations
+- None
+EOF
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_cold_start_handler__LxXzSBY > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Python Cold Start Handler
+
+## Background
+ClickHouse Cloud services may "pause" when idle. The first request after a pause may experience higher latency (a cold start). To handle this gracefully, applications must configure their database clients with increased timeouts.
+
+## Requirements
+- Create a Python script `/home/user/ch-project/query.py` that connects to a ClickHouse server and executes a simple query: `SELECT 1`.
+- You must use the official `clickhouse-connect` library.
+- The client must be configured to handle potential cold starts by setting `connect_timeout` to 30 seconds and `send_receive_timeout` to 120 seconds.
+- The script should print the result of the query to the standard output.
+
+## Implementation Guide
+1. Ensure `clickhouse-connect` is installed or install it if necessary.
+2. Create the script at `/home/user/ch-project/query.py`.
+3. In the script, read the connection details from the environment variables: `CH_HOST`, `CH_PORT`, `CH_USER`, and `CH_PASSWORD`.
+4. Initialize the `clickhouse_connect` client with these credentials and the required timeout settings (`connect_timeout=30`, `send_receive_timeout=120`).
+5. Execute the query `SELECT 1` and print the result.
+
+## Constraints
+- Project path: /home/user/ch-project
+- The script must use `clickhouse-connect`.
+- The script must read credentials from environment variables.
+- The script must configure `connect_timeout` and `send_receive_timeout` exactly as specified.
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_service_deletion__QqzMJU6 > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Service Deletion Script
+
+## Background
+You need to automate the deletion of a specific ClickHouse Cloud service using the official `clickhousectl` CLI tool.
+
+## Requirements
+- Write a bash script named `delete_service.sh` that accepts a service name as its first argument.
+- The script must use `clickhousectl cloud service list` to find the service ID associated with the provided service name.
+- The script must then delete the service using `clickhousectl cloud service delete <service-id>`.
+- If the service name is not found, the script should exit with an error message and code 1.
+- Make the script executable.
+
+## Constraints
+- **Project path**: /home/user
+- **Script path**: /home/user/delete_service.sh
+- Use `clickhousectl` for all interactions.
+- Do not hardcode the service ID.
+
+## Integrations
+- None
+EOF
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_nodejs_data_dictionary__booc7do > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Data Dictionary Extractor
+
+## Background
+You need to write a Node.js script that connects to ClickHouse Cloud using the official `@clickhouse/client` SDK and extracts a data dictionary (schema information) from the system tables.
+
+## Requirements
+- Initialize a Node.js project in `/home/user/ch_project`.
+- Install `@clickhouse/client`.
+- Create a script named `extract_dict.js` that connects to the ClickHouse Cloud instance.
+- The script must read connection details from the following environment variables:
+  - `CLICKHOUSE_HOST` (e.g., `https://your-host.clickhouse.cloud:8443`)
+  - `CLICKHOUSE_PASSWORD`
+- The user is implicitly `default`.
+- Query the `system.columns` table to extract the `database`, `table`, `name` (column name), and `type` (column type) for all tables in the `system` database.
+- Save the extracted data as a JSON array to `/home/user/ch_project/dictionary.json`.
+- Run the script to generate the file.
+
+## Implementation Guide
+1. `cd /home/user/ch_project`
+2. `npm init -y` and `npm install @clickhouse/client`
+3. Write `extract_dict.js` to connect to ClickHouse and query `system.columns` where `database = 'system'`.
+4. Format the output as a JSON array of objects and write to `dictionary.json`.
+5. Run `node extract_dict.js`.
+
+## Constraints
+- Project path: /home/user/ch_project
+- Output file: /home/user/ch_project/dictionary.json
+- Use `@clickhouse/client` for Node.js.
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Trial clickhouse_metrics_dashboard__hS6hSXE failed: Docker compose command failed for environment clickhouse_metrics_dashboard. Command: docker compose --project-name clickhouse_metrics_dashboard__hs6hsxe --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/clickhouse-tasks/clickhouse_metrics_dashboard/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image clickhouse_metrics_dashboard__hs6hsxe-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 716B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.68kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#5 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#5 DONE 0.0s
+
+#6 [2/5] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash         ffmpeg ripgrep libxcb-shm0 libx11-xcb1 libx11-6 libxcb1 libxext6 libxrandr2 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxi6 libgtk-3-0t64 libpangocairo-1.0-0 libpango-1.0-0 libatk1.0-0t64 libcairo-gobject2 libcairo2 libgdk-pixbuf-2.0-0 libxrender1 libasound2t64 libfreetype6 libfontconfig1 libdbus-1-3 libnss3 libnspr4 libatk-bridge2.0-0t64 libdrm2 libxkbcommon0 libatspi2.0-0t64 libcups2t64 libxshmfence1 libgbm1 &&     curl -fsSL https://deb.nodesource.com/setup_24.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     npm i -g @getpochi/cli agent-browser &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/5] RUN agent-browser install
+#7 0.078 ✗ Chrome for Testing does not provide Linux ARM64 builds.
+#7 0.078   Install Chromium from your system package manager instead:
+#7 0.078     sudo apt install chromium-browser   # Debian/Ubuntu
+#7 0.078     sudo dnf install chromium            # Fedora
+#7 0.078   Then use: agent-browser --executable-path /usr/bin/chromium
+#7 ERROR: process "/bin/sh -c agent-browser install" did not complete successfully: exit code: 1
+------
+ > [3/5] RUN agent-browser install:
+0.078 ✗ Chrome for Testing does not provide Linux ARM64 builds.
+0.078   Install Chromium from your system package manager instead:
+0.078     sudo apt install chromium-browser   # Debian/Ubuntu
+0.078     sudo dnf install chromium            # Fedora
+0.078   Then use: agent-browser --executable-path /usr/bin/chromium
+------
+Dockerfile:13
+
+--------------------
+
+  11 |         rm -rf /var/lib/apt/lists/*
+
+  12 |     
+
+  13 | >>> RUN agent-browser install
+
+  14 |     
+
+  15 |     RUN mkdir -p /home/user && chmod 0755 /home/user
+
+--------------------
+
+failed to solve: process "/bin/sh -c agent-browser install" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo python_sdk_basic_ingestion__jLxnaAa > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Python SDK Ingestion
+
+## Background
+Write a Python script to interact with ClickHouse Cloud using the official `clickhouse-connect` SDK.
+
+## Requirements
+- Connect to ClickHouse Cloud using the following environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT`, `CLICKHOUSE_USER`, `CLICKHOUSE_PASSWORD`.
+- Create a table named `test_events` with columns `id UInt64` and `event_type String`. Use `MergeTree` engine ordered by `id`.
+- Insert 3 rows of data: `[1, 'push']`, `[2, 'pull_request']`, `[3, 'issue']`.
+- Query the table to count the number of rows and print the result.
+
+## Implementation
+1. Initialize a Python project in `/home/user/ch_project`.
+2. Install `clickhouse-connect`.
+3. Create a script `ingest.py` that connects to the database, creates the table, inserts data, and queries the count.
+4. Run the script and redirect output to `/home/user/ch_project/output.log`.
+
+## Constraints
+- Project path: `/home/user/ch_project`
+- Log file: `/home/user/ch_project/output.log`
+EOF
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_ip_access_list__CY2edrE > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Update ClickHouse Cloud IP Access List
+
+## Background
+You need to automate adding new IP addresses to a ClickHouse Cloud service's IP Access List using the Cloud Management API.
+
+## Requirements
+- Create a bash script `update_ip_list.sh` that takes two arguments: an IP CIDR (e.g., `10.0.0.0/8`) and a description.
+- The script must use `curl` to send a `PATCH` request to the ClickHouse Cloud Management API to add the given IP to the access list.
+- The script must read `CLICKHOUSE_ORG_ID`, `CLICKHOUSE_SERVICE_ID`, `CLICKHOUSE_KEY_ID`, and `CLICKHOUSE_KEY_SECRET` from environment variables.
+- The script must use the base URL from the `CLICKHOUSE_API_URL` environment variable, defaulting to `https://api.clickhouse.cloud/v1` if not set.
+- The script must use Basic Authentication with `KEY_ID:KEY_SECRET`.
+- The API endpoint is `${CLICKHOUSE_API_URL}/organizations/${CLICKHOUSE_ORG_ID}/services/${CLICKHOUSE_SERVICE_ID}`.
+- The JSON payload must follow the format: `{"ipAccessList": {"add": [{"source": "<IP>", "description": "<DESC>"}]}}`.
+- The script must be executable.
+
+## Implementation Guide
+1. Read the IP CIDR and description from arguments (`$1` and `$2`).
+2. Set up the `CLICKHOUSE_API_URL` variable (default to `https://api.clickhouse.cloud/v1`).
+3. Use `curl -s -X PATCH` with `--user "${CLICKHOUSE_KEY_ID}:${CLICKHOUSE_KEY_SECRET}"` and `-H "Content-Type: application/json"`.
+4. Send the correct JSON payload with `-d`.
+5. Output the curl response to `/home/user/ch-cli/output.log`.
+
+## Constraints
+- Project path: /home/user/ch-cli
+- Log file: /home/user/ch-cli/output.log
+- Do not hardcode any credentials or IDs in the script.
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_python_query_tester__PnYBh4G > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Python Query Benchmark
+
+## Background
+You need to benchmark query performance on a ClickHouse database using the official Python SDK `clickhouse-connect`.
+
+## Requirements
+- Initialize a Python project in `/home/user/ch_benchmark`.
+- Install the `clickhouse-connect` library.
+- Write a Python script `benchmark.py` that connects to a ClickHouse database using the following environment variables:
+  - `CH_HOST` (e.g., localhost)
+  - `CH_PORT` (e.g., 8123)
+  - `CH_USER` (e.g., default)
+  - `CH_PASSWORD` (e.g., empty string)
+  - `CH_SECURE` (e.g., 'True' or 'False', parse to boolean)
+- The script must perform the following operations sequentially:
+  1. Create a table `events` (`id UInt64`, `event_type String`, `timestamp DateTime`) `ENGINE = MergeTree ORDER BY id`.
+  2. Insert exactly 1000 rows into the `events` table (e.g., `id` from 1 to 1000, `event_type` as 'click', 'view', or 'purchase', and `timestamp` as the current time).
+  3. Execute the query `SELECT event_type, count() FROM events GROUP BY event_type`.
+  4. Record the query execution time (in seconds).
+  5. Write the output to `/home/user/ch_benchmark/output.json` in exactly this JSON format: `{"time_seconds": 0.05, "results": [["click", 330], ["view", 340], ["purchase", 330]]}`.
+- Run the script and ensure `output.json` is generated.
+
+## Constraints
+- Project path: `/home/user/ch_benchmark`
+- Log file: `/home/user/ch_benchmark/output.log`
+- The database connection must use the environment variables as specified. Do not hardcode credentials.
+
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Trial system_metrics_dashboard__p4ZzPEU failed: Docker compose command failed for environment system_metrics_dashboard. Command: docker compose --project-name system_metrics_dashboard__p4zzpeu --project-directory /Users/warrenlow/Documents/projects/pochi-harbor/clickhouse-tasks/system_metrics_dashboard/environment -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-base.yaml -f /Users/warrenlow/Documents/projects/pochi-harbor/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml build. Return code: 1. Stdout:  Image system_metrics_dashboard__p4zzpeu-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 700B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.17kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ubuntu:24.04
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+#4 resolve docker.io/library/ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b done
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [2/4] RUN apt-get update -y &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         curl ca-certificates git python3 python3-pip python3-pytest bash         ffmpeg ripgrep libxcb-shm0 libx11-xcb1 libx11-6 libxcb1 libxext6 libxrandr2 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxi6 libgtk-3-0t64 libpangocairo-1.0-0 libpango-1.0-0 libatk1.0-0t64 libcairo-gobject2 libcairo2 libgdk-pixbuf-2.0-0 libxrender1 libasound2t64 libfreetype6 libfontconfig1 libdbus-1-3 libnss3 libnspr4 libatk-bridge2.0-0t64 libdrm2 libxkbcommon0 libatspi2.0-0t64 libcups2t64 libxshmfence1 libgbm1 &&     curl -fsSL https://deb.nodesource.com/setup_24.x | bash - &&     apt-get install -y --no-install-recommends nodejs &&     npm i -g @getpochi/cli agent-browser &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/4] RUN agent-browser install
+#7 0.081 ✗ Chrome for Testing does not provide Linux ARM64 builds.
+#7 0.081   Install Chromium from your system package manager instead:
+#7 0.081     sudo apt install chromium-browser   # Debian/Ubuntu
+#7 0.081     sudo dnf install chromium            # Fedora
+#7 0.081   Then use: agent-browser --executable-path /usr/bin/chromium
+#7 ERROR: process "/bin/sh -c agent-browser install" did not complete successfully: exit code: 1
+------
+ > [3/4] RUN agent-browser install:
+0.081 ✗ Chrome for Testing does not provide Linux ARM64 builds.
+0.081   Install Chromium from your system package manager instead:
+0.081     sudo apt install chromium-browser   # Debian/Ubuntu
+0.081     sudo dnf install chromium            # Fedora
+0.081   Then use: agent-browser --executable-path /usr/bin/chromium
+------
+Dockerfile:13
+
+--------------------
+
+  11 |         rm -rf /var/lib/apt/lists/*
+
+  12 |     
+
+  13 | >>> RUN agent-browser install
+
+  14 |     
+
+  15 |     RUN mkdir -p /home/user && chmod 0755 /home/user
+
+--------------------
+
+failed to solve: process "/bin/sh -c agent-browser install" did not complete successfully: exit code: 1
+
+. Stderr: None. 
+Not retrying trial because the maximum number of retries has been reached
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_nodejs_grafana_setup__kZe9RLB > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Configure ClickHouse for Grafana using Node.js
+
+## Background
+You need to prepare a ClickHouse database for Grafana to use as a data source. You will write a Node.js script that uses the `@clickhouse/client` SDK to set up the schema and a dedicated read-only user.
+
+## Requirements
+- Write a script named `setup_grafana.js` in `/home/user/project`.
+- The script must connect to ClickHouse at `http://localhost:8123` using the default user (no password).
+- It must create a database named `grafana_db`.
+- It must create a table `grafana_db.metrics` with columns: `timestamp` (DateTime), `metric_name` (String), and `value` (Float64). The engine must be `MergeTree` ordered by `(metric_name, timestamp)`.
+- It must create a user `grafana_user` with password `grafana_pass`.
+- It must grant `SELECT` privilege on `grafana_db.metrics` to `grafana_user`.
+- The script should execute these commands sequentially and exit successfully.
+
+## Implementation Guide
+1. Initialize a Node.js project in `/home/user/project` and install `@clickhouse/client`.
+2. Write `setup_grafana.js`.
+3. Use `client.command()` to execute the DDL statements.
+4. Ensure you await all operations.
+
+## Constraints
+- Project path: `/home/user/project`
+- The ClickHouse server is already running locally on port 8123.
+
+## Integrations
+- None
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo schema_migration__qU5bavc > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Schema Migration
+
+## Background
+Implement a simple Python script to perform schema migrations on ClickHouse Cloud using the official `clickhouse-connect` SDK.
+
+## Requirements
+- Write a Python script `migrate.py` that reads a `migrations.sql` file.
+- The script must connect to ClickHouse Cloud using the following environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT` (default 8443), `CLICKHOUSE_USERNAME` (default 'default'), and `CLICKHOUSE_PASSWORD`.
+- It should execute the SQL statements in the `migrations.sql` file sequentially.
+
+## Implementation Guide
+1. The project directory is `/home/user/myproject`.
+2. The file `/home/user/myproject/migrations.sql` is already provided.
+3. Install `clickhouse-connect`.
+4. Create `migrate.py` that uses `clickhouse_connect.get_client(host=..., port=..., username=..., password=..., secure=True)`.
+5. Read `migrations.sql`, split by `;`, and use `client.command()` to execute the DDL statements.
+6. Run the script and redirect output to `output.log`.
+
+## Constraints
+- Project path: `/home/user/myproject`
+- Log file: `/home/user/myproject/output.log`
+EOF
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo python_s3_data_ingestion__au8pg4y > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# S3 Data Ingestion with ClickHouse Python SDK
+
+## Background
+ClickHouse Cloud excels at querying external data lakes. The `s3()` table function allows seamless reading from S3-compatible object storage. In this task, you will write a Python script using the official HTTP client (`clickhouse-connect`) to ingest a public CSV dataset from S3 into a native ClickHouse MergeTree table.
+
+## Requirements
+- Write a Python script at `/home/user/ingest.py`.
+- Connect to ClickHouse Cloud using credentials from environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT`, `CLICKHOUSE_USER`, and `CLICKHOUSE_PASSWORD`. Connection must be secure (`secure=True`).
+- Create a table named `aapl_stock` (if it does not exist) with the following schema:
+  - `Date` Date
+  - `Open` Float64
+  - `High` Float64
+  - `Low` Float64
+  - `Close` Float64
+  - `Volume` UInt64
+  - `OpenInt` UInt64
+- The table should use the `MergeTree` engine, ordered by `Date`.
+- Insert data into the `aapl_stock` table by reading directly from this public S3 URL: `https://datasets-documentation.s3.eu-west-3.amazonaws.com/aapl_stock.csv`. Use the `s3()` table function with the `CSVWithNames` format.
+
+## Implementation Guide
+1. Ensure `clickhouse-connect` is installed.
+2. In `/home/user/ingest.py`, use `clickhouse_connect.get_client` to establish a connection.
+3. Execute a `CREATE TABLE` command for the `aapl_stock` table.
+4. Execute an `INSERT INTO ... SELECT * FROM s3(...)` command to load the data.
+5. Print the number of rows inserted or a success message.
+
+## Constraints
+- Project path: `/home/user`
+- The script must be executable by running `python3 /home/user/ingest.py`.
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo python_schema_migration_tool_v2__zyT24NW > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Schema Migration with Python
+
+## Background
+You need to build a simple schema migration script using the official Python SDK `clickhouse-connect`. The script will ensure a specific table schema exists in ClickHouse Cloud and apply an `ALTER TABLE` migration if a column is missing.
+
+## Requirements
+- Connect to ClickHouse Cloud using credentials from environment variables: `CLICKHOUSE_HOST`, `CLICKHOUSE_PORT` (default 8443), `CLICKHOUSE_USER` (default 'default'), and `CLICKHOUSE_PASSWORD`.
+- Ensure a table named `users` exists with the engine `MergeTree` ordered by `id`. The initial schema should be `id UInt64, name String`.
+- Detect if the `email` column (type `String`) exists in the `users` table.
+- If the `email` column is missing, apply a migration to add it: `ALTER TABLE users ADD COLUMN email String`.
+- Insert a test record with `id=1`, `name='Alice'`, and `email='alice@example.com'` into the `users` table.
+
+## Implementation Guide
+1. Create a Python script at `/home/user/migrate.py`.
+2. Use `clickhouse_connect.get_client` to establish a secure connection (`secure=True`).
+3. Use `client.command()` for DDL operations (CREATE, ALTER).
+4. Query `system.columns` to check if the `email` column exists for the `users` table.
+5. Use `client.insert()` to add the test record.
+
+## Constraints
+- Project path: `/home/user`
+- The script must be executable by running `python3 /home/user/migrate.py`.
+- Do not hardcode credentials; always read from the environment variables.
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_role_management__xCnP7rx > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Cloud Role and Key Management
+
+## Background
+You need to write a bash script to automate managing API keys and invitations in ClickHouse Cloud using `clickhousectl`.
+
+## Requirements
+- Create a bash script at `/home/user/ch-task/manage.sh`.
+- The script should take three arguments: an email address, a role ID, and an API key name.
+- It must use `clickhousectl` to:
+  1. Create an invitation for the provided email address with the provided role ID.
+  2. Create an API key with the provided API key name and the provided role ID.
+- The script should output the results in JSON format by passing the `--json` flag to `clickhousectl`.
+- Ensure the script is executable.
+
+## Implementation Guide
+1. Create the script `/home/user/ch-task/manage.sh`.
+2. Add `#!/bin/bash` at the top.
+3. Read the arguments: `EMAIL=$1`, `ROLE_ID=$2`, `KEY_NAME=$3`.
+4. Execute `clickhousectl cloud --json invitation create --email "$EMAIL" --role-id "$ROLE_ID"`.
+5. Execute `clickhousectl cloud --json key create --name "$KEY_NAME" --role-id "$ROLE_ID"`.
+6. Make the script executable (`chmod +x`).
+
+## Constraints
+- Project path: /home/user/ch-task
+- The script must exactly match the argument order: email, role ID, key name.
+- Do not hardcode the arguments.
+
+## Integrations
+- ClickHouse Cloud
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Running command: apt-get update && apt-get install -y curl ripgrep
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.8 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_cli_status_checker__yeetkvj > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# ClickHouse Service Status Checker
+
+## Background
+You need to automate the monitoring of a ClickHouse service using the official `clickhouse-client` CLI.
+
+## Requirements
+Write a bash script `check_status.sh` that retrieves the version of a ClickHouse service to verify it is running.
+- The script must use `clickhouse-client` to execute the query `SELECT version()`.
+- The output of the command must be saved to `status.log`.
+- The script must be executable.
+
+## Implementation Guide
+1. Create a script named `check_status.sh` in `/home/user/project`.
+2. Add the shebang `#!/bin/bash`.
+3. Run `clickhouse-client --query "SELECT version()" > /home/user/project/status.log`.
+4. Make the script executable with `chmod +x /home/user/project/check_status.sh`.
+
+## Constraints
+- Project path: `/home/user/project`
+- Log file: `/home/user/project/status.log`
+- You must use `clickhouse-client --query`.
+
+## Integrations
+- None
+EOF
+Command outputs captured
+Running command: ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi
+Command outputs captured
+Running command: echo ch_nodejs_csv_load__qwHcVhN > /logs/artifacts/trial_id
+Command outputs captured
+Running command: mkdir -p ~/.pochi && cat << 'EOF' | sed -e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" -e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" -e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" > ~/.pochi/config.jsonc
+{
+  "providers": {
+    "deepinfra": {
+      "kind": "openai",
+      "baseURL": "https://api.deepinfra.com/v1/openai",
+      "apiKey": "DEEPINFRA_API_KEY",
+      "models": {
+        "zai-org/GLM-4.7-Flash": {
+          "name": "glm-4.7-flash"
+        },
+        "moonshotai/Kimi-K2.5": {
+          "name": "kimi-K2.5"
+        },
+        "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
+          "name": "qwen3-coder-480b"
+        }
+      }
+    },
+    "anthropic": {
+      "kind": "openai",
+      "baseURL": "https://api.anthropic.com/v1",
+      "apiKey": "ANTHROPIC_API_KEY",
+      "models": {
+        "claude-opus-4-6": {
+          "name": "claude-opus-4-6"
+        }
+      }
+    },
+    "openai": {
+      "kind": "openai",
+      "baseURL": "https://api.openai.com/v1",
+      "apiKey": "OPENAI_API_KEY",
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  }
+}
+EOF
+Command outputs captured
+Running command: mkdir -p /logs/artifacts
+Command outputs captured
+Running command: export PATH="$HOME/.pochi/bin:$PATH"; pochi --model zai/glm-4.7 --max-steps 200 --max-retries 10 --blobs-dir /logs/agent/pochi/blobs --experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl > >(tee /logs/agent/pochi/stdout.txt) 2> >(tee /logs/agent/pochi/stderr.txt >&2) <<'EOF'
+# Preserving your work
+
+Save a copy of files you create during this task to `/logs/artifacts/`. This directory is preserved after the run so outputs can be inspected. Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, `/logs/artifacts/reports/`). The directory already exists and is writable.
+
+---
+
+# Bulk Load CSV to ClickHouse Cloud via Node.js
+
+## Background
+You need to build a Node.js script that connects to a ClickHouse Cloud instance, creates a table, and bulk loads data from a CSV file using the official `@clickhouse/client` SDK.
+
+## Requirements
+- Initialize a Node.js project in `/home/user/ch-task`.
+- Install the `@clickhouse/client` package.
+- Write a script `index.js` that:
+  1. Connects to ClickHouse Cloud using the `CLICKHOUSE_HOST` and `CLICKHOUSE_PASSWORD` environment variables. The host URL must use HTTPS and port 8443 (e.g., `https://${process.env.CLICKHOUSE_HOST}:8443`). Use `default` as the username.
+  2. Creates a table named `employees` (if it doesn't exist) with the following schema: `id UInt32`, `name String`, `department String`, `salary Float64`. Use the `MergeTree` engine ordered by `id`.
+  3. Reads the file `/home/user/ch-task/employees.csv` as a stream and inserts it into the `employees` table using the `CSVWithNames` format.
+  4. Writes the text `Success` to `/home/user/ch-task/output.log` upon completion.
+- Execute your script so the data is loaded.
+
+## Constraints
+- Project path: `/home/user/ch-task`
+- Log file: `/home/user/ch-task/output.log`
+- The script must handle the CSV header properly (using `CSVWithNames`).
+EOF
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.
+Command outputs captured
+Running command: rm -f ~/.pochi/config.jsonc
+Command outputs captured
+The verifier.env contains an API key (often the case for LLM-based verifiers). You will incur costs associated with the API calls.

@@ -1,0 +1,6 @@
+Connecting to ClickHouse at [REDACTED_CLICKHOUSE_HOST]:8443 as 'default' ...
+Connection established.
+Table 'test_events' ready (created or already exists).
+Inserted 3 rows into 'test_events'.
+Row count in 'test_events': 3
+Connection closed.

@@ -1,0 +1,41 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 2,
+            "passed": 1,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777537189.245361,
+            "stop": 1777537194.013017
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_amazon_reviews_table_and_data",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4.753716023056768,
+                "start": 1777537189.248687,
+                "stop": 1777537194.0113184,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_amazon_reviews_table_and_data():\n        host = os.environ.get(\"CH_HOST\")\n        port = os.environ.get(\"CH_PORT\", \"8443\")\n        user = os.environ.get(\"CH_USER\", \"default\")\n        password = os.environ.get(\"CH_PASSWORD\", \"\")\n    \n        assert host, \"CH_HOST environment variable is missing\"\n    \n        python_script = f\"\"\"\n    import clickhouse_connect\n    import sys\n    \n    client = clickhouse_connect.get_client(\n        host='{host}',\n        port={port},\n        username='{user}',\n        password='{password}',\n        secure=True\n    )\n    \n    res = client.query(\"EXISTS TABLE amazon_reviews\")\n    if res.result_rows[0][0] != 1:\n        print(\"Table 'amazon_reviews' does not exist\")\n        sys.exit(1)\n    \n    schema = client.query(\"DESCRIBE TABLE amazon_reviews\")\n    columns = {{row[0]: row[1] for row in schema.result_rows}}\n    \n    if \"review_id\" not in columns or \"String\" not in columns[\"review_id\"]:\n        print(\"review_id column missing or invalid: \" + str(columns.get('review_id')))\n        sys.exit(1)\n    \n    if \"product_id\" not in columns or \"String\" not in columns[\"product_id\"]:\n        print(\"product_id column missing or invalid: \" + str(columns.get('product_id')))\n        sys.exit(1)\n    \n    if \"star_rating\" not in columns or \"UInt8\" not in columns[\"star_rating\"]:\n        print(\"star_rating column missing or invalid: \" + str(columns.get('star_rating')))\n        sys.exit(1)\n    \n    count_res = client.query(\"SELECT count() FROM amazon_reviews\")\n    count = count_res.result_rows[0][0]\n    if count != 10:\n        print(\"Expected 10 rows, got \" + str(count))\n        sys.exit(1)\n    \n    print(\"SUCCESS\")\n    \"\"\"\n        result = subprocess.run(\n            [\"python3\", \"-c\", python_script],\n            capture_output=True, text=True\n        )\n    \n>       assert result.returncode == 0, f\"Verification script failed: {result.stdout} {result.stderr}\"\nE       AssertionError: Verification script failed: Table 'amazon_reviews' does not exist\nE          \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['python3', '-c', '\\nimport clickhouse_connect\\nimport sys\\n\\nclient = clickhouse_connect.get_cl...))\\n    sys.exit(1)\\n\\nprint(\"SUCCESS\")\\n'], returncode=1, stdout=\"Table 'amazon_reviews' does not exist\\n\", stderr='').returncode\n\ntests/test_final_state.py:58: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_script_exists",
+                "status": "passed",
+                "duration": 0.0009323499980382621,
+                "start": 1777537194.0114853,
+                "stop": 1777537194.012683,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

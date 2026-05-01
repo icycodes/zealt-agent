@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777599437.2327752,
+            "stop": 1777599454.8536606
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_migrate_script_exists",
+                "status": "passed",
+                "duration": 0.0003209540154784918,
+                "start": 1777599437.3066888,
+                "stop": 1777599437.3071659,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_migrate_script_runs_successfully",
+                "status": "passed",
+                "duration": 16.818802482972387,
+                "start": 1777599437.307247,
+                "stop": 1777599454.1263528,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_migration_log_exists",
+                "status": "passed",
+                "duration": 0.0004144530394114554,
+                "start": 1777599454.1264837,
+                "stop": 1777599454.1271014,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_users_table_schema_updated",
+                "status": "passed",
+                "duration": 0.7240291200578213,
+                "start": 1777599454.127197,
+                "stop": 1777599454.852426,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

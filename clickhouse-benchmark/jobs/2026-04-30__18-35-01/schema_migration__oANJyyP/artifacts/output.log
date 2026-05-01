@@ -1,0 +1,2 @@
+Unexpected Http Driver Exception
+An error occurred: Error HTTPSConnectionPool(host='placeholder_host', port=8443): Max retries exceeded with url: /?query_id=c5073abf-0f2e-47d9-972d-7af9c3e23060 (Caused by NameResolutionError("HTTPSConnection(host='placeholder_host', port=8443): Failed to resolve 'placeholder_host' ([Errno -2] Name or service not known)")) executing HTTP request attempt 1 (https://placeholder_host:8443)

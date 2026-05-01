@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 4,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777538199.6734328,
+            "stop": 1777538199.6793182
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_script_exists",
+                "status": "passed",
+                "duration": 0.00032016803743317723,
+                "start": 1777538199.6775904,
+                "stop": 1777538199.6780639,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_imports_clickhouse_connect",
+                "status": "passed",
+                "duration": 0.00020574999507516623,
+                "start": 1777538199.6781442,
+                "stop": 1777538199.67844,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_configures_timeouts",
+                "status": "passed",
+                "duration": 0.00024633307475596666,
+                "start": 1777538199.6784978,
+                "stop": 1777538199.6788425,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_reads_env_vars",
+                "status": "passed",
+                "duration": 0.00020962499547749758,
+                "start": 1777538199.6789007,
+                "stop": 1777538199.6792102,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 3,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777538516.17823,
+            "stop": 1777538516.292208
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_database_exists",
+                "status": "passed",
+                "duration": 0.04512311494909227,
+                "start": 1777538516.1829338,
+                "stop": 1777538516.2283843,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_table_exists",
+                "status": "passed",
+                "duration": 0.029589661047793925,
+                "start": 1777538516.2285187,
+                "stop": 1777538516.2584677,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_user_can_query",
+                "status": "passed",
+                "duration": 0.03301825193921104,
+                "start": 1777538516.2586136,
+                "stop": 1777538516.2919798,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

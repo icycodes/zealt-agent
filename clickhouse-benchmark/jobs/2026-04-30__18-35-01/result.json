@@ -1,0 +1,53 @@
+{
+    "id": "7699b9a4-7d98-424e-a1b8-8a113354e2e6",
+    "started_at": "2026-04-30T18:35:03.134608",
+    "finished_at": "2026-04-30T18:47:48.424106",
+    "n_total_trials": 20,
+    "stats": {
+        "n_trials": 20,
+        "n_errors": 2,
+        "evals": {
+            "pochi__gemini-3-flash__clickhouse-tasks": {
+                "n_trials": 18,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.75
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ch_python_s3_parquet__rDcM5q5",
+                            "ch_nodejs_analytics_api__7Sh8Eht",
+                            "ch_python_schema_migration__GWysd6r",
+                            "ch_python_github_archive__4UhRaSy",
+                            "ch_nodejs_query_endpoint__UQUpxhy",
+                            "node_js_streaming_query_executio__J23FKD2",
+                            "ch_cli_backup_config__E7PKVa3",
+                            "ch_python_cold_start_handler__Udvygrr",
+                            "ch_cli_service_deletion__ySJFTWw",
+                            "ch_nodejs_data_dictionary__YQsX9V3",
+                            "python_sdk_basic_ingestion__pv336ee",
+                            "ch_cli_ip_access_list__Ris7oh7",
+                            "schema_migration__oANJyyP",
+                            "python_s3_data_ingestion__Me9E9mJ",
+                            "ch_cli_role_management__gkByPEL"
+                        ],
+                        "0.0": [
+                            "ch_python_query_tester__SUrAEVs",
+                            "ch_nodejs_grafana_setup__cFhiv9B",
+                            "ch_nodejs_csv_load__TtR3z97"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "clickhouse_metrics_dashboard__JVR6yKd",
+                        "system_metrics_dashboard__euQxAfr"
+                    ]
+                }
+            }
+        }
+    }
+}

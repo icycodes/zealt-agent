@@ -1,0 +1,53 @@
+{
+    "id": "be508f0d-c4e6-477a-89ea-56c515755a56",
+    "started_at": "2026-04-30T01:17:48.090313",
+    "finished_at": "2026-04-30T01:29:02.150819",
+    "n_total_trials": 20,
+    "stats": {
+        "n_trials": 20,
+        "n_errors": 2,
+        "evals": {
+            "pochi__gpt-5.2-codex__clickhouse-tasks": {
+                "n_trials": 18,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.75
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "ch_python_s3_parquet__WdUCXVF",
+                            "ch_python_query_tester__yoiXMq8",
+                            "ch_nodejs_grafana_setup__bEdx8pt"
+                        ],
+                        "1.0": [
+                            "ch_nodejs_analytics_api__Tp6DgwW",
+                            "ch_python_schema_migration__YhUCFsL",
+                            "ch_python_github_archive__QH925cf",
+                            "ch_nodejs_query_endpoint__uGX7dfs",
+                            "node_js_streaming_query_executio__8rjU9Qa",
+                            "ch_cli_backup_config__gwuLQDg",
+                            "ch_python_cold_start_handler__y7xetib",
+                            "ch_cli_service_deletion__HizTiYB",
+                            "ch_nodejs_data_dictionary__saK8AfK",
+                            "python_sdk_basic_ingestion__TCiJBcu",
+                            "ch_cli_ip_access_list__T5rfsxa",
+                            "schema_migration__GAo92S4",
+                            "python_s3_data_ingestion__3QtTYHK",
+                            "ch_cli_role_management__iPtkLhb",
+                            "ch_nodejs_csv_load__3XDA2Lp"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "clickhouse_metrics_dashboard__i8bTht5",
+                        "system_metrics_dashboard__U992QLp"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 12ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+tests/test_final_state.py ...F                                           [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_output_log_is_valid_json_array ______________________
+
+    def test_output_log_is_valid_json_array():
+        with open(OUTPUT_LOG, "r") as f:
+            content = f.read().strip()
+    
+        try:
+>           data = json.loads(content)
+                   ^^^^^^^^^^^^^^^^^^^
+
+tests/test_final_state.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+usr/lib/python3.12/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xe19b0fd39550>
+s = '[2026-05-01T01:56:47.191Z][WARN][@clickhouse/client][Config] "host" is deprecated. Use "url" instead.\n[\n  [\n    {\...ling_parts_num\\":0,\\"dangling_parts_compressed_bytes\\":0,\\"dangling_parts_uncompressed_bytes\\":0}"\n    }\n  ]\n]'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+>           obj, end = self.scan_once(s, idx)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+E           json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 6 (char 5)
+
+usr/lib/python3.12/json/decoder.py:353: JSONDecodeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_output_log_is_valid_json_array():
+        with open(OUTPUT_LOG, "r") as f:
+            content = f.read().strip()
+    
+        try:
+            data = json.loads(content)
+        except json.JSONDecodeError as e:
+>           pytest.fail(f"Failed to parse {OUTPUT_LOG} as JSON: {e}")
+E           Failed: Failed to parse /home/user/myproject/output.log as JSON: Expecting ',' delimiter: line 1 column 6 (char 5)
+
+tests/test_final_state.py:31: Failed
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_query_js_exists
+PASSED tests/test_final_state.py::test_package_json_has_clickhouse_client
+PASSED tests/test_final_state.py::test_output_log_exists
+FAILED tests/test_final_state.py::test_output_log_is_valid_json_array - Faile...
+========================= 1 failed, 3 passed in 0.02s ==========================

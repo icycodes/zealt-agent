@@ -1,0 +1,38 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777595122.3130322,
+            "stop": 1777595122.3484807
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_events_table_row_count_via_cli",
+                "status": "passed",
+                "duration": 0.030396010086406022,
+                "start": 1777595122.3171353,
+                "stop": 1777595122.347802,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_json_exists_and_valid",
+                "status": "passed",
+                "duration": 0.00030990404775366187,
+                "start": 1777595122.3479328,
+                "stop": 1777595122.348357,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

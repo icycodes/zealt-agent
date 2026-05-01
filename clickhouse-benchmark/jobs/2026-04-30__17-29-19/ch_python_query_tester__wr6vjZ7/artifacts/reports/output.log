@@ -1,0 +1,8 @@
+2026-05-01 00:36:48.031674: Connecting to localhost:8123 as default (secure=False)
+2026-05-01 00:36:48.033302: Error: Error HTTPConnectionPool(host='localhost', port=8123): Max retries exceeded with url: /?query_id=e1e01425-f0b2-4a57-bd31-c6decf2d91df (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8123): Failed to establish a new connection: [Errno 111] Connection refused")) executing HTTP request attempt 1 (http://localhost:8123)
+2026-05-01 00:37:33.247584: Connecting to localhost:8123 as default (secure=False)
+2026-05-01 00:37:33.263185: Connected successfully
+2026-05-01 00:37:33.293370: Table 'events' created
+2026-05-01 00:37:33.360226: Inserted 1000 rows
+2026-05-01 00:37:33.362316: Query executed in 0.0021 seconds
+2026-05-01 00:37:33.362433: Output written to /home/user/ch_benchmark/output.json

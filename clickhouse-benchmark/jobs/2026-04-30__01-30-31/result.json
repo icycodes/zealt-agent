@@ -1,0 +1,53 @@
+{
+    "id": "67bebb00-33f1-4702-929d-38b869eaff47",
+    "started_at": "2026-04-30T01:30:32.973058",
+    "finished_at": "2026-04-30T01:42:38.621669",
+    "n_total_trials": 20,
+    "stats": {
+        "n_trials": 20,
+        "n_errors": 2,
+        "evals": {
+            "pochi__claude-4-6-sonnet__clickhouse-tasks": {
+                "n_trials": 18,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.8
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ch_python_s3_parquet__M5TMrvZ",
+                            "ch_nodejs_analytics_api__Muk42k9",
+                            "ch_python_schema_migration__b5nNAFF",
+                            "ch_nodejs_query_endpoint__ow7GGyr",
+                            "node_js_streaming_query_executio__pmmfdqt",
+                            "ch_python_cold_start_handler__eLq5HJU",
+                            "ch_cli_service_deletion__AF9ypyp",
+                            "ch_nodejs_data_dictionary__HHG7rNs",
+                            "python_sdk_basic_ingestion__zv9ddYG",
+                            "ch_cli_ip_access_list__au75qnc",
+                            "ch_python_query_tester__68WgGHa",
+                            "schema_migration__CMT5rwW",
+                            "ch_nodejs_grafana_setup__pmZt9eq",
+                            "python_s3_data_ingestion__CgnqW2v",
+                            "ch_cli_role_management__bZm48HK",
+                            "ch_nodejs_csv_load__LM6fob4"
+                        ],
+                        "0.0": [
+                            "ch_python_github_archive__TywmLyX",
+                            "ch_cli_backup_config__TrizvGR"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "clickhouse_metrics_dashboard__vf72bwu",
+                        "system_metrics_dashboard__NkL6uJT"
+                    ]
+                }
+            }
+        }
+    }
+}

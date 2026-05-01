@@ -1,0 +1,50 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 2,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777538014.1428468,
+            "stop": 1777538016.8660703
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_github_events_table_exists",
+                "status": "passed",
+                "duration": 1.3555151059408672,
+                "start": 1777538014.1471138,
+                "stop": 1777538015.5030348,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_github_events_has_data",
+                "status": "passed",
+                "duration": 0.8435334200039506,
+                "start": 1777538015.503175,
+                "stop": 1777538016.347005,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists_and_matches",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.5133538979571313,
+                "start": 1777538016.3471522,
+                "stop": 1777538016.8658872,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_exists_and_matches():\n        assert os.path.isfile(LOG_FILE), f\"Log file {LOG_FILE} does not exist.\"\n        with open(LOG_FILE, \"r\") as f:\n            log_content = f.read().strip()\n    \n        result = subprocess.run(\n            [\"clickhouse-client\", \"--query\", \"SELECT count() FROM github_events\"],\n            capture_output=True,\n            text=True,\n            check=False\n        )\n        db_count = result.stdout.strip()\n>       assert log_content == db_count, f\"Log file content ({log_content}) does not match db count ({db_count}).\"\nE       AssertionError: Log file content (Total rows in github_events: 11351) does not match db count (11351).\nE       assert 'Total rows i...events: 11351' == '11351'\nE         \nE         - 11351\nE         + Total rows in github_events: 11351\n\ntests/test_final_state.py:41: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

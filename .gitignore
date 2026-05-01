@@ -11,6 +11,8 @@ jobs/
 
 # Ignore in agent, the jobs would be shown in benchmark repos
 jobs/
+!clickhouse-benchmark/jobs/
+!clickhouse-benchmark/jobs/**
 
 # Python Gitignore
 #

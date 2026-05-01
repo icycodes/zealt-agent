@@ -1,0 +1,96 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+Downloading lz4 (1.2MiB)
+Downloading zstandard (4.8MiB)
+Downloading clickhouse-connect (1.1MiB)
+ Downloading clickhouse-connect
+ Downloading pygments
+ Downloading lz4
+ Downloading zstandard
+Installed 13 packages in 17ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 2 items
+
+tests/test_final_state.py F.                                             [100%]
+
+=================================== FAILURES ===================================
+______________________ test_amazon_reviews_table_and_data ______________________
+
+    def test_amazon_reviews_table_and_data():
+        host = os.environ.get("CH_HOST")
+        port = os.environ.get("CH_PORT", "8443")
+        user = os.environ.get("CH_USER", "default")
+        password = os.environ.get("CH_PASSWORD", "")
+    
+        assert host, "CH_HOST environment variable is missing"
+    
+        python_script = f"""
+    import clickhouse_connect
+    import sys
+    
+    client = clickhouse_connect.get_client(
+        host='{host}',
+        port={port},
+        username='{user}',
+        password='{password}',
+        secure=True
+    )
+    
+    res = client.query("EXISTS TABLE amazon_reviews")
+    if res.result_rows[0][0] != 1:
+        print("Table 'amazon_reviews' does not exist")
+        sys.exit(1)
+    
+    schema = client.query("DESCRIBE TABLE amazon_reviews")
+    columns = {{row[0]: row[1] for row in schema.result_rows}}
+    
+    if "review_id" not in columns or "String" not in columns["review_id"]:
+        print("review_id column missing or invalid: " + str(columns.get('review_id')))
+        sys.exit(1)
+    
+    if "product_id" not in columns or "String" not in columns["product_id"]:
+        print("product_id column missing or invalid: " + str(columns.get('product_id')))
+        sys.exit(1)
+    
+    if "star_rating" not in columns or "UInt8" not in columns["star_rating"]:
+        print("star_rating column missing or invalid: " + str(columns.get('star_rating')))
+        sys.exit(1)
+    
+    count_res = client.query("SELECT count() FROM amazon_reviews")
+    count = count_res.result_rows[0][0]
+    if count != 10:
+        print("Expected 10 rows, got " + str(count))
+        sys.exit(1)
+    
+    print("SUCCESS")
+    """
+        result = subprocess.run(
+            ["python3", "-c", python_script],
+            capture_output=True, text=True
+        )
+    
+>       assert result.returncode == 0, f"Verification script failed: {result.stdout} {result.stderr}"
+E       AssertionError: Verification script failed: Table 'amazon_reviews' does not exist
+E          
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['python3', '-c', '\nimport clickhouse_connect\nimport sys\n\nclient = clickhouse_connect.get_cl...))\n    sys.exit(1)\n\nprint("SUCCESS")\n'], returncode=1, stdout="Table 'amazon_reviews' does not exist\n", stderr='').returncode
+
+tests/test_final_state.py:58: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_script_exists
+FAILED tests/test_final_state.py::test_amazon_reviews_table_and_data - Assert...
+========================= 1 failed, 1 passed in 4.77s ==========================

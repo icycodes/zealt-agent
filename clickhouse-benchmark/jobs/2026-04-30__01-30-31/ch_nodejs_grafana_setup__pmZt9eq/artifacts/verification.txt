@@ -1,0 +1,35 @@
+ClickHouse Setup Verification
+==============================
+
+DATABASES:
+INFORMATION_SCHEMA
+default
+grafana_db
+information_schema
+system
+
+TABLES IN grafana_db:
+metrics
+
+DESCRIBE grafana_db.metrics:
+timestamp     DateTime
+metric_name   String
+value         Float64
+
+CREATE TABLE DDL:
+CREATE TABLE grafana_db.metrics
+(
+    `timestamp` DateTime,
+    `metric_name` String,
+    `value` Float64
+)
+ENGINE = MergeTree
+ORDER BY (metric_name, timestamp)
+SETTINGS index_granularity = 8192
+
+USERS:
+default
+grafana_user
+
+GRANTS FOR grafana_user:
+GRANT SELECT ON grafana_db.metrics TO grafana_user

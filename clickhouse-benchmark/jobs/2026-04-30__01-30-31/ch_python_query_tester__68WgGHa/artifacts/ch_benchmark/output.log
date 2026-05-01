@@ -1,0 +1,10 @@
+2026-04-30 08:39:23,660 [INFO] Connecting to ClickHouse at localhost:8123 (secure=False, user=default)
+2026-04-30 08:39:23,671 [INFO] Dropping table 'events' if it exists …
+2026-04-30 08:39:23,672 [INFO] Creating table 'events' …
+2026-04-30 08:39:23,688 [INFO] Table 'events' created.
+2026-04-30 08:39:23,688 [INFO] Inserting 1000 rows …
+2026-04-30 08:39:23,761 [INFO] Insert complete.
+2026-04-30 08:39:23,761 [INFO] Running benchmark query: SELECT event_type, count() FROM events GROUP BY event_type
+2026-04-30 08:39:23,769 [INFO] Query finished in 0.007981 seconds.
+2026-04-30 08:39:23,769 [INFO] Query results: [['click', 334], ['view', 333], ['purchase', 333]]
+2026-04-30 08:39:23,769 [INFO] Output written to /home/user/ch_benchmark/output.json

@@ -1,0 +1,59 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 3,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777600717.8200443,
+            "stop": 1777600717.8405938
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_query_js_exists",
+                "status": "passed",
+                "duration": 0.0003298299852758646,
+                "start": 1777600717.825685,
+                "stop": 1777600717.8261876,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_package_json_has_clickhouse_client",
+                "status": "passed",
+                "duration": 0.0003339549875818193,
+                "start": 1777600717.8262782,
+                "stop": 1777600717.8267527,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_exists",
+                "status": "passed",
+                "duration": 0.00028845592169091105,
+                "start": 1777600717.826829,
+                "stop": 1777600717.8272505,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_is_valid_json_array",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0020063199917785823,
+                "start": 1777600717.8273168,
+                "stop": 1777600717.840453,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_is_valid_json_array():\n        with open(OUTPUT_LOG, \"r\") as f:\n            content = f.read().strip()\n    \n        try:\n>           data = json.loads(content)\n                   ^^^^^^^^^^^^^^^^^^^\n\ntests/test_final_state.py:29: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nusr/lib/python3.12/json/__init__.py:346: in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nusr/lib/python3.12/json/decoder.py:337: in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <json.decoder.JSONDecoder object at 0xe19b0fd39550>\ns = '[2026-05-01T01:56:47.191Z][WARN][@clickhouse/client][Config] \"host\" is deprecated. Use \"url\" instead.\\n[\\n  [\\n    {\\...ling_parts_num\\\\\":0,\\\\\"dangling_parts_compressed_bytes\\\\\":0,\\\\\"dangling_parts_uncompressed_bytes\\\\\":0}\"\\n    }\\n  ]\\n]'\nidx = 0\n\n    def raw_decode(self, s, idx=0):\n        \"\"\"Decode a JSON document from ``s`` (a ``str`` beginning with\n        a JSON document) and return a 2-tuple of the Python\n        representation and the index in ``s`` where the document ended.\n    \n        This can be used to decode a JSON document from a string that may\n        have extraneous data at the end.\n    \n        \"\"\"\n        try:\n>           obj, end = self.scan_once(s, idx)\n                       ^^^^^^^^^^^^^^^^^^^^^^\nE           json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 6 (char 5)\n\nusr/lib/python3.12/json/decoder.py:353: JSONDecodeError\n\nDuring handling of the above exception, another exception occurred:\n\n    def test_output_log_is_valid_json_array():\n        with open(OUTPUT_LOG, \"r\") as f:\n            content = f.read().strip()\n    \n        try:\n            data = json.loads(content)\n        except json.JSONDecodeError as e:\n>           pytest.fail(f\"Failed to parse {OUTPUT_LOG} as JSON: {e}\")\nE           Failed: Failed to parse /home/user/myproject/output.log as JSON: Expecting ',' delimiter: line 1 column 6 (char 5)\n\ntests/test_final_state.py:31: Failed",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

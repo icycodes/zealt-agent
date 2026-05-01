@@ -1,0 +1,56 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 0,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777537614.0693645,
+            "stop": 1777537614.2601588
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_database_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.13636937498813495,
+                "start": 1777537614.0745027,
+                "stop": 1777537614.2160442,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_database_exists():\n        \"\"\"Priority 1: Use clickhouse-client to verify database exists.\"\"\"\n        result = subprocess.run(\n            [\"clickhouse-client\", \"-q\", \"EXISTS DATABASE grafana_db\"],\n            capture_output=True, text=True\n        )\n>       assert result.returncode == 0, f\"clickhouse-client failed: {result.stderr}\"\nE       AssertionError: clickhouse-client failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\nE         \nE         \nE       assert 210 == 0\nE        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'EXISTS DATABASE grafana_db'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\\n\\n').returncode\n\ntests/test_final_state.py:10: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_table_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.022274054994340986,
+                "start": 1777537614.2161412,
+                "stop": 1777537614.2395115,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_table_exists():\n        \"\"\"Priority 1: Use clickhouse-client to verify table exists.\"\"\"\n        result = subprocess.run(\n            [\"clickhouse-client\", \"-q\", \"EXISTS TABLE grafana_db.metrics\"],\n            capture_output=True, text=True\n        )\n>       assert result.returncode == 0, f\"clickhouse-client failed: {result.stderr}\"\nE       AssertionError: clickhouse-client failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\nE         \nE         \nE       assert 210 == 0\nE        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'EXISTS TABLE grafana_db.metrics'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\\n\\n').returncode\n\ntests/test_final_state.py:19: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_user_can_query",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.019315559999085963,
+                "start": 1777537614.2396054,
+                "stop": 1777537614.25995,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_user_can_query():\n        \"\"\"Priority 1: Use clickhouse-client to verify the new user can query the table.\"\"\"\n        result = subprocess.run(\n            [\"clickhouse-client\", \"--user\", \"grafana_user\", \"--password\", \"grafana_pass\", \"-q\", \"SELECT count() FROM grafana_db.metrics\"],\n            capture_output=True, text=True\n        )\n>       assert result.returncode == 0, f\"Failed to query table as grafana_user: {result.stderr}\"\nE       AssertionError: Failed to query table as grafana_user: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\nE         \nE         \nE       assert 210 == 0\nE        +  where 210 = CompletedProcess(args=['clickhouse-client', '--user', 'grafana_user', '--password', 'grafana_pass', '-q', 'SELECT coun...urncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\\n\\n').returncode\n\ntests/test_final_state.py:28: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

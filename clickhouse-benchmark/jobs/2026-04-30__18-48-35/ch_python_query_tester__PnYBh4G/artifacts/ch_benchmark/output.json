@@ -1,0 +1,17 @@
+{
+  "time_seconds": 0.0,
+  "results": [
+    [
+      "click",
+      333
+    ],
+    [
+      "view",
+      334
+    ],
+    [
+      "purchase",
+      333
+    ]
+  ]
+}

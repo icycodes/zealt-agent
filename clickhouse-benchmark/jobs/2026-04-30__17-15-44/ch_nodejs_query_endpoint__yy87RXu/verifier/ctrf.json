@@ -1,0 +1,29 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 1,
+            "passed": 1,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777594845.784624,
+            "stop": 1777594847.2031326
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_tables_endpoint_returns_json_array",
+                "status": "passed",
+                "duration": 1.402920228021685,
+                "start": 1777594845.796443,
+                "stop": 1777594847.2018316,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

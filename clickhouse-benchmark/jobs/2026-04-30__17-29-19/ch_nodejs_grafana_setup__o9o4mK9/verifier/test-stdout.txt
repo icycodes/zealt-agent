@@ -1,0 +1,76 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 19ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+tests/test_final_state.py FFF                                            [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_database_exists _____________________________
+
+    def test_database_exists():
+        """Priority 1: Use clickhouse-client to verify database exists."""
+        result = subprocess.run(
+            ["clickhouse-client", "-q", "EXISTS DATABASE grafana_db"],
+            capture_output=True, text=True
+        )
+>       assert result.returncode == 0, f"clickhouse-client failed: {result.stderr}"
+E       AssertionError: clickhouse-client failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)
+E         
+E         
+E       assert 210 == 0
+E        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'EXISTS DATABASE grafana_db'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\n\n').returncode
+
+tests/test_final_state.py:10: AssertionError
+______________________________ test_table_exists _______________________________
+
+    def test_table_exists():
+        """Priority 1: Use clickhouse-client to verify table exists."""
+        result = subprocess.run(
+            ["clickhouse-client", "-q", "EXISTS TABLE grafana_db.metrics"],
+            capture_output=True, text=True
+        )
+>       assert result.returncode == 0, f"clickhouse-client failed: {result.stderr}"
+E       AssertionError: clickhouse-client failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)
+E         
+E         
+E       assert 210 == 0
+E        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'EXISTS TABLE grafana_db.metrics'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\n\n').returncode
+
+tests/test_final_state.py:19: AssertionError
+_____________________________ test_user_can_query ______________________________
+
+    def test_user_can_query():
+        """Priority 1: Use clickhouse-client to verify the new user can query the table."""
+        result = subprocess.run(
+            ["clickhouse-client", "--user", "grafana_user", "--password", "grafana_pass", "-q", "SELECT count() FROM grafana_db.metrics"],
+            capture_output=True, text=True
+        )
+>       assert result.returncode == 0, f"Failed to query table as grafana_user: {result.stderr}"
+E       AssertionError: Failed to query table as grafana_user: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)
+E         
+E         
+E       assert 210 == 0
+E        +  where 210 = CompletedProcess(args=['clickhouse-client', '--user', 'grafana_user', '--password', 'grafana_pass', '-q', 'SELECT coun...urncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\n\n').returncode
+
+tests/test_final_state.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_final_state.py::test_database_exists - AssertionError: clic...
+FAILED tests/test_final_state.py::test_table_exists - AssertionError: clickho...
+FAILED tests/test_final_state.py::test_user_can_query - AssertionError: Faile...
+============================== 3 failed in 0.17s ===============================

@@ -1,0 +1,27 @@
+Connecting to ClickHouse at localhost:8123 (secure=False)
+Connected successfully
+Creating table 'events'...
+Table created successfully
+Inserting 1000 rows into 'events' table...
+Inserted 1000 rows successfully
+Executing query: SELECT event_type, count() FROM events GROUP BY event_type
+Query executed in 0.0017 seconds
+Results: [['click', 333], ['view', 334], ['purchase', 333]]
+Output written to /home/user/ch_benchmark/output.json
+Final output: {
+  "time_seconds": 0.0,
+  "results": [
+    [
+      "click",
+      333
+    ],
+    [
+      "view",
+      334
+    ],
+    [
+      "purchase",
+      333
+    ]
+  ]
+}

@@ -1,0 +1,44 @@
+downloading uv 0.9.7 aarch64-unknown-linux-gnu
+no checksums to verify
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Downloading pygments (1.2MiB)
+ Downloading pygments
+Installed 7 packages in 13ms
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 2 items
+
+tests/test_final_state.py F.                                             [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_events_table_row_count_via_cli ______________________
+
+    def test_events_table_row_count_via_cli():
+        """Priority 1: Use ClickHouse CLI to verify the table exists and has 1000 rows."""
+        result = subprocess.run(
+            ["clickhouse-client", "-q", "SELECT count() FROM events"],
+            capture_output=True, text=True
+        )
+>       assert result.returncode == 0, f"'clickhouse-client' query failed: {result.stderr}"
+E       AssertionError: 'clickhouse-client' query failed: Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)
+E         
+E         
+E       assert 210 == 0
+E        +  where 210 = CompletedProcess(args=['clickhouse-client', '-q', 'SELECT count() FROM events'], returncode=210, stdout='', stderr='Code: 210. DB::NetException: Connection refused (localhost:9000). (NETWORK_ERROR)\n\n').returncode
+
+tests/test_final_state.py:15: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_output_json_exists_and_valid
+FAILED tests/test_final_state.py::test_events_table_row_count_via_cli - Asser...
+========================= 1 failed, 1 passed in 0.04s ==========================

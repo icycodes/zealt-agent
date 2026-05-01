@@ -1,0 +1,68 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 4,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1777538123.6888568,
+            "stop": 1777538123.7005553
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_script_exists_and_executable",
+                "status": "passed",
+                "duration": 0.00023275101557374,
+                "start": 1777538123.693718,
+                "stop": 1777538123.6940746,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_contains_correct_api_endpoint",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005825020489282906,
+                "start": 1777538123.6941426,
+                "stop": 1777538123.6993687,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_script_contains_correct_api_endpoint():\n        \"\"\"Priority 3 fallback: verify curl command targets correct endpoint.\"\"\"\n        with open(SCRIPT_FILE, \"r\") as f:\n            content = f.read()\n    \n        endpoint1 = \"https://api.clickhouse.cloud/v1/organizations/${CH_ORG_ID}/services/${CH_SERVICE_ID}/backupConfiguration\"\n        endpoint2 = \"https://api.clickhouse.cloud/v1/organizations/$CH_ORG_ID/services/$CH_SERVICE_ID/backupConfiguration\"\n>       assert endpoint1 in content or endpoint2 in content, \\\n            f\"Expected curl to target {endpoint1} or {endpoint2}, but it was not found in the script.\"\nE       AssertionError: Expected curl to target https://api.clickhouse.cloud/v1/organizations/${CH_ORG_ID}/services/${CH_SERVICE_ID}/backupConfiguration or https://api.clickhouse.cloud/v1/organizations/$CH_ORG_ID/services/$CH_SERVICE_ID/backupConfiguration, but it was not found in the script.\nE       assert ('https://api.clickhouse.cloud/v1/organizations/${CH_ORG_ID}/services/${CH_SERVICE_ID}/backupConfiguration' in '#!/usr/bin/env bash\\nset -euo pipefail\\n\\n# -------------------------------------------------------------------------...ation updated successfully.\"\\nelse\\n  log \"ERROR: API request failed with HTTP status ${HTTP_STATUS}.\"\\n  exit 1\\nfi\\n' or 'https://api.clickhouse.cloud/v1/organizations/$CH_ORG_ID/services/$CH_SERVICE_ID/backupConfiguration' in '#!/usr/bin/env bash\\nset -euo pipefail\\n\\n# -------------------------------------------------------------------------...ation updated successfully.\"\\nelse\\n  log \"ERROR: API request failed with HTTP status ${HTTP_STATUS}.\"\\n  exit 1\\nfi\\n')\n\ntests/test_final_state.py:18: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_script_uses_basic_auth",
+                "status": "passed",
+                "duration": 0.00022466597147285938,
+                "start": 1777538123.699436,
+                "stop": 1777538123.6997616,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_sends_patch_request",
+                "status": "passed",
+                "duration": 0.0001866660313680768,
+                "start": 1777538123.6998188,
+                "stop": 1777538123.7000847,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_script_payload_contains_schedule_and_retention",
+                "status": "passed",
+                "duration": 0.0002135849790647626,
+                "start": 1777538123.700146,
+                "stop": 1777538123.7004359,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

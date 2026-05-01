@@ -1,0 +1,10 @@
+Connecting to ClickHouse at [REDACTED_CLICKHOUSE_HOST]:8443...
+Connected successfully.
+Found 2 statements to execute.
+Executing statement 1/2...
+SQL: CREATE TABLE IF NOT EXISTS test_migration (id UInt64) ENGINE = MergeTree ORDER BY id
+Statement executed successfully.
+Executing statement 2/2...
+SQL: ALTER TABLE test_migration ADD COLUMN IF NOT EXISTS name String
+Statement executed successfully.
+Migration completed successfully.

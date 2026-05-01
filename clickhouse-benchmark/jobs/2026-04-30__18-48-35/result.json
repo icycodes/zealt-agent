@@ -1,0 +1,53 @@
+{
+    "id": "fecee1f3-c602-47e8-8290-1a57e07d603e",
+    "started_at": "2026-04-30T18:48:36.731851",
+    "finished_at": "2026-04-30T19:10:30.051068",
+    "n_total_trials": 20,
+    "stats": {
+        "n_trials": 20,
+        "n_errors": 2,
+        "evals": {
+            "pochi__glm-4.7__clickhouse-tasks": {
+                "n_trials": 18,
+                "n_errors": 2,
+                "metrics": [
+                    {
+                        "mean": 0.65
+                    }
+                ],
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "ch_python_s3_parquet__wDkvjQf",
+                            "ch_python_schema_migration__4CWzpSU",
+                            "ch_nodejs_query_endpoint__72bM2jL",
+                            "ch_cli_backup_config__f8vZsUB",
+                            "ch_python_cold_start_handler__LxXzSBY",
+                            "ch_cli_service_deletion__QqzMJU6",
+                            "ch_nodejs_data_dictionary__booc7do",
+                            "python_sdk_basic_ingestion__jLxnaAa",
+                            "ch_cli_ip_access_list__CY2edrE",
+                            "schema_migration__qU5bavc",
+                            "ch_nodejs_grafana_setup__kZe9RLB",
+                            "python_s3_data_ingestion__au8pg4y",
+                            "ch_cli_role_management__xCnP7rx"
+                        ],
+                        "0.0": [
+                            "ch_nodejs_analytics_api__hUXDy3b",
+                            "ch_python_github_archive__tgn43Fr",
+                            "node_js_streaming_query_executio__cYd9SSF",
+                            "ch_python_query_tester__PnYBh4G",
+                            "ch_nodejs_csv_load__qwHcVhN"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "RuntimeError": [
+                        "clickhouse_metrics_dashboard__hS6hSXE",
+                        "system_metrics_dashboard__p4ZzPEU"
+                    ]
+                }
+            }
+        }
+    }
+}
