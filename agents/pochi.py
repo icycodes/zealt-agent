@@ -1,6 +1,8 @@
 import os
+import re
 import json
 import shlex
+import hashlib
 
 from harbor.models.agent.context import AgentContext
 from harbor.models.trial.paths import EnvironmentPaths
@@ -22,6 +24,10 @@ from harbor.models.trajectories import (
     Agent,
 )
 from harbor.models.trial.paths import EnvironmentPaths
+
+
+class InitialStateError(Exception):
+    pass
 
 
 class ExecInput(BaseModel):
@@ -115,17 +121,18 @@ class Pochi(BaseInstalledAgent):
     async def run(
         self, instruction: str, environment: BaseEnvironment, context: AgentContext
     ) -> None:
-        # Write the trial_id into "/logs/artifacts/trial_id"
-        write_trial_id_command = f"echo {environment.session_id} > /logs/artifacts/trial_id"
-
-        await self.exec_as_agent(environment, command=write_trial_id_command)
+        run_id = "zr-" + re.sub(r"[^a-z0-9.-]", "-", environment.session_id.lower())
+        write_ids_command = (
+            f"echo {run_id} > /logs/artifacts/run-id && "
+            f"echo {environment.session_id} > /logs/artifacts/trial_id"
+        )
+        await self.exec_as_agent(environment, command=write_ids_command)
 
         model = self.model_name if self.model_name else "google/gemini-3-flash"
 
         config_env = {
             "OPENAI_API_KEY": os.environ.get("OPENAI_API_KEY", ""),
             "DEEPINFRA_API_KEY": os.environ.get("DEEPINFRA_API_KEY", ""),
-            "ANTHROPIC_API_KEY": os.environ.get("ANTHROPIC_API_KEY", ""),
         }
 
         config_json = """{
@@ -143,16 +150,6 @@ class Pochi(BaseInstalledAgent):
         },
         "deepseek-ai/DeepSeek-V4-Pro": {
           "name": "DeepSeek-V4-Pro"
-        }
-      }
-    },
-    "anthropic": {
-      "kind": "openai",
-      "baseURL": "https://api.anthropic.com/v1",
-      "apiKey": "ANTHROPIC_API_KEY",
-      "models": {
-        "claude-opus-4-6": {
-          "name": "claude-opus-4-6"
         }
       }
     },
@@ -175,7 +172,6 @@ class Pochi(BaseInstalledAgent):
             "cat << 'EOF' | sed "
             '-e "s/OPENAI_API_KEY/${OPENAI_API_KEY}/g" '
             '-e "s/DEEPINFRA_API_KEY/${DEEPINFRA_API_KEY}/g" '
-            '-e "s/ANTHROPIC_API_KEY/${ANTHROPIC_API_KEY}/g" '
             "> ~/.pochi/config.jsonc\n"
             f"{config_json}\n"
             "EOF"
@@ -195,17 +191,29 @@ class Pochi(BaseInstalledAgent):
             env=config_env,
         )
 
-        # Ensure artifacts dir exists
-        await self.exec_as_agent(
-            environment,
-            command="mkdir -p /logs/artifacts",
-        )
+        eval_env = {
+            "POCHI_LOG": "debug",
+            "ZEALT_RUN_ID": run_id,
+        }
+        try:
+            await self.exec_as_agent(
+                environment,
+                command=(
+                    "if [ -f /bootstrap/test_initial_state.py ]; then "
+                    "pytest -s --log-cli-level=DEBUG /bootstrap/test_initial_state.py "
+                    "> >(tee /logs/agent/pochi/initial-test-stdout.txt) "
+                    "2> >(tee /logs/agent/pochi/initial-test-stderr.txt >&2); "
+                    "fi"
+                ),
+                env=eval_env,
+            )
+        except Exception as e:
+            raise InitialStateError("Initial state test failed") from e
 
         try:
             await self.exec_as_agent(
                 environment,
                 command=(
-                    'export PATH="$HOME/.pochi/bin:$PATH"; '
                     "pochi "
                     f"--model {model} "
                     "--max-steps 200 "
@@ -218,6 +226,7 @@ class Pochi(BaseInstalledAgent):
                     f"{instruction}\n"
                     "EOF"
                 ),
+                env=eval_env,
             )
         finally:
             # cleanup - best effort
