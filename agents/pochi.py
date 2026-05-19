@@ -201,15 +201,6 @@ class Pochi(BaseInstalledAgent):
             command="mkdir -p /logs/artifacts",
         )
 
-        artifact_preamble = (
-            "# Preserving your work\n\n"
-            "Save a copy of files you create during this task to `/logs/artifacts/`. "
-            "This directory is preserved after the run so outputs can be inspected. "
-            "Organize with subdirectories if helpful (e.g., `/logs/artifacts/code/`, "
-            "`/logs/artifacts/reports/`). The directory already exists and is writable.\n\n"
-            "---\n\n"
-        )
-        instruction = artifact_preamble + instruction
         try:
             await self.exec_as_agent(
                 environment,
