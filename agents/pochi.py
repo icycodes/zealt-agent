@@ -3,6 +3,7 @@ import re
 import json
 import shlex
 import hashlib
+from packaging.version import Version
 
 from harbor.models.agent.context import AgentContext
 from harbor.models.trial.paths import EnvironmentPaths
@@ -68,7 +69,7 @@ class Pochi(BaseInstalledAgent):
         # some containers (returns the API URL as the "version" → 404).
         # Keep `bash -x` so any future install failure shows the resolved
         # version and download URL in the trace.
-        version_spec = f"pochi-{self._version}" if self._version else "pochi-v0.6.14"
+        version_spec = f"pochi-{self._version}" if self._version else "pochi-v0.6.15"
         await self.exec_as_agent(
             environment,
             command=(
@@ -210,6 +211,12 @@ class Pochi(BaseInstalledAgent):
         except Exception as e:
             raise InitialStateError("Initial state test failed") from e
 
+        strip_duplicates_flag = (
+            "--experimental-stream-trajectory-strip-duplicates "
+            if self._version and Version(self._version) >= Version("0.6.15")
+            else ""
+        )
+
         try:
             await self.exec_as_agent(
                 environment,
@@ -220,6 +227,7 @@ class Pochi(BaseInstalledAgent):
                     "--max-retries 10 "
                     "--blobs-dir /logs/agent/pochi/blobs "
                     "--experimental-stream-trajectory /logs/agent/pochi/trajectory.jsonl "
+                    f"{strip_duplicates_flag}"
                     "> >(tee /logs/agent/pochi/stdout.txt) "
                     "2> >(tee /logs/agent/pochi/stderr.txt >&2) "
                     "<<'EOF'\n"
