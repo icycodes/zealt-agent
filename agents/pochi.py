@@ -51,38 +51,20 @@ class Pochi(BaseInstalledAgent):
         return PurePosixPath(EnvironmentPaths.agent_dir / "trajectory.json")
 
     def get_version_command(self) -> str | None:
-        return 'export PATH="$HOME/.pochi/bin:$PATH"; export POCHI_LOG=info pochi; pochi --version'
+        return 'pochi --version'
 
     def parse_version(self, stdout: str) -> str:
         return stdout.strip()
 
     async def install(self, environment: BaseEnvironment) -> None:
-        # Install system packages (root)
-        await self.exec_as_root(
-            environment,
-            command="apt-get update && apt-get install -y curl ripgrep",
-            env={"DEBIAN_FRONTEND": "noninteractive"},
-        )
-        # Install pochi (as default user). Pin a known-good CLI release when
-        # the trial config doesn't specify one — getpochi.com/install.sh's
-        # `get_latest_version` mis-parses the GitHub releases API from inside
-        # some containers (returns the API URL as the "version" → 404).
-        # Keep `bash -x` so any future install failure shows the resolved
-        # version and download URL in the trace.
-        version_spec = f"pochi-{self._version}" if self._version else "pochi-v0.6.15"
+        # Assuming Pochi CLI is installed, only version information is printed here.
         await self.exec_as_agent(
             environment,
             command=(
                 "set -euo pipefail; "
-                f"curl -fsSL https://getpochi.com/install.sh | bash -x -s -- {version_spec} && "
                 "mkdir -p /logs/agent/pochi && "
-                "~/.pochi/bin/pochi --version"
+                "pochi --version"
             ),
-        )
-        # Symlink pochi to /usr/local/bin (root)
-        await self.exec_as_root(
-            environment,
-            command="ln -sf ~/.pochi/bin/pochi /usr/local/bin/pochi",
         )
 
     def _build_register_skills_command(self) -> str | None:
