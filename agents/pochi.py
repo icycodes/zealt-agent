@@ -51,7 +51,7 @@ class Pochi(BaseInstalledAgent):
         return PurePosixPath(EnvironmentPaths.agent_dir / "trajectory.json")
 
     def get_version_command(self) -> str | None:
-        return 'pochi --version'
+        return 'export POCHI_LOG=info pochi; pochi --version'
 
     def parse_version(self, stdout: str) -> str:
         return stdout.strip()
